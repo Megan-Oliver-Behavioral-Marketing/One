@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
+ 
   <style>
     :root {
       --green: #2d5a45;
@@ -22,18 +22,18 @@
       --rule: #c8c4bc;
       --accent: #c4a35a;
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--cream);
       color: var(--ink);
       overflow-x: hidden;
     }
-
+ 
     /* ── NAV ── */
     header.main-header {
       position: fixed;
@@ -48,7 +48,7 @@
       animation: fadeDown 0.6s 0.1s forwards;
     }
     header.main-header nav { display: flex; align-items: center; }
-
+ 
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -58,13 +58,13 @@
       color: #ffffff;
       text-decoration: none;
     }
-
+ 
     .nav-links {
       display: flex;
       gap: 2.5rem;
       list-style: none;
     }
-
+ 
     .nav-links a {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
@@ -74,9 +74,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     .nav-links a:hover { color: #ffffff; }
-
+ 
     /* ── HERO ── */
     #home {
       min-height: 100vh;
@@ -84,7 +84,7 @@
       grid-template-columns: 1fr 1fr;
       padding-top: 5rem;
     }
-
+ 
     .hero-left {
       display: flex;
       flex-direction: column;
@@ -93,7 +93,7 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.3s forwards;
     }
-
+ 
     .hero-eyebrow {
       font-family: 'DM Mono', monospace;
       font-size: 0.68rem;
@@ -102,7 +102,7 @@
       color: var(--green);
       margin-bottom: 1.5rem;
     }
-
+ 
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.5rem, 6vw, 5.5rem);
@@ -111,12 +111,12 @@
       color: var(--ink);
       margin-bottom: 0.5rem;
     }
-
+ 
     .hero-name em {
       font-style: italic;
       color: var(--green);
     }
-
+ 
     .hero-title {
       font-family: 'DM Mono', monospace;
       font-size: 0.75rem;
@@ -127,7 +127,7 @@
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--rule);
     }
-
+ 
     .hero-bio {
       font-size: 1.05rem;
       font-weight: 300;
@@ -136,12 +136,12 @@
       max-width: 480px;
       margin-bottom: 2.5rem;
     }
-
+ 
     .hero-bio strong {
       font-weight: 500;
       color: var(--ink);
     }
-
+ 
     .hero-cta {
       display: inline-flex;
       align-items: center;
@@ -157,9 +157,9 @@
       transition: background 0.2s, gap 0.2s;
       align-self: flex-start;
     }
-
+ 
     .hero-cta:hover { background: var(--green-light); gap: 1.25rem; }
-
+ 
     .hero-right {
       position: relative;
       background: var(--green);
@@ -167,7 +167,7 @@
       opacity: 0;
       animation: fadeIn 0.8s 0.5s forwards;
     }
-
+ 
     .hero-right::before {
       content: '';
       position: absolute;
@@ -180,7 +180,7 @@
         rgba(255,255,255,0.03) 41px
       );
     }
-
+ 
     .hero-img-placeholder {
       width: 100%;
       height: 100%;
@@ -191,7 +191,7 @@
       padding: 3rem;
       min-height: 600px;
     }
-
+ 
     .hero-photo {
       position: absolute;
       inset: 0;
@@ -200,7 +200,7 @@
       object-fit: cover;
       object-position: center top;
     }
-
+ 
     .hero-img-note {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
@@ -210,7 +210,7 @@
       border: 1px solid rgba(255,255,255,0.15);
       padding: 0.6rem 1.2rem;
     }
-
+ 
     .hero-stat-strip {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -218,16 +218,16 @@
       background: rgba(0,0,0,0.25);
       backdrop-filter: blur(4px);
     }
-
+ 
     .hero-stat {
       flex: 1;
       padding: 1.25rem 1.5rem;
       border-right: 1px solid rgba(255,255,255,0.1);
       text-align: center;
     }
-
+ 
     .hero-stat:last-child { border-right: none; }
-
+ 
     .hero-stat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.75rem;
@@ -235,7 +235,7 @@
       color: #fff;
       line-height: 1;
     }
-
+ 
     .hero-stat-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
@@ -244,24 +244,24 @@
       color: rgba(255,255,255,0.5);
       margin-top: 0.3rem;
     }
-
+ 
     /* ── SECTION SHARED ── */
     section { padding: 7rem 4rem; }
-
+ 
     .section-header {
       display: flex;
       align-items: baseline;
       gap: 1.5rem;
       margin-bottom: 4rem;
     }
-
+ 
     .section-number {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       color: var(--ink-light);
     }
-
+ 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -269,34 +269,34 @@
       color: var(--ink);
       line-height: 1.1;
     }
-
+ 
     .section-rule {
       flex: 1;
       height: 1px;
       background: var(--rule);
     }
-
+ 
     /* ── ABOUT ── */
     #about {
       background: #fff;
     }
-
+ 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
       gap: 6rem;
       align-items: start;
     }
-
+ 
     .about-sidebar {}
-
+ 
     .about-credential {
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
-
+ 
     .about-credential:first-child { border-top: 1px solid var(--rule); }
-
+ 
     .cred-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -305,14 +305,14 @@
       color: var(--green);
       margin-bottom: 0.4rem;
     }
-
+ 
     .cred-value {
       font-size: 0.9rem;
       font-weight: 400;
       color: var(--ink-mid);
       line-height: 1.5;
     }
-
+ 
     .about-body p {
       font-size: 1.05rem;
       font-weight: 300;
@@ -320,12 +320,12 @@
       color: var(--ink-mid);
       margin-bottom: 1.5rem;
     }
-
+ 
     .about-body p strong {
       font-weight: 500;
       color: var(--ink);
     }
-
+ 
     .about-pullquote {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
@@ -337,28 +337,28 @@
       border-left: 3px solid var(--green);
       margin: 2.5rem 0;
     }
-
+ 
     /* ── PORTFOLIO ── */
     #portfolio {
       background: var(--cream);
     }
-
+ 
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5px;
       background: var(--rule);
     }
-
+ 
     .portfolio-item {
       background: var(--cream);
       padding: 2.5rem;
       transition: background 0.2s;
       cursor: pointer;
     }
-
+ 
     .portfolio-item:hover { background: var(--green-pale); }
-
+ 
     .portfolio-tag {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
@@ -367,7 +367,7 @@
       color: var(--green);
       margin-bottom: 1rem;
     }
-
+ 
     .portfolio-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
@@ -376,7 +376,7 @@
       line-height: 1.2;
       margin-bottom: 0.75rem;
     }
-
+ 
     .portfolio-desc {
       font-size: 0.875rem;
       font-weight: 300;
@@ -384,7 +384,7 @@
       color: var(--ink-light);
       margin-bottom: 1.5rem;
     }
-
+ 
     .portfolio-result {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
@@ -392,27 +392,27 @@
       color: var(--accent);
       text-transform: uppercase;
     }
-
+ 
     .portfolio-item.featured-case {
       grid-column: span 3;
       background: var(--ink);
       color: var(--cream);
       border-left: 3px solid var(--accent);
     }
-
+ 
     .portfolio-item.featured-case:hover { background: #262620; }
-
+ 
     .portfolio-item.featured-case .portfolio-tag { color: var(--accent); }
-
+ 
     .portfolio-item.featured-case .portfolio-title {
       color: var(--cream);
       font-size: 1.6rem;
     }
-
+ 
     .portfolio-item.featured-case .portfolio-desc { color: rgba(245,242,238,0.6); }
-
+ 
     .portfolio-item.featured-case .portfolio-result { color: var(--accent); }
-
+ 
     .case-meta {
       display: flex;
       flex-wrap: wrap;
@@ -422,13 +422,13 @@
       border-top: 1px solid rgba(255,255,255,0.1);
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-
+ 
     .case-meta-item {
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
     }
-
+ 
     .case-meta-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem;
@@ -436,27 +436,27 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.35);
     }
-
+ 
     .case-meta-value {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
       letter-spacing: 0.06em;
       color: rgba(255,255,255,0.7);
     }
-
+ 
     .case-outcomes {
       display: flex;
       gap: 2rem;
       margin-top: 1.5rem;
     }
-
+ 
     .case-outcome {
       text-align: center;
       padding: 1rem 1.5rem;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
+ 
     .case-outcome-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
@@ -464,7 +464,7 @@
       color: var(--accent);
       line-height: 1;
     }
-
+ 
     .case-outcome-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.58rem;
@@ -473,7 +473,7 @@
       color: rgba(255,255,255,0.4);
       margin-top: 0.3rem;
     }
-
+ 
     .case-link {
       display: inline-flex;
       align-items: center;
@@ -489,51 +489,51 @@
       padding-bottom: 0.2rem;
       transition: border-color 0.2s;
     }
-
+ 
     .case-link:hover { border-color: var(--accent); }
-
+ 
     @media (max-width: 900px) {
       .portfolio-item.featured-case { grid-column: span 1; }
       .case-outcomes { flex-wrap: wrap; gap: 1rem; }
     }
-
+ 
     /* ── WRITING ── */
     #writing {
       background: var(--ink);
     }
-
+ 
     #writing .section-title { color: var(--cream); }
     #writing .section-number { color: var(--ink-light); }
     #writing .section-rule { background: rgba(255,255,255,0.1); }
-
+ 
     .writing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5px;
       background: rgba(255,255,255,0.08);
     }
-
+ 
     .writing-item {
       background: var(--ink);
       padding: 2.5rem;
       transition: background 0.2s;
       cursor: pointer;
     }
-
+ 
     .writing-item:hover { background: #262620; }
-
+ 
     .writing-item.featured {
       grid-column: span 2;
       border-left: 3px solid var(--accent);
     }
-
+ 
     .writing-meta {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.25rem;
     }
-
+ 
     .writing-platform {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
@@ -541,14 +541,14 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-
+ 
     .writing-date {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.1em;
       color: var(--ink-light);
     }
-
+ 
     .writing-badge {
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem;
@@ -558,7 +558,7 @@
       background: var(--accent);
       padding: 0.2rem 0.6rem;
     }
-
+ 
     .writing-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem;
@@ -567,18 +567,18 @@
       line-height: 1.25;
       margin-bottom: 0.75rem;
     }
-
+ 
     .writing-item.featured .writing-title {
       font-size: 1.65rem;
     }
-
+ 
     .writing-excerpt {
       font-size: 0.875rem;
       font-weight: 300;
       line-height: 1.7;
       color: rgba(245,242,238,0.5);
     }
-
+ 
     .writing-cta {
       display: inline-block;
       margin-top: 3rem;
@@ -592,22 +592,22 @@
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
     }
-
+ 
     .writing-cta:hover { color: var(--accent); border-color: var(--accent); }
-
+ 
     /* ── CONTACT ── */
     #contact {
       background: var(--green);
     }
-
+ 
     .contact-inner {
       max-width: 680px;
     }
-
+ 
     #contact .section-title { color: var(--cream); }
     #contact .section-number { color: rgba(255,255,255,0.4); }
     #contact .section-rule { background: rgba(255,255,255,0.2); }
-
+ 
     .contact-intro {
       font-size: 1.1rem;
       font-weight: 300;
@@ -615,25 +615,25 @@
       color: rgba(245,242,238,0.8);
       margin-bottom: 3rem;
     }
-
+ 
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-
+ 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-
+ 
     .form-field {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
     }
-
+ 
     .form-field label {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -641,7 +641,7 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.5);
     }
-
+ 
     .form-field input,
     .form-field textarea,
     .form-field select {
@@ -656,13 +656,13 @@
       resize: none;
       appearance: none;
     }
-
+ 
     .form-field input::placeholder,
     .form-field textarea::placeholder { color: rgba(255,255,255,0.25); }
-
+ 
     .form-field input:focus,
     .form-field textarea:focus { border-color: rgba(255,255,255,0.5); }
-
+ 
     .form-submit {
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
@@ -677,9 +677,9 @@
       margin-top: 0.5rem;
       transition: background 0.2s;
     }
-
+ 
     .form-submit:hover { background: #ebe7e0; }
-
+ 
     .contact-links {
       display: flex;
       gap: 2rem;
@@ -687,7 +687,7 @@
       padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.15);
     }
-
+ 
     .contact-link {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
@@ -697,9 +697,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     .contact-link:hover { color: #fff; }
-
+ 
     /* ── FOOTER ── */
     footer {
       background: var(--ink);
@@ -708,7 +708,7 @@
       align-items: center;
       justify-content: space-between;
     }
-
+ 
     .footer-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem;
@@ -716,54 +716,54 @@
       letter-spacing: 0.06em;
       color: rgba(255,255,255,0.4);
     }
-
+ 
     .footer-copy {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.1em;
       color: rgba(255,255,255,0.25);
     }
-
+ 
     /* ── ANIMATIONS ── */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-
+ 
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 1; transform: none; }
-
+ 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.5rem; }
-
+ 
       #home { grid-template-columns: 1fr; }
       .hero-right { display: none; }
       .hero-left { padding: 6rem 1.5rem 4rem; }
-
+ 
       section { padding: 5rem 1.5rem; }
-
+ 
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .portfolio-grid { grid-template-columns: 1fr; }
       .writing-grid { grid-template-columns: 1fr; }
       .writing-item.featured { grid-column: span 1; }
       .form-row { grid-template-columns: 1fr; }
-
+ 
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   
-
+ 
     /* ── CASE STUDY FULL PAGE ── */
     .cs-page {
       position: fixed;
@@ -818,7 +818,7 @@
       transition: transform 0.2s;
     }
     .cs-back-btn:hover .cs-back-arrow { transform: translateX(-4px); }
-
+ 
     /* Hero band */
     .cs-hero {
       background: var(--ink);
@@ -868,7 +868,7 @@
       letter-spacing: 0.04em;
       color: rgba(255,255,255,0.75);
     }
-
+ 
     /* Outcomes strip */
     .cs-outcomes-strip {
       display: grid;
@@ -904,7 +904,7 @@
       margin-top: 0.3rem;
       line-height: 1.4;
     }
-
+ 
     /* Body */
     .cs-content {
       max-width: 740px;
@@ -1060,7 +1060,7 @@
       transition: border-color 0.2s;
     }
     .cs-footer-link:hover { border-color: var(--green); }
-
+ 
     @media (max-width: 900px) {
       .cs-topbar { padding: 1rem 1.5rem; }
       .cs-hero { padding: 4rem 1.5rem 3rem; }
@@ -1071,7 +1071,7 @@
       .cs-content { padding: 3rem 1.5rem 5rem; }
       .cs-shift-grid { grid-template-columns: 1fr; }
     }
-
+ 
   
     .writing-read-more {
       display: inline-block;
@@ -1085,7 +1085,7 @@
       padding-bottom: 0.15rem;
     }
     .writing-item.featured:hover .writing-read-more { border-color: var(--accent); }
-
+ 
     /* Article full page — inherits cs-page styles */
     .article-page {
       position: fixed;
@@ -1234,11 +1234,11 @@
       .article-hero { padding: 4rem 1.5rem 3rem; }
       .article-content { padding: 3rem 1.5rem 5rem; }
     }
-
+ 
   </style>
 </head>
 <body>
-
+ 
   <!-- NAV -->
   <header class="main-header">
     <a href="#home" class="nav-logo">Megan Oliver</a>
@@ -1251,7 +1251,7 @@
     </ul>
     </nav>
   </header>
-
+ 
   <!-- HERO -->
   <section id="home">
     <div class="hero-left">
@@ -1285,7 +1285,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ABOUT -->
   <section id="about">
     <div class="section-header reveal">
@@ -1332,7 +1332,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="section-header reveal">
@@ -1418,7 +1418,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- WRITING -->
   <section id="writing">
     <div class="section-header reveal">
@@ -1472,7 +1472,7 @@
     </div>
     <a href="#contact" class="writing-cta">Get notified when I publish &rarr;</a>
   </section>
-
+ 
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
@@ -1512,17 +1512,17 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- FOOTER -->
   <footer>
     <span class="footer-name">Megan Oliver</span>
     <span class="footer-copy">&copy; 2025 &middot; Brand &amp; Behavioral Strategist &middot; meganoliver.com</span>
   </footer>
-
+ 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <!-- CASE STUDY FULL PAGE -->
   <div class="cs-page" id="csPage">
-
+ 
     <!-- Top bar -->
     <div class="cs-topbar">
       <span class="cs-topbar-brand">Megan Oliver</span>
@@ -1530,7 +1530,7 @@
         <span class="cs-back-arrow">&larr;</span> Back to Work
       </button>
     </div>
-
+ 
     <!-- Hero -->
     <div class="cs-hero">
       <p class="cs-eyebrow">Behavioral Marketing Strategy &middot; Case Study &middot; 2025</p>
@@ -1554,7 +1554,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Outcomes strip -->
     <div class="cs-outcomes-strip">
       <div class="cs-outcome-cell">
@@ -1573,17 +1573,17 @@
         <div class="cs-outcome-note">Friction reduction &amp; behavior-specific CTAs</div>
       </div>
     </div>
-
+ 
     <!-- Body content -->
     <div class="cs-content">
-
+ 
       <p class="cs-section-label">Overview</p>
       <h2 class="cs-section-heading">Consistent activity. Inconsistent participation.</h2>
       <p>This case shows how engagement was rebuilt by redesigning communication around decision-making, not announcements. The organization had consistent activity&mdash;but inconsistent participation. The issue wasn&rsquo;t effort. It was structure.</p>
       <p>Communication, programming, and execution weren&rsquo;t designed to guide people toward action in the moment they encountered the message. My role was to diagnose where behavior was breaking down and rebuild the system around how people actually decide to participate.</p>
-
+ 
       <hr class="cs-rule">
-
+ 
       <p class="cs-section-label">The Problem</p>
       <h2 class="cs-section-heading">The path to action was unclear.</h2>
       <p>Engagement wasn&rsquo;t low because people weren&rsquo;t interested. It was low because the path to action was unclear.</p>
@@ -1595,9 +1595,9 @@
         <li>Social channels weren&rsquo;t contributing to participation</li>
       </ul>
       <p>People weren&rsquo;t disengaged from the organization. They were disengaged from <strong>what to do, when to do it, and why it mattered now.</strong></p>
-
+ 
       <hr class="cs-rule">
-
+ 
       <p class="cs-section-label">Behavioral Diagnosis</p>
       <h2 class="cs-section-heading">Not an awareness problem. A <a href="/writing/decision-making">decision-level</a> breakdown.</h2>
       <p>Communication was built around information, announcements, and isolated updates&mdash;but not around timing, reinforcement, or clear next steps. There was no structured reason for someone to act in the moment they saw the message.</p>
@@ -1608,9 +1608,9 @@
         <li>How this fits into what I&rsquo;m already seeking</li>
       </ul>
       <p>For this audience&mdash;people navigating belonging, rest, and emotional or spiritual needs&mdash;the decision to participate was primarily motivational, not logistical. So instead of polishing copy, I redesigned the decision architecture.</p>
-
+ 
       <hr class="cs-rule">
-
+ 
       <p class="cs-section-label">Strategic Shift</p>
       <h2 class="cs-section-heading">From announcements to decision environments.</h2>
       <div class="cs-shift-grid">
@@ -1631,51 +1631,51 @@
           </ul>
         </div>
       </div>
-
+ 
       <hr class="cs-rule">
-
+ 
       <p class="cs-section-label">What Changed</p>
       <h2 class="cs-section-heading">Four levers. Each mapped to a specific behavioral outcome.</h2>
-
+ 
       <p><strong>1 &mdash; Unified Weekly Narrative</strong><br>Each week operated as a coordinated system. Messaging aligned across services, events, and outreach so every channel reinforced the same &ldquo;why now.&rdquo; Communication became directional, not informational&mdash;people didn&rsquo;t just receive information, they understood where they fit.</p>
-
+ 
       <p><strong>2 &mdash; Reinforced Decision Cycles Across Channels</strong><br>Channels were assigned clear roles in the decision journey: Social &rarr; awareness &middot; Email &rarr; clarity &middot; Livestream &rarr; reinforcement &middot; In-person &rarr; action.</p>
-
+ 
       <div class="cs-callout">
         <div class="cs-callout-label">Behavioral Lever &mdash; Trigger Timing vs. Intent</div>
         <p>We shifted the primary email trigger to 35 minutes before the live engagement. Aligning with the &ldquo;transition window&rdquo;&mdash;when users move from passive routines into Sunday intentions&mdash;let us harness action bias and drove a +23% increase in livestream viewership without increasing send volume.</p>
       </div>
-
+ 
       <p><strong>3 &mdash; <a href="/writing/friction">Friction Reduction</a> in Participation</strong><br>The question became: &ldquo;What&rsquo;s stopping someone from acting right now?&rdquo; Every message got a single, clear next step. Messaging hierarchy was simplified. Timing and cadence became consistent.</p>
-
+ 
       <p><strong>4 &mdash; System-Based Execution</strong><br>Repeatable workflows replaced one-offs. Volunteers worked inside defined roles. Reliance on individual talent decreased.</p>
-
+ 
       <div class="cs-callout">
         <div class="cs-callout-label">Behavioral Playbook &mdash; System over Skill</div>
         <p>I developed a &ldquo;zero-barrier&rdquo; execution checklist that translated the strategy into a simple &ldquo;don&rsquo;t think, just do&rdquo; workflow. Volunteers could keep four channels aligned to the same behavioral logic without constant oversight, while the audience experienced fewer cognitive demands at each touchpoint.</p>
       </div>
-
+ 
       <hr class="cs-rule">
-
+ 
       <p class="cs-section-label">Outcomes &mdash; 3 Months</p>
       <h2 class="cs-section-heading">Each lift mapped to a specific behavioral lever.</h2>
       <p>Trigger timing &rarr; livestream viewership. Narrative alignment &rarr; social engagement. Friction reduction &rarr; first-time participation.</p>
       <p>Operationally: communication became consistent across channels, weekly execution became repeatable, and dependence on specific individuals decreased. Behaviorally: clearer follow-through from messaging to participation, more predictable engagement patterns, and reduced confusion around next steps.</p>
       <p>The shift was from passive awareness to active participation. From isolated messages to reinforced decision cycles. From effort-based execution to system-based consistency.</p>
-
+ 
       <div class="cs-insight-block">
         <div class="cs-insight-label">Key Insight</div>
         <p>&ldquo;Engagement doesn&rsquo;t increase because you communicate more. It increases when people understand why acting now makes sense&mdash;and how to act immediately.&rdquo;</p>
       </div>
-
+ 
       <div class="cs-footer-links">
         <a href="#writing" class="cs-footer-link" onclick="closeCaseStudy()">Explore behavioral marketing insights &rarr;</a>
         <a href="#about" class="cs-footer-link" onclick="closeCaseStudy()">About my approach &rarr;</a>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -1688,7 +1688,7 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-
+ 
     // Case study full-page transition
     function openCaseStudy() {
       const page = document.getElementById('csPage');
@@ -1700,7 +1700,7 @@
       document.getElementById('csPage').classList.remove('open');
       document.body.style.overflow = '';
     }
-
+ 
     // Article full-page transition
     function openArticle() {
       const page = document.getElementById('articlePage');
@@ -1712,14 +1712,14 @@
       document.getElementById('articlePage').classList.remove('open');
       document.body.style.overflow = '';
     }
-
+ 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeCaseStudy();
         closeArticle();
       }
     });
-
+ 
     // Contact form → mailto
     function sendMail(e) {
       e.preventDefault();
@@ -1740,97 +1740,97 @@
       }
     }
   </script>
-
+ 
   <!-- ARTICLE FULL PAGE: Your Persona Knows Who They Are -->
   <div class="article-page" id="articlePage">
-
+ 
     <div class="article-topbar">
       <span class="article-topbar-brand">Megan Oliver</span>
       <button class="article-back-btn" onclick="closeArticle()">
         <span class="article-back-arrow">&larr;</span> Back to Writing
       </button>
     </div>
-
+ 
     <div class="article-hero">
       <p class="article-eyebrow">Thought Leadership &middot; <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">LinkedIn</a> &middot; 2025</p>
       <h1 class="article-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</h1>
     </div>
-
+ 
     <div class="article-content">
-
+ 
       <p>There&rsquo;s a specific kind of marketing failure that&rsquo;s hard to explain in a debrief. The audience was right. The message tested well. The channel made sense. And the campaign still landed flat. No obvious culprit in the data. The creative wasn&rsquo;t bad. The targeting wasn&rsquo;t off. Everything the brief called for got delivered.</p>
-
+ 
       <p>The persona said this should have worked.</p>
-
+ 
       <p>And that&rsquo;s exactly the problem.</p>
-
+ 
       <p>The persona wasn&rsquo;t wrong about the person. It was blind to the moment the decision actually happened.</p>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">Personas do something genuinely useful</h2>
-
+ 
       <p>Before this becomes a takedown, let&rsquo;s be clear about what personas are actually good at.</p>
-
+ 
       <p>They give creative teams a shared mental model of who they&rsquo;re talking to. They help with tone, channel selection, message framing. They prevent the kind of generic, speak-to-everyone copy that ends up connecting with no one. A well-built persona captures real motivations, real anxieties, real aspirations.</p>
-
+ 
       <p>That&rsquo;s not nothing. That&rsquo;s actually valuable.</p>
-
+ 
       <p>The problem isn&rsquo;t that personas are wrong. It&rsquo;s that marketers have been using them to answer a question they weren&rsquo;t designed to answer.</p>
-
+ 
       <div class="article-pullquote">Personas describe identity. Marketers are using them to predict behavior. Those are different problems.</div>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">Identity is stable. Behavior is situational.</h2>
-
+ 
       <p>Here&rsquo;s what&rsquo;s actually happening when someone makes a decision. They&rsquo;re not consulting their own personality profile. They&rsquo;re responding to conditions. The environment they&rsquo;re in, the options in front of them, the friction between where they are and what you&rsquo;re asking them to do, what just happened in the last hour, whether the default path leads toward you or away from you.</p>
-
+ 
       <p>Take the same person your persona describes perfectly. Health-conscious, 34, values quality, researches before buying. On a Saturday morning with coffee and time, they&rsquo;ll read your long-form content, compare options, and make a considered choice. On a Wednesday at 6pm after back-to-back meetings, that same person will click the first reasonable option that doesn&rsquo;t require them to think too hard.</p>
-
+ 
       <p><strong>Same person. Completely different decision environment. Completely different behavior.</strong></p>
-
+ 
       <p>The persona didn&rsquo;t change. The context did. And the campaign that spoke beautifully to the Saturday version of that person had nothing useful to say to the Wednesday version.</p>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">What this looks like in practice</h2>
-
+ 
       <p>Consider a gym trying to grow membership. The traditional approach is awareness&mdash;run ads, tell an emotional story about transformation, target people who&rsquo;ve expressed interest in fitness. The persona is solid. The creative is good. Conversion is mediocre.</p>
-
+ 
       <p>What the persona missed is the moment. Most people who want to get healthy don&rsquo;t fail at the decision to join a gym. They fail at the dozen small decisions that happen before that&mdash;what they grab for lunch, whether they feel like someone who makes healthy choices, whether the habit of health is already active in their life or dormant.</p>
-
+ 
       <p>A gym that partners with a health food brand to get their product as the default snack option&mdash;with a promo code on the packaging&mdash;isn&rsquo;t just doing co-marketing. They&rsquo;re entering the decision environment earlier, at a moment when the behavior is already in motion. The person who just chose the granola bar is primed. Their identity as a healthy person just got reinforced. Now the gym ad lands on completely different psychological ground.</p>
-
+ 
       <div class="article-pullquote">Same audience. Different context. Entirely different conversion conditions.</div>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">Most marketing problems aren&rsquo;t messaging problems</h2>
-
+ 
       <p>This is where the budget goes wrong.</p>
-
+ 
       <p>If you believe behavior flows primarily from identity, then the solution to flat conversion is always some version of better storytelling. More emotional resonance. Stronger brand affinity. A more precise message to a more precise audience.</p>
-
+ 
       <p>Sometimes that&rsquo;s right. But a lot of the time, the actual problem is somewhere else entirely.</p>
-
+ 
       <ul class="article-list">
         <li>A form with six fields when two would do</li>
         <li>A pricing page that creates more questions than it answers</li>
         <li>A retargeting ad served to someone who already converted</li>
         <li>An awareness campaign running at full spend to an audience that&rsquo;s already in consideration and just needs a reason to act</li>
       </ul>
-
+ 
       <p>These aren&rsquo;t messaging failures. They&rsquo;re decision environment failures. And no amount of emotional storytelling fixes a broken decision environment.</p>
-
+ 
       <p>The persona told you who the customer was. It had nothing to say about what they were standing in front of when they decided.</p>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">Context is what personas leave out</h2>
-
+ 
       <p>So what does context actually include? It&rsquo;s more than timing, though timing matters.</p>
-
+ 
       <ul class="article-list">
         <li>Where someone is in their decision process&mdash;are they exploring, comparing, or ready to act?</li>
         <li>What the friction looks like at that specific moment&mdash;how many steps, how much cognitive load, how much uncertainty sits between intent and action</li>
@@ -1838,44 +1838,44 @@
         <li>What just happened to them&mdash;a bad experience with a competitor, a conversation with a colleague, a problem that just got urgent</li>
         <li>What social signals are present&mdash;whether anyone around them is doing this thing or whether it feels like an isolated choice</li>
       </ul>
-
+ 
       <p>None of that lives in a persona. All of it shapes whether someone acts.</p>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">The question marketers aren&rsquo;t asking</h2>
-
+ 
       <p>Most marketing briefs ask some version of: <em>who is this person and what do they care about?</em></p>
-
+ 
       <p>That&rsquo;s a good question. It&rsquo;s just not the only question.</p>
-
+ 
       <p>The missing questions look more like: What situation is this person actually in right now? What does the path to action feel like from where they&rsquo;re standing? What is the environment making easy, and what is it making hard? What would have to be true about this moment for the decision to feel obvious?</p>
-
+ 
       <p>Answering those questions requires different inputs than a persona. It requires looking at behavior data, not just demographic data. It requires understanding the decision journey, not just the audience profile. It requires someone on the strategy side asking not just <em>who are we talking to</em> but <em>what are they standing in front of when they decide.</em></p>
-
+ 
       <hr class="article-rule">
-
+ 
       <h2 class="article-h2">What this means for how you work</h2>
-
+ 
       <p>Personas aren&rsquo;t going away, and they shouldn&rsquo;t. But they need a partner.</p>
-
+ 
       <p>Every persona should have a context layer&mdash;a working model of the conditions under which that person actually makes decisions. Not just who they are when they&rsquo;re at their best, most intentional self. Who they are when they&rsquo;re distracted, rushed, uncertain, or overwhelmed. What the environment looks like in those moments. What friction exists. What the default path is.</p>
-
+ 
       <p>Because that&rsquo;s when most decisions actually get made.</p>
-
+ 
       <div class="article-pullquote">Knowing your audience isn&rsquo;t enough. You have to know what they&rsquo;re standing in front of when they decide.</div>
-
+ 
       <p>The marketers who understand that stop designing campaigns around audiences&mdash;and start designing the environments where decisions happen.</p>
-
+ 
       <div class="article-footer-links">
         <a href="#writing" class="article-footer-link" onclick="closeArticle()">More thought leadership &rarr;</a>
         <a href="#about" class="article-footer-link" onclick="closeArticle()">About my approach &rarr;</a>
         <a href="#contact" class="article-footer-link" onclick="closeArticle()">Get in touch &rarr;</a>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   
 </body>
 </html>
