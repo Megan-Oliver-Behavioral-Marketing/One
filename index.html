@@ -393,6 +393,110 @@
       text-transform: uppercase;
     }
 
+    .portfolio-item.featured-case {
+      grid-column: span 3;
+      background: var(--ink);
+      color: var(--cream);
+      border-left: 3px solid var(--accent);
+    }
+
+    .portfolio-item.featured-case:hover { background: #262620; }
+
+    .portfolio-item.featured-case .portfolio-tag { color: var(--accent); }
+
+    .portfolio-item.featured-case .portfolio-title {
+      color: var(--cream);
+      font-size: 1.6rem;
+    }
+
+    .portfolio-item.featured-case .portfolio-desc { color: rgba(245,242,238,0.6); }
+
+    .portfolio-item.featured-case .portfolio-result { color: var(--accent); }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 1.25rem 0 1.5rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .case-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .case-meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .case-meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .case-outcomes {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-outcome {
+      text-align: center;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .case-outcome-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .case-outcome-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.3rem;
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,163,90,0.3);
+      padding-bottom: 0.2rem;
+      transition: border-color 0.2s;
+    }
+
+    .case-link:hover { border-color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .portfolio-item.featured-case { grid-column: span 1; }
+      .case-outcomes { flex-wrap: wrap; gap: 1rem; }
+    }
+
     /* ── WRITING ── */
     #writing {
       background: var(--ink);
@@ -764,6 +868,44 @@
       <div class="section-rule"></div>
     </div>
     <div class="portfolio-grid">
+      <div class="portfolio-item featured-case reveal">
+        <div class="portfolio-tag">Behavioral Marketing Strategy &middot; Case Study</div>
+        <div class="portfolio-title">Rebuilding Engagement Through Decision-Focused Communication</div>
+        <div class="case-meta">
+          <div class="case-meta-item">
+            <span class="case-meta-label">Industry</span>
+            <span class="case-meta-value">Community / Nonprofit</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Focus</span>
+            <span class="case-meta-value"><a href="#about" style="color:inherit;text-decoration:none;">Behavioral Marketing</a> Strategy</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Timeframe</span>
+            <span class="case-meta-value">3 Months</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Core Problem</span>
+            <span class="case-meta-value">Engagement breakdown at the decision level</span>
+          </div>
+        </div>
+        <div class="portfolio-desc">The organization had consistent activity — but inconsistent participation. The issue wasn't effort. It was structure. Communications were built around announcements, not around the moment someone decides to act. I diagnosed where behavior was breaking down and rebuilt the entire system around how people actually decide to participate — shifting from informational messaging to <a href="/writing/decision-making" style="color:rgba(245,242,238,0.7);text-decoration:underline;text-underline-offset:3px;">decision-focused communication</a>. Channels were assigned clear roles in the decision journey, email trigger timing was aligned to the audience's behavioral window, and <a href="/writing/friction" style="color:rgba(245,242,238,0.7);text-decoration:underline;text-underline-offset:3px;">friction was reduced</a> at every point of action.</div>
+        <div class="case-outcomes">
+          <div class="case-outcome">
+            <div class="case-outcome-num">+125%</div>
+            <div class="case-outcome-label">Organic Social Engagement</div>
+          </div>
+          <div class="case-outcome">
+            <div class="case-outcome-num">+23%</div>
+            <div class="case-outcome-label">Livestream Viewership</div>
+          </div>
+          <div class="case-outcome">
+            <div class="case-outcome-num">+20%</div>
+            <div class="case-outcome-label">First-Time Participation</div>
+          </div>
+        </div>
+        <a href="#writing" class="case-link">Explore more behavioral marketing insights &rarr;</a>
+      </div>
       <div class="portfolio-item reveal">
         <div class="portfolio-tag">Brand Strategy</div>
         <div class="portfolio-title">Full Brand Repositioning for Regional Retailer</div>
@@ -901,7 +1043,7 @@
       <div class="contact-links reveal">
         <a href="https://linkedin.com" class="contact-link">LinkedIn &nearr;</a>
         <a href="https://instagram.com" class="contact-link">Instagram &nearr;</a>
-        <a href="mailto:hello@meganoliver.com" class="contact-link">hello@meganoliver.com</a>
+        <a href="/cdn-cgi/l/email-protection#4129242d2d2e012c2426202f2e2d283724336f222e2c" class="contact-link"><span class="__cf_email__" data-cfemail="553d3039393a15383032343b3a393c2330277b363a38">[email&#160;protected]</span></a>
       </div>
     </div>
   </section>
@@ -912,18 +1054,9 @@
     <span class="footer-copy">&copy; 2025 &middot; Brand &amp; Behavioral Strategist &middot; meganoliver.com</span>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+        if (entry.isIntersecting
