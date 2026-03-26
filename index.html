@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Megan Oliver | Behavioral Marketing Strategist</title>
+  <meta name="description" content="Megan Oliver is a Brand & Behavioral Strategist with 10 years of experience helping brands understand audience psychology, build identity-driven campaigns, and drive measurable growth." />
+  <meta name="keywords" content="Megan Oliver, brand strategist, behavioral marketing, behavioral strategist, Memphis marketing strategist, marketing thought leadership" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --green-light: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ee;
+      --ink: #1a1a18;
+      --ink-mid: #3d3d38;
+      --ink-light: #7a7a72;
+      --rule: #c8c4bc;
+      --accent: #c4a35a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      animation: fadeDown 0.6s 0.1s forwards;
+    }
+    header.main-header nav { display: flex; align-items: center; }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #ffffff; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .hero-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink-mid);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-bio strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--green);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s, gap 0.2s;
+      align-self: flex-start;
+    }
+
+    .hero-cta:hover { background: var(--green-light); gap: 1.25rem; }
+
+    .hero-right {
+      position: relative;
+      background: var(--green);
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 0.8s 0.5s forwards;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.03) 40px,
+        rgba(255,255,255,0.03) 41px
+      );
+    }
+
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 3rem;
+      min-height: 600px;
+    }
+
+    .hero-img-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.6rem 1.2rem;
+    }
+
+    .hero-stat-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      display: flex;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-stat {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .hero-stat:last-child { border-right: none; }
+
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 4rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--ink-light);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-sidebar {}
+
+    .about-credential {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .about-credential:first-child { border-top: 1px solid var(--rule); }
+
+    .cred-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .cred-value {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    .about-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-body p strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .about-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.4;
+      padding: 2rem 0 2rem 2rem;
+      border-left: 3px solid var(--green);
+      margin: 2.5rem 0;
+    }
+
+    /* ── PORTFOLIO ── */
+    #portfolio {
+      background: var(--cream);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+
+    .portfolio-item {
+      background: var(--cream);
+      padding: 2.5rem;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .portfolio-item:hover { background: var(--green-pale); }
+
+    .portfolio-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .portfolio-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .portfolio-result {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* ── WRITING ── */
+    #writing {
+      background: var(--ink);
+    }
+
+    #writing .section-title { color: var(--cream); }
+    #writing .section-number { color: var(--ink-light); }
+    #writing .section-rule { background: rgba(255,255,255,0.1); }
+
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .writing-item {
+      background: var(--ink);
+      padding: 2.5rem;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .writing-item:hover { background: #262620; }
+
+    .writing-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .writing-platform {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .writing-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-light);
+    }
+
+    .writing-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .writing-excerpt {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(245,242,238,0.5);
+    }
+
+    .writing-cta {
+      display: inline-block;
+      margin-top: 3rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 0.2rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .writing-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--green);
+    }
+
+    .contact-inner {
+      max-width: 680px;
+    }
+
+    #contact .section-title { color: var(--cream); }
+    #contact .section-number { color: rgba(255,255,255,0.4); }
+    #contact .section-rule { background: rgba(255,255,255,0.2); }
+
+    .contact-intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(245,242,238,0.8);
+      margin-bottom: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+      appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: rgba(255,255,255,0.5); }
+
+    .form-submit {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--cream);
+      border: none;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: #ebe7e0; }
+
+    .contact-links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .contact-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+
+      #home { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 6rem 1.5rem 4rem; }
+
+      section { padding: 5rem 1.5rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .writing-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="main-header">
+    <a href="#home" class="nav-logo">Megan Oliver</a>
+    <nav>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Behavioral Marketing Strategist</p>
+      <h1 class="hero-name">Megan<br /><em>Oliver</em></h1>
+      <p class="hero-title">10 years turning behavioral insight into commercial results</p>
+      <p class="hero-bio">
+        I help brands stop guessing why people do what they do — and start building strategies around how people <strong>actually</strong> behave. My work sits at the intersection of brand identity, audience psychology, and behavioral context.
+      </p>
+      <a href="#about" class="hero-cta">Explore My Work →</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-placeholder">
+        <p class="hero-img-note">[ Your photo goes here ]</p>
+      </div>
+      <div class="hero-stat-strip">
+        <div class="hero-stat">
+          <div class="hero-stat-num">10</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">B2B+B2C</div>
+          <div class="hero-stat-label">Industries Served</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Full</div>
+          <div class="hero-stat-label">Funnel Strategy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header reveal">
+      <span class="section-number">01</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-sidebar reveal">
+        <div class="about-credential">
+          <div class="cred-label">Specialization</div>
+          <div class="cred-value">Behavioral Strategy<br/>Brand Identity<br/>Audience Psychology</div>
+        </div>
+        <div class="about-credential">
+          <div class="cred-label">Experience</div>
+          <div class="cred-value">10 Years in Marketing Strategy</div>
+        </div>
+        <div class="about-credential">
+          <div class="cred-label">Based In</div>
+          <div class="cred-value">Memphis, TN</div>
+        </div>
+        <div class="about-credential">
+          <div class="cred-label">Open To</div>
+          <div class="cred-value">Senior Strategy Roles<br/>Chicago · Atlanta · Dallas · Austin · NYC</div>
+        </div>
+        <div class="about-credential">
+          <div class="cred-label">Connect</div>
+          <div class="cred-value"><a href="https://linkedin.com" style="color:var(--green);text-decoration:none;">LinkedIn</a> &nbsp;·&nbsp; <a href="https://instagram.com" style="color:var(--green);text-decoration:none;">Instagram</a></div>
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <p>
+          Most marketing strategies are built on <strong>assumptions about who people are.</strong> Mine are built on understanding how context shapes what people actually do — and why that difference changes everything downstream.
+        </p>
+        <div class="about-pullquote">
+          "Context isn't a detail. It's the variable that makes the same person behave completely differently."
+        </div>
+        <p>
+          Over the past decade I've developed a framework for brand strategy that treats audience behavior as dynamic — not fixed. The same person who ignores your ad on Monday might be your most receptive prospect on Thursday. The question isn't who they are. It's <strong>what state they're in when they encounter your brand.</strong>
+        </p>
+        <p>
+          That behavioral lens is what I bring to every engagement — from brand positioning and campaign architecture to go-to-market strategy and content systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Selected Work</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Brand Strategy</div>
+        <div class="portfolio-title">Full Brand Repositioning for Regional Retailer</div>
+        <div class="portfolio-desc">Repositioned a mid-market retail brand from product-led to identity-led messaging, restructuring the brand architecture across all customer touchpoints.</div>
+        <div class="portfolio-result">↑ 34% engagement · Brand recall +2x</div>
+      </div>
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Behavioral Campaign</div>
+        <div class="portfolio-title">Contextual Trigger Campaign — B2C Launch</div>
+        <div class="portfolio-desc">Designed a launch campaign around audience behavioral states rather than demographics. Message variants mapped to context windows, not personas.</div>
+        <div class="portfolio-result">↑ 22% conversion lift vs. control</div>
+      </div>
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Go-to-Market</div>
+        <div class="portfolio-title">GTM Strategy for SaaS Product Expansion</div>
+        <div class="portfolio-desc">Led go-to-market strategy for a product entering a new vertical. Audience segmentation, positioning framework, and full-funnel campaign architecture.</div>
+        <div class="portfolio-result">Market entry in 90 days · Pipeline +$1.2M</div>
+      </div>
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Content Strategy</div>
+        <div class="portfolio-title">Thought Leadership Content System</div>
+        <div class="portfolio-desc">Built an editorial strategy and content system for a B2B brand establishing category authority, including SEO architecture and distribution playbook.</div>
+        <div class="portfolio-result">Organic traffic +180% in 6 months</div>
+      </div>
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Audience Strategy</div>
+        <div class="portfolio-title">Behavioral Segmentation Overhaul</div>
+        <div class="portfolio-desc">Replaced a static persona model with a context-based audience segmentation system, enabling dynamic message matching across paid and owned channels.</div>
+        <div class="portfolio-result">CAC ↓ 18% · ROAS ↑ 29%</div>
+      </div>
+      <div class="portfolio-item reveal">
+        <div class="portfolio-tag">Campaign Architecture</div>
+        <div class="portfolio-title">Integrated Campaign — Regional Healthcare Brand</div>
+        <div class="portfolio-desc">End-to-end campaign strategy for a healthcare provider entering a competitive urban market. Messaging, media mix, and community-based activation strategy.</div>
+        <div class="portfolio-result">Top-of-mind awareness +41% in market</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="section-header reveal">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Thought Leadership</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="writing-grid">
+      <div class="writing-item reveal">
+        <div class="writing-meta">
+          <span class="writing-platform">LinkedIn</span>
+          <span class="writing-date">2025</span>
+        </div>
+        <div class="writing-title">Emotional Marketing vs. Behavioral Marketing: Why the Distinction Matters</div>
+        <div class="writing-excerpt">Most brands think they're doing behavioral marketing when they're actually doing emotional marketing with better analytics. Here's the difference — and why it changes your entire strategy.</div>
+      </div>
+      <div class="writing-item reveal">
+        <div class="writing-meta">
+          <span class="writing-platform">Instagram</span>
+          <span class="writing-date">2025</span>
+        </div>
+        <div class="writing-title">Context Is Not a Trait. It's an Environment.</div>
+        <div class="writing-excerpt">Your audience isn't one person. They're the same person in ten different states. Stop building campaigns for who they are. Build them for the moment they're in.</div>
+      </div>
+      <div class="writing-item reveal">
+        <div class="writing-meta">
+          <span class="writing-platform">LinkedIn</span>
+          <span class="writing-date">2025</span>
+        </div>
+        <div class="writing-title">The Brand Identity Trap: When Consistency Becomes a Liability</div>
+        <div class="writing-excerpt">Brand consistency is preached like gospel. But for brands trying to grow into new markets or audiences, it can be the exact thing holding them back.</div>
+      </div>
+      <div class="writing-item reveal">
+        <div class="writing-meta">
+          <span class="writing-platform">LinkedIn</span>
+          <span class="writing-date">2024</span>
+        </div>
+        <div class="writing-title">Why Your Persona Model Is Making You Worse at Marketing</div>
+        <div class="writing-excerpt">Personas flatten human behavior into fixed archetypes. Behavioral strategy asks a different question: what context activates this person to act — and how do we meet them there?</div>
+      </div>
+    </div>
+    <a href="#contact" class="writing-cta">Get notified when I publish →</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-header reveal">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-rule"></div>
+      </div>
+      <p class="contact-intro reveal">
+        Whether you're exploring a senior strategy role, a consulting engagement, or a conversation about behavioral marketing — I'd like to hear from you.
+      </p>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" />
+          </div>
+          <div class="form-field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="jane@company.com" />
+        </div>
+        <div class="form-field">
+          <label>What brings you here?</label>
+          <select>
+            <option value="" disabled selected>Select one</option>
+            <option>Exploring a role or opportunity</option>
+            <option>Strategy consulting inquiry</option>
+            <option>Speaking or media</option>
+            <option>Just want to connect</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Tell me what's on your mind..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+      <div class="contact-links reveal">
+        <a href="https://linkedin.com" class="contact-link">LinkedIn ↗</a>
+        <a href="https://instagram.com" class="contact-link">Instagram ↗</a>
+        <a href="/cdn-cgi/l/email-protection#b1d9d4dddddef1dcd4d6d0dfdeddd8c7d4c39fd2dedc" class="contact-link"><span class="__cf_email__" data-cfemail="5c34393030331c31393b3d323330352a392e723f3331">[email&#160;protected]</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Megan Oliver</span>
+    <span class="footer-copy">© 2025 · Brand & Behavioral Strategist · meganoliver.com</span>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
