@@ -1072,6 +1072,169 @@
       .cs-shift-grid { grid-template-columns: 1fr; }
     }
  
+  
+    .writing-read-more {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(196,163,90,0.3);
+      padding-bottom: 0.15rem;
+    }
+    .writing-item.featured:hover .writing-read-more { border-color: var(--accent); }
+ 
+    /* Article full page — inherits cs-page styles */
+    .article-page {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--cream);
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .article-page.open { transform: translateY(0); }
+    .article-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .article-topbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .article-back-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.2s;
+      padding: 0;
+    }
+    .article-back-btn:hover { color: #fff; }
+    .article-back-arrow { display: inline-block; transition: transform 0.2s; }
+    .article-back-btn:hover .article-back-arrow { transform: translateX(-4px); }
+    .article-hero {
+      background: var(--ink);
+      padding: 5rem 4rem 4rem;
+    }
+    .article-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--cream);
+      max-width: 800px;
+    }
+    .article-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 5rem 4rem 7rem;
+    }
+    .article-content p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+    .article-content p strong { font-weight: 500; color: var(--ink); }
+    .article-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+      margin: 3rem 0 1rem;
+    }
+    .article-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.5;
+      padding: 1.75rem 0 1.75rem 2rem;
+      border-left: 3px solid var(--green);
+      margin: 2.5rem 0;
+    }
+    .article-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+    .article-list {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .article-list li {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-mid);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .article-list li::before { content: '—'; position: absolute; left: 0; color: var(--green); }
+    .article-footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    .article-footer-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,90,69,0.3);
+      padding-bottom: 0.2rem;
+      transition: border-color 0.2s;
+    }
+    .article-footer-link:hover { border-color: var(--green); }
+    @media (max-width: 900px) {
+      .article-topbar { padding: 1rem 1.5rem; }
+      .article-hero { padding: 4rem 1.5rem 3rem; }
+      .article-content { padding: 3rem 1.5rem 5rem; }
+    }
+ 
   </style>
 </head>
 <body>
@@ -1098,7 +1261,7 @@
       <p class="hero-bio">
         I help brands stop guessing why people do what they do — and start building strategies around how people <strong>actually</strong> behave. My work sits at the intersection of brand identity, audience psychology, and behavioral context.
       </p>
-      <a href="#about" class="hero-cta">Explore My Work &rarr;</a>
+      <a href="#portfolio" class="hero-cta">Explore My Work &rarr;</a>
     </div>
     <div class="hero-right">
       <img
@@ -1150,7 +1313,7 @@
         </div>
         <div class="about-credential">
           <div class="cred-label">Connect</div>
-          <div class="cred-value"><a href="https://linkedin.com" style="color:var(--green);text-decoration:none;">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://instagram.com" style="color:var(--green);text-decoration:none;">Instagram</a></div>
+          <div class="cred-value"><a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" style="color:var(--green);text-decoration:none;">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://instagram.com" style="color:var(--green);text-decoration:none;">Instagram</a></div>
         </div>
       </div>
       <div class="about-body reveal">
@@ -1264,7 +1427,7 @@
       <div class="section-rule"></div>
     </div>
     <div class="writing-grid">
-      <div class="writing-item featured reveal">
+      <div class="writing-item featured reveal" onclick="openArticle()" style="cursor:pointer;">
         <div class="writing-meta">
           <span class="writing-platform">LinkedIn</span>
           <span class="writing-date">2025</span>
@@ -1272,6 +1435,7 @@
         </div>
         <div class="writing-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</div>
         <div class="writing-excerpt">Personas do something genuinely useful. They give creative teams a shared mental model of who they&rsquo;re talking to. The problem isn&rsquo;t that personas are wrong &mdash; it&rsquo;s that marketers have been using them to answer a question they weren&rsquo;t designed to answer. Personas describe identity. Marketers are using them to predict behavior. Those are different problems. Identity is stable. Behavior is situational.</div>
+        <span class="writing-read-more">Read full article &rarr;</span>
       </div>
       <div class="writing-item reveal">
         <div class="writing-meta">
@@ -1320,7 +1484,7 @@
       <p class="contact-intro reveal">
         Whether you&rsquo;re exploring a senior strategy role, a consulting engagement, or a conversation about behavioral marketing &mdash; I&rsquo;d like to hear from you.
       </p>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" onsubmit="sendContactForm(event)">
         <div class="form-row">
           <div class="form-field">
             <label>First Name</label>
@@ -1352,9 +1516,9 @@
         <button type="submit" class="form-submit">Send Message &rarr;</button>
       </form>
       <div class="contact-links reveal">
-        <a href="https://linkedin.com" class="contact-link">LinkedIn &nearr;</a>
+        <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" class="contact-link">LinkedIn &nearr;</a>
         <a href="https://instagram.com" class="contact-link">Instagram &nearr;</a>
-        <a href="/cdn-cgi/l/email-protection#4129242d2d2e012c2426202f2e2d283724336f222e2c" class="contact-link"><span class="__cf_email__" data-cfemail="553d3039393a15383032343b3a393c2330277b363a38">[email&#160;protected]</span></a>
+        <a href="mailto:megan@meganoliver.work" class="contact-link">megan@meganoliver.work</a>
       </div>
     </div>
   </section>
@@ -1540,19 +1704,192 @@
       const page = document.getElementById('csPage');
       page.classList.add('open');
       document.body.style.overflow = 'hidden';
-      // Scroll case study page to top
       page.scrollTop = 0;
     }
- 
     function closeCaseStudy() {
-      const page = document.getElementById('csPage');
-      page.classList.remove('open');
+      document.getElementById('csPage').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+ 
+    // Article full-page transition
+    function openArticle() {
+      const page = document.getElementById('articlePage');
+      page.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      page.scrollTop = 0;
+    }
+    function closeArticle() {
+      document.getElementById('articlePage').classList.remove('open');
       document.body.style.overflow = '';
     }
  
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeCaseStudy();
+      if (e.key === 'Escape') {
+        closeCaseStudy();
+        closeArticle();
+      }
     });
+ 
+    // Contact form → mailto
+    function sendContactForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      const fields = form.querySelectorAll('input, textarea, select');
+      let first = '', last = '', email = '', reason = '', message = '';
+      fields.forEach(f => {
+        const label = f.previousElementSibling ? f.previousElementSibling.textContent.trim() : '';
+        if (label === 'First Name') first = f.value;
+        else if (label === 'Last Name') last = f.value;
+        else if (label === 'Email') email = f.value;
+        else if (label === 'What brings you here?') reason = f.value;
+        else if (label === 'Message') message = f.value;
+      });
+      const subject = encodeURIComponent('Website Inquiry' + (reason ? ' — ' + reason : ''));
+      const body = encodeURIComponent(
+        'From: ' + first + ' ' + last + '\n' +
+        'Email: ' + email + '\n' +
+        'Reason: ' + reason + '\n\n' +
+        message
+      );
+      window.location.href = 'mailto:megan@meganoliver.work?subject=' + subject + '&body=' + body;
+    }
   </script>
+ 
+  <!-- ARTICLE FULL PAGE: Your Persona Knows Who They Are -->
+  <div class="article-page" id="articlePage">
+ 
+    <div class="article-topbar">
+      <span class="article-topbar-brand">Megan Oliver</span>
+      <button class="article-back-btn" onclick="closeArticle()">
+        <span class="article-back-arrow">&larr;</span> Back to Writing
+      </button>
+    </div>
+ 
+    <div class="article-hero">
+      <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
+      <h1 class="article-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</h1>
+    </div>
+ 
+    <div class="article-content">
+ 
+      <p>There&rsquo;s a specific kind of marketing failure that&rsquo;s hard to explain in a debrief. The audience was right. The message tested well. The channel made sense. And the campaign still landed flat. No obvious culprit in the data. The creative wasn&rsquo;t bad. The targeting wasn&rsquo;t off. Everything the brief called for got delivered.</p>
+ 
+      <p>The persona said this should have worked.</p>
+ 
+      <p>And that&rsquo;s exactly the problem.</p>
+ 
+      <p>The persona wasn&rsquo;t wrong about the person. It was blind to the moment the decision actually happened.</p>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">Personas do something genuinely useful</h2>
+ 
+      <p>Before this becomes a takedown, let&rsquo;s be clear about what personas are actually good at.</p>
+ 
+      <p>They give creative teams a shared mental model of who they&rsquo;re talking to. They help with tone, channel selection, message framing. They prevent the kind of generic, speak-to-everyone copy that ends up connecting with no one. A well-built persona captures real motivations, real anxieties, real aspirations.</p>
+ 
+      <p>That&rsquo;s not nothing. That&rsquo;s actually valuable.</p>
+ 
+      <p>The problem isn&rsquo;t that personas are wrong. It&rsquo;s that marketers have been using them to answer a question they weren&rsquo;t designed to answer.</p>
+ 
+      <div class="article-pullquote">Personas describe identity. Marketers are using them to predict behavior. Those are different problems.</div>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">Identity is stable. Behavior is situational.</h2>
+ 
+      <p>Here&rsquo;s what&rsquo;s actually happening when someone makes a decision. They&rsquo;re not consulting their own personality profile. They&rsquo;re responding to conditions. The environment they&rsquo;re in, the options in front of them, the friction between where they are and what you&rsquo;re asking them to do, what just happened in the last hour, whether the default path leads toward you or away from you.</p>
+ 
+      <p>Take the same person your persona describes perfectly. Health-conscious, 34, values quality, researches before buying. On a Saturday morning with coffee and time, they&rsquo;ll read your long-form content, compare options, and make a considered choice. On a Wednesday at 6pm after back-to-back meetings, that same person will click the first reasonable option that doesn&rsquo;t require them to think too hard.</p>
+ 
+      <p><strong>Same person. Completely different decision environment. Completely different behavior.</strong></p>
+ 
+      <p>The persona didn&rsquo;t change. The context did. And the campaign that spoke beautifully to the Saturday version of that person had nothing useful to say to the Wednesday version.</p>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">What this looks like in practice</h2>
+ 
+      <p>Consider a gym trying to grow membership. The traditional approach is awareness&mdash;run ads, tell an emotional story about transformation, target people who&rsquo;ve expressed interest in fitness. The persona is solid. The creative is good. Conversion is mediocre.</p>
+ 
+      <p>What the persona missed is the moment. Most people who want to get healthy don&rsquo;t fail at the decision to join a gym. They fail at the dozen small decisions that happen before that&mdash;what they grab for lunch, whether they feel like someone who makes healthy choices, whether the habit of health is already active in their life or dormant.</p>
+ 
+      <p>A gym that partners with a health food brand to get their product as the default snack option&mdash;with a promo code on the packaging&mdash;isn&rsquo;t just doing co-marketing. They&rsquo;re entering the decision environment earlier, at a moment when the behavior is already in motion. The person who just chose the granola bar is primed. Their identity as a healthy person just got reinforced. Now the gym ad lands on completely different psychological ground.</p>
+ 
+      <div class="article-pullquote">Same audience. Different context. Entirely different conversion conditions.</div>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">Most marketing problems aren&rsquo;t messaging problems</h2>
+ 
+      <p>This is where the budget goes wrong.</p>
+ 
+      <p>If you believe behavior flows primarily from identity, then the solution to flat conversion is always some version of better storytelling. More emotional resonance. Stronger brand affinity. A more precise message to a more precise audience.</p>
+ 
+      <p>Sometimes that&rsquo;s right. But a lot of the time, the actual problem is somewhere else entirely.</p>
+ 
+      <ul class="article-list">
+        <li>A form with six fields when two would do</li>
+        <li>A pricing page that creates more questions than it answers</li>
+        <li>A retargeting ad served to someone who already converted</li>
+        <li>An awareness campaign running at full spend to an audience that&rsquo;s already in consideration and just needs a reason to act</li>
+      </ul>
+ 
+      <p>These aren&rsquo;t messaging failures. They&rsquo;re decision environment failures. And no amount of emotional storytelling fixes a broken decision environment.</p>
+ 
+      <p>The persona told you who the customer was. It had nothing to say about what they were standing in front of when they decided.</p>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">Context is what personas leave out</h2>
+ 
+      <p>So what does context actually include? It&rsquo;s more than timing, though timing matters.</p>
+ 
+      <ul class="article-list">
+        <li>Where someone is in their decision process&mdash;are they exploring, comparing, or ready to act?</li>
+        <li>What the friction looks like at that specific moment&mdash;how many steps, how much cognitive load, how much uncertainty sits between intent and action</li>
+        <li>What the default option is&mdash;because most people don&rsquo;t choose, they accept whatever the environment makes easiest</li>
+        <li>What just happened to them&mdash;a bad experience with a competitor, a conversation with a colleague, a problem that just got urgent</li>
+        <li>What social signals are present&mdash;whether anyone around them is doing this thing or whether it feels like an isolated choice</li>
+      </ul>
+ 
+      <p>None of that lives in a persona. All of it shapes whether someone acts.</p>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">The question marketers aren&rsquo;t asking</h2>
+ 
+      <p>Most marketing briefs ask some version of: <em>who is this person and what do they care about?</em></p>
+ 
+      <p>That&rsquo;s a good question. It&rsquo;s just not the only question.</p>
+ 
+      <p>The missing questions look more like: What situation is this person actually in right now? What does the path to action feel like from where they&rsquo;re standing? What is the environment making easy, and what is it making hard? What would have to be true about this moment for the decision to feel obvious?</p>
+ 
+      <p>Answering those questions requires different inputs than a persona. It requires looking at behavior data, not just demographic data. It requires understanding the decision journey, not just the audience profile. It requires someone on the strategy side asking not just <em>who are we talking to</em> but <em>what are they standing in front of when they decide.</em></p>
+ 
+      <hr class="article-rule">
+ 
+      <h2 class="article-h2">What this means for how you work</h2>
+ 
+      <p>Personas aren&rsquo;t going away, and they shouldn&rsquo;t. But they need a partner.</p>
+ 
+      <p>Every persona should have a context layer&mdash;a working model of the conditions under which that person actually makes decisions. Not just who they are when they&rsquo;re at their best, most intentional self. Who they are when they&rsquo;re distracted, rushed, uncertain, or overwhelmed. What the environment looks like in those moments. What friction exists. What the default path is.</p>
+ 
+      <p>Because that&rsquo;s when most decisions actually get made.</p>
+ 
+      <div class="article-pullquote">Knowing your audience isn&rsquo;t enough. You have to know what they&rsquo;re standing in front of when they decide.</div>
+ 
+      <p>The marketers who understand that stop designing campaigns around audiences&mdash;and start designing the environments where decisions happen.</p>
+ 
+      <div class="article-footer-links">
+        <a href="#writing" class="article-footer-link" onclick="closeArticle()">More thought leadership &rarr;</a>
+        <a href="#about" class="article-footer-link" onclick="closeArticle()">About my approach &rarr;</a>
+        <a href="#contact" class="article-footer-link" onclick="closeArticle()">Get in touch &rarr;</a>
+      </div>
+ 
+    </div>
+  </div>
+ 
 </body>
 </html>
+ 
