@@ -1965,8 +1965,7 @@
 </div>
 
   
-  <script>
-    // Scroll reveal
+<script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -1977,7 +1976,7 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
- 
+
     function openCaseStudy() {
       const page = document.getElementById('csPage');
       page.classList.add('open');
@@ -1988,7 +1987,6 @@
       document.getElementById('csPage').classList.remove('open');
       document.body.style.overflow = '';
     }
- 
     function openArticle() {
       const page = document.getElementById('articlePage');
       page.classList.add('open');
@@ -1999,28 +1997,28 @@
       document.getElementById('articlePage').classList.remove('open');
       document.body.style.overflow = '';
     }
- function openArticle2() {
-  const page = document.getElementById('articlePage2');
-  page.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  page.scrollTop = 0;
-}
-function closeArticle2() {
-  document.getElementById('articlePage2').classList.remove('open');
-  document.body.style.overflow = '';
-}
+    function openArticle2() {
+      const page = document.getElementById('articlePage2');
+      page.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      page.scrollTop = 0;
+    }
+    function closeArticle2() {
+      document.getElementById('articlePage2').classList.remove('open');
+      document.body.style.overflow = '';
+    }
     function openArticle3() {
-  const page = document.getElementById('articlePage3');
-  page.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  page.scrollTop = 0;
-}
-function closeArticle3() {
-  document.getElementById('articlePage3').classList.remove('open');
-  document.body.style.overflow = '';
-}
+      const page = document.getElementById('articlePage3');
+      page.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      page.scrollTop = 0;
+    }
+    function closeArticle3() {
+      document.getElementById('articlePage3').classList.remove('open');
+      document.body.style.overflow = '';
+    }
     document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); closeArticle3(); }
+      if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); closeArticle3(); }
     });
     function sendMail(e) {
       e.preventDefault();
