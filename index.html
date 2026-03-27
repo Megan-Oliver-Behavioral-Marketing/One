@@ -1913,6 +1913,82 @@
   </div>
 
 </div>
+
+<div class="article-page" id="articlePage3">
+
+  <div class="article-topbar">
+    <span class="article-topbar-brand">Megan Oliver</span>
+    <button class="article-back-btn" onclick="closeArticle3()">
+      <span class="article-back-arrow">&larr;</span> Back to Writing
+    </button>
+  </div>
+
+  <div class="article-hero">
+    <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
+    <h1 class="article-title">When Personalization Breaks Recognition</h1>
+  </div>
+
+  <div class="article-content">
+
+    <p>I was scrolling through my shows and couldn&rsquo;t find Billions. Not because it wasn&rsquo;t there. Because I was looking for it. I kept scanning past it. Paused. Scrolled back. Still missed it.</p>
+    <p>Until I realized what changed. The cover image. Instead of the cast I associate with the show, it was a different character. Still from the show. Still relevant. But not what I use to recognize it.</p>
+    <p>It didn&rsquo;t change the show. It changed how I find it. And that&rsquo;s the point.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">This is where personalization breaks.</h2>
+    <p>Most platforms assume that changing what you show will make something more relevant. Sometimes it does. But sometimes it interferes with something more important: recognition.</p>
+    <p>People don&rsquo;t navigate interfaces by reading. They scan. They rely on familiar visuals, repeated patterns, and quick identification. You don&rsquo;t search for what you&rsquo;ve already chosen. You look for what you recognize.</p>
+    <p>So when that visual anchor changes, even slightly, the cost isn&rsquo;t confusion. It&rsquo;s friction. Not enough to stop you completely. Just enough to slow you down. Make you second guess. Make you miss it once. Then twice. That&rsquo;s enough to break the experience.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Misunderstanding</h2>
+    <p>This wasn&rsquo;t random. It was likely an attempt at personalization, or representation, or both. That&rsquo;s not the issue. The issue is the system misunderstood the job of that surface.</p>
+    <p>The cover image isn&rsquo;t there to experiment. It isn&rsquo;t there to optimize identity. It isn&rsquo;t even there to drive engagement. It exists to do one thing: help you recognize what you&rsquo;re looking for immediately. When that function is disrupted, everything downstream gets harder.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Behavioral Layer</h2>
+    <p>Not every surface should be personalized. Not every interaction should be optimized. Not every variable should be tested. Because different parts of a system do different jobs &mdash; and optimizing one can break another.</p>
+    <ul class="article-list">
+      <li>Some surfaces are for discovery, persuasion, exploration</li>
+      <li>Others are for retrieval</li>
+    </ul>
+    <p>And retrieval depends on stability. Consistency. Familiarity. When you personalize a retrieval layer, you risk breaking recognition. And once recognition breaks, navigation slows.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Broader Pattern</h2>
+    <p>This doesn&rsquo;t just happen in streaming. It shows up everywhere.</p>
+    <ul class="article-list">
+      <li>Product thumbnails that change too often</li>
+      <li>Navigation labels that get &ldquo;optimized&rdquo; into ambiguity</li>
+      <li>Landing pages that shift structure between visits</li>
+      <li>Interfaces that prioritize novelty over recognition</li>
+    </ul>
+    <p>I saw this working with a fashion brand. The creative team wanted to display clothes in editorial, high-concept styling &mdash; interesting for awareness, compelling for brand identity. But the product pages were pulling from the same imagery. Someone arriving to buy a specific jacket wasn&rsquo;t exploring. They were retrieving. The editorial images weren&rsquo;t wrong. They were in the wrong place.</p>
+    <div class="article-pullquote">When you put discovery-layer content on a retrieval-layer surface, you don&rsquo;t elevate the experience. You interrupt it.</div>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Strategic Takeaway</h2>
+    <p>Separate the decision layer from the recognition layer.</p>
+    <ul class="article-list">
+      <li><strong>Personalize where people are deciding:</strong> recommendations, offers, messaging</li>
+      <li><strong>Stabilize where people are navigating:</strong> labels, structure, visual anchors</li>
+    </ul>
+    <p>Search results, navigation, and &ldquo;continue watching&rdquo; modules should stay highly stable. Hero banners, carousels, and promotional tiles can carry the personalization. Because those are not the same job.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Reframe</h2>
+    <p>Personalization is often treated as universally good. More relevance. More engagement. Better outcomes. But relevance isn&rsquo;t always about what you show. Sometimes it&rsquo;s about how easily someone can find what they already decided they want.</p>
+    <p>If you change how something is recognized, you change how it&rsquo;s used. And not every system can afford to trade recognition for relevance.</p>
+
+    <div class="article-footer-links">
+      <a href="#writing" class="article-footer-link" onclick="closeArticle3()">More thought leadership &rarr;</a>
+      <a href="#about" class="article-footer-link" onclick="closeArticle3()">About my approach &rarr;</a>
+      <a href="#contact" class="article-footer-link" onclick="closeArticle3()">Get in touch &rarr;</a>
+    </div>
+
+  </div>
+</div>
+
   
   <script>
     // Scroll reveal
@@ -1958,9 +2034,18 @@ function closeArticle2() {
   document.getElementById('articlePage2').classList.remove('open');
   document.body.style.overflow = '';
 }
+    function openArticle3() {
+  const page = document.getElementById('articlePage3');
+  page.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  page.scrollTop = 0;
+}
+function closeArticle3() {
+  document.getElementById('articlePage3').classList.remove('open');
+  document.body.style.overflow = '';
+}
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); }
-    });
+    if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); closeArticle3(); }
  
     function sendMail(e) {
       e.preventDefault();
