@@ -1679,32 +1679,7 @@
       document.body.style.overflow = '';
     }
  
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeCaseStudy();
-        closeArticle();
-      }
-    });
- 
-    // Contact form → mailto
-    function sendMail(e) {
-      e.preventDefault();
-      const f = document.getElementById('contactForm');
-      const first   = f.querySelector('[name=first_name]').value;
-      const last    = f.querySelector('[name=last_name]').value;
-      const email   = f.querySelector('[name=email]').value;
-      const message = f.querySelector('[name=message]').value;
-      const subject = encodeURIComponent('Website Inquiry from ' + first + ' ' + last);
-      const body    = encodeURIComponent('From: ' + first + ' ' + last + '\nEmail: ' + email + '\n\n' + message);
-      window.open('mailto:megan@meganoliver.work?subject=' + subject + '&body=' + body);
-    } catch (err) {
-        btn.textContent = 'Send Message →';
-        btn.disabled = false;
-        feedback.style.display = 'block';
-        feedback.style.color = '#e07070';
-        feedback.textContent = 'Something went wrong. Please email megan@meganoliver.work directly.';
-      }
-    }
+
   </script>
  
   <!-- ARTICLE FULL PAGE: Your Persona Knows Who They Are -->
@@ -2046,7 +2021,7 @@ function closeArticle3() {
 }
     document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); closeArticle3(); }
- 
+    })
     function sendMail(e) {
       e.preventDefault();
       const f = document.getElementById('contactForm');
