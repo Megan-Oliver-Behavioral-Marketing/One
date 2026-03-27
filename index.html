@@ -1833,7 +1833,79 @@
  
     </div>
   </div>
- 
+
+<div class="article-page" id="articlePage2">
+
+  <div class="article-topbar">
+    <span class="article-topbar-brand">Megan Oliver</span>
+    <button class="article-back-btn" onclick="closeArticle2()">
+      <span class="article-back-arrow">&larr;</span> Back to Writing
+    </button>
+  </div>
+
+  <div class="article-hero">
+    <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
+    <h1 class="article-title">Why People Don&rsquo;t Fix Bad Decisions (And What It Means for Marketing)</h1>
+  </div>
+
+  <div class="article-content">
+    <p>I grabbed three drinks at Kroger. Not because I wanted three. Because I couldn&rsquo;t find the one I was actually looking for. So I hedged &mdash; one safe option, one &ldquo;maybe this works&rdquo; option. Then, right before checkout, I saw the one I actually wanted. And grabbed it immediately.</p>
+    <p>This is a small example of a bigger pattern: people rarely correct decisions once they&rsquo;ve started them.</p>
+    <p>It wasn&rsquo;t hard to buy the third drink. It was harder to undo it.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Mechanism</h2>
+    <p>We like to think bad decisions come from bad thinking. They don&rsquo;t. They come from timing.</p>
+    <p>There are two phases happening in the brain:</p>
+    <ul class="article-list">
+      <li><strong>Fast Action (System 1):</strong> intuitive, effortless, momentum-driven</li>
+      <li><strong>Delayed Evaluation (System 2):</strong> analytical, slow, effort-heavy</li>
+    </ul>
+    <p>You act quickly. You evaluate slowly. And by the time evaluation shows up, it&rsquo;s already easier to continue than to correct. Returning something. Putting it back. Undoing the step. Starting over. All of that costs more mental energy than just&hellip; continuing.</p>
+    <div class="article-pullquote">People don&rsquo;t optimize decisions. They continue them.</div>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Pattern</h2>
+    <p>Once you see it, you see it everywhere.</p>
+    <ul class="article-list">
+      <li>You add something at checkout and never remove it</li>
+      <li>You keep a subscription longer than you should</li>
+      <li>You move through a funnel even when you&rsquo;re unsure</li>
+      <li>You stick with a tool or service you&rsquo;ve already outgrown</li>
+    </ul>
+    <p>Not because those decisions are correct. Because correcting them requires more effort than continuing.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">What This Means for Marketing</h2>
+    <p>Most marketing teams ask the wrong questions: Why didn&rsquo;t they switch? Why didn&rsquo;t they cancel? Why didn&rsquo;t they choose the better option? Behavior isn&rsquo;t driven by what&rsquo;s best. It&rsquo;s driven by what&rsquo;s easiest to do next.</p>
+    <ul class="article-list">
+      <li>Upsells convert &mdash; they&rsquo;re easy to add in the moment</li>
+      <li>Churn lags &mdash; cancellation requires friction</li>
+      <li>&ldquo;Better&rdquo; products don&rsquo;t always win &mdash; switching is a cognitive load</li>
+    </ul>
+    <p>This isn&rsquo;t irrational behavior. It&rsquo;s predictable.</p>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Strategy Layer</h2>
+    <p><strong>1 &mdash; Reduce the Cognitive Cost of Continuing</strong><br>Design environments where the next step is obvious, low-effort, and already aligned with the momentum they&rsquo;re in. You&rsquo;re not persuading. You&rsquo;re removing the need for System 2 to wake up.</p>
+    <p><strong>2 &mdash; Introduce Decisions at the Peak of Momentum</strong><br>The best time to ask for action is when someone is already acting. This is why upgrades work at checkout, bundling works mid-flow, and add-ons work when the cart is open.</p>
+    <p><strong>3 &mdash; Design to Avoid Re-Evaluation</strong><br>The biggest threat to conversion isn&rsquo;t confusion &mdash; it&rsquo;s pause. A pause triggers System 2. System 2 triggers reconsideration. Reconsideration triggers abandonment.</p>
+    <div class="article-pullquote">The real goal is to reduce friction at the point of action &mdash; and remove every obstacle between the person and the decision they&rsquo;re already inclined to make.</div>
+
+    <hr class="article-rule">
+    <h2 class="article-h2">The Reframe</h2>
+    <p>Most marketing focuses on reducing friction. That&rsquo;s incomplete. Because decisions don&rsquo;t happen in isolation. They happen in motion.</p>
+    <p>People don&rsquo;t always choose what&rsquo;s best. They continue with what&rsquo;s easiest.</p>
+
+    <div class="article-footer-links">
+      <a href="#writing" class="article-footer-link" onclick="closeArticle2()">More thought leadership &rarr;</a>
+      <a href="#about" class="article-footer-link" onclick="closeArticle2()">About my approach &rarr;</a>
+      <a href="#contact" class="article-footer-link" onclick="closeArticle2()">Get in touch &rarr;</a>
+    </div>
+  </div>
+
+</div>
+  
   <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -1868,9 +1940,18 @@
       document.getElementById('articlePage').classList.remove('open');
       document.body.style.overflow = '';
     }
- 
+ function openArticle2() {
+  const page = document.getElementById('articlePage2');
+  page.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  page.scrollTop = 0;
+}
+function closeArticle2() {
+  document.getElementById('articlePage2').classList.remove('open');
+  document.body.style.overflow = '';
+}
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); }
+      if (e.key === 'Escape') { closeCaseStudy(); closeArticle(); closeArticle2(); }
     });
  
     function sendMail(e) {
