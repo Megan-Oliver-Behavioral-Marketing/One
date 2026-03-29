@@ -1411,7 +1411,7 @@
  
   <div class="article-topbar">
     <span class="article-topbar-brand">Megan Oliver</span>
-    <button class="article-back-btn" onclick="closeArticle1()">
+    <button class="article-back-btn" onclick="closeArticle()">
       <span class="article-back-arrow">&larr;</span> Back to Writing
     </button>
   </div>
@@ -1647,9 +1647,10 @@
     document.body.style.overflow = 'hidden';
     page.scrollTop = 0;
   }
-  function closeArticle() {
+ function closeArticle() {
     document.getElementById('articlePage').classList.remove('open');
     document.body.style.overflow = '';
+    document.getElementById('writing').scrollIntoView();
   }
  
   // ── Article 2 ──
@@ -1662,6 +1663,7 @@
   function closeArticle2() {
     document.getElementById('articlePage2').classList.remove('open');
     document.body.style.overflow = '';
+    document.getElementById('writing').scrollIntoView();
   }
  
   // ── Article 3 ──
