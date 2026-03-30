@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Megan Oliver — Behavioral Marketing Strategist</title>
+  <meta name="description" content="Megan Oliver is a Marketing Strategist with 10 years of experience across agency, in-house, and independent settings — building strategies grounded in how people actually make decisions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --green-light: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ee;
+      --ink: #1a1a18;
+      --ink-mid: #3d3d38;
+      --ink-light: #7a7a72;
+      --rule: #c8c4bc;
+      --accent: #c4a35a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    header.main-header nav { display: flex; align-items: center; }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #ffffff; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--ink);
+      padding: 10rem 4rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .page-hero-left {}
+    .page-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--cream);
+    }
+    .page-title em { font-style: italic; color: var(--accent); }
+    .page-hero-right {
+      padding-bottom: 0.5rem;
+    }
+    .page-hero-desc {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(245,242,238,0.65);
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    /* QUICK STATS BAR */
+    .stats-bar {
+      background: var(--green);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      opacity: 0;
+      animation: fadeIn 0.6s 0.6s forwards;
+    }
+    .stat-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.4rem;
+    }
+
+    /* SECTIONS */
+    .content-section {
+      padding: 7rem 4rem;
+    }
+    .content-section.alt { background: #fff; }
+    .content-section.dark {
+      background: var(--ink);
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .dark .section-label { color: var(--accent); }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+    .dark .section-heading { color: var(--cream); }
+
+    /* STORY */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .story-sidebar {}
+    .story-sidebar-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .story-sidebar-item:first-child { border-top: 1px solid var(--rule); }
+    .sidebar-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+    .sidebar-value {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+    .story-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+    .story-body p strong { font-weight: 500; color: var(--ink); }
+    .story-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.45;
+      padding: 2rem 0 2rem 2rem;
+      border-left: 3px solid var(--green);
+      margin: 2.5rem 0;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      max-width: 800px;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .timeline-item {
+      padding: 0 0 3.5rem 2.5rem;
+      position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 6px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .timeline-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .timeline-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+    .timeline-company {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.85rem;
+    }
+    .timeline-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(245,242,238,0.55);
+    }
+
+    /* WHAT I BRING */
+    .bring-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+    .bring-item {
+      background: var(--cream);
+      padding: 2.5rem;
+    }
+    .bring-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--green-pale);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .bring-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .bring-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-light);
+    }
+
+    /* FRAMEWORKS */
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: rgba(255,255,255,0.08);
+    }
+    .framework-item {
+      background: var(--ink);
+      padding: 3rem;
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .framework-item:hover { border-left-color: var(--accent); }
+    .framework-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .framework-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .framework-full {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+    }
+    .framework-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(245,242,238,0.55);
+    }
+    .framework-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,163,90,0.3);
+      padding-bottom: 0.2rem;
+      transition: border-color 0.2s;
+    }
+    .framework-link:hover { border-color: var(--accent); }
+
+    /* PRESS */
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+    .press-item {
+      background: #fff;
+      padding: 2.5rem;
+    }
+    .press-outlet {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .press-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .press-placeholder {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      font-style: italic;
+    }
+    .press-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--rule);
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--green);
+      padding: 5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+    .cta-band-text {}
+    .cta-band-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .cta-band-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(245,242,238,0.7);
+    }
+    .cta-band-actions {
+      display: flex;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .btn-primary {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--cream);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: #ebe7e0; }
+    .btn-secondary {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      header.main-header { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .page-hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .content-section { padding: 5rem 1.5rem; }
+      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .bring-grid { grid-template-columns: 1fr; }
+      .frameworks-grid { grid-template-columns: 1fr; }
+      .press-grid { grid-template-columns: 1fr; }
+      .cta-band { flex-direction: column; align-items: flex-start; padding: 4rem 1.5rem; }
+      .cta-band-actions { flex-direction: column; width: 100%; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- NAV -->
+
+  <header class="main-header">
+    <a href="index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+
+  <div class="page-hero">
+    <div class="page-hero-left">
+      <p class="page-eyebrow">About Megan Oliver</p>
+      <h1 class="page-title">Behavior is<br /><em>the brief.</em></h1>
+    </div>
+    <div class="page-hero-right">
+      <p class="page-hero-desc">I&rsquo;ve spent 10 years working across agency, in-house, and independent settings — building marketing strategy that holds up because it&rsquo;s built around how people actually make decisions, not just who they are on paper.</p>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Years in Marketing</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">B2B + B2C</div>
+      <div class="stat-label">Sectors Worked</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Organizational Types</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Agency · In-House · Independent</div>
+      <div class="stat-label">Experience Models</div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+
+  <section class="content-section alt">
+    <div class="story-grid">
+      <div class="story-sidebar reveal">
+        <div class="story-sidebar-item">
+          <div class="sidebar-label">Currently</div>
+          <div class="sidebar-value">Marketing Strategist<br/>Speak Creative</div>
+        </div>
+        <div class="story-sidebar-item">
+          <div class="sidebar-label">Started</div>
+          <div class="sidebar-value">Carter Malone Group<br/>PR Associate, 2016</div>
+        </div>
+        <div class="story-sidebar-item">
+          <div class="sidebar-label">Based In</div>
+          <div class="sidebar-value">Memphis, TN</div>
+        </div>
+        <div class="story-sidebar-item">
+          <div class="sidebar-label">Open To</div>
+          <div class="sidebar-value">Senior Strategy Roles<br/>Relocation Considered</div>
+        </div>
+        <div class="story-sidebar-item">
+          <div class="sidebar-label">Specialization</div>
+          <div class="sidebar-value">Behavioral Strategy<br/>Brand Identity<br/>Choice Architecture</div>
+        </div>
+      </div>
+      <div class="story-body reveal">
+        <p class="section-label">My Story</p>
+        <p>I started at <strong>Carter Malone Group</strong> in 2016 as a public relations associate. One of my first clients was a nonprofit whose mission was straightforward: get people to eat more seafood for heart health. The logic was airtight. Heart disease is one of the leading causes of death. Seafood is one of the simplest dietary changes you can make to reduce your risk. If you can avoid a serious health outcome by simply changing what you eat, why wouldn't you?</p>
+
+```
+    <div class="story-pullquote">&ldquo;The message wasn&rsquo;t the problem. The distance between knowing and doing was.&rdquo;</div>
+
+    <p>That question sent me into the field. I started talking to people at health events, conducting informal interviews and focus groups, trying to understand what was actually getting in the way. What I found wasn&rsquo;t a knowledge gap — most people already knew seafood was good for them. What I found were <strong>friction points</strong>: the small, situational barriers that made the easy choice feel harder than it should.</p>
+
+    <p>Once I could name the friction, I could design around it. We built targeted content, email segmentation, and messaging that walked different audience segments through their specific points of resistance — not the general case for seafood, but the particular reason <em>this person</em> hadn&rsquo;t made the switch yet.</p>
+
+    <p>That experience permanently changed how I think about marketing. It&rsquo;s not enough to know who your audience is. You have to understand what they&rsquo;re standing in front of when they decide — and what&rsquo;s making the next step harder than it needs to be.</p>
+
+    <p>That&rsquo;s the lens I&rsquo;ve carried through every role and every engagement since.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CAREER TIMELINE -->
+
+  <section class="content-section dark">
+    <p class="section-label reveal">Career</p>
+    <h2 class="section-heading reveal">Where I&rsquo;ve been.<br/>What I&rsquo;ve built.</h2>
+    <div class="timeline reveal">
+
+```
+  <div class="timeline-item">
+    <div class="timeline-year">2023 — Present</div>
+    <div class="timeline-role">Marketing Strategist</div>
+    <div class="timeline-company">Speak Creative &middot; Memphis, TN</div>
+    <div class="timeline-desc">Building marketing strategy for agency clients across B2B and B2C verticals. Responsible for brand positioning, campaign architecture, and go-to-market strategy — with a consistent focus on how audience behavior shapes what actually works.</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-year">2024 — 2026</div>
+    <div class="timeline-role">Marketing Director</div>
+    <div class="timeline-company">Raleigh Community Church &middot; Memphis, TN</div>
+    <div class="timeline-desc">Led marketing and communications strategy for a growing community organization. Rebuilt the communications system around audience decision-making — resulting in measurable increases in engagement, participation, and first-time attendance across digital and in-person channels.</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-year">2018 — 2026</div>
+    <div class="timeline-role">Founder &amp; Principal Strategist</div>
+    <div class="timeline-company">Independent Agency &middot; Memphis, TN</div>
+    <div class="timeline-desc">Operated an independent marketing strategy practice serving nonprofit, retail, and community-focused organizations. Developed full-funnel strategies grounded in audience behavior, identity-driven brand positioning, and decision architecture.</div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-year">2016 — 2024</div>
+    <div class="timeline-role">Marketing Associate / PR Associate</div>
+    <div class="timeline-company">Carter Malone Group &middot; Memphis, TN</div>
+    <div class="timeline-desc">Began career in public relations and marketing. Conducted field research, informal interviews, and focus groups to identify friction points in audience decision-making — the experience that shaped the direction of everything that followed.</div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- WHAT I BRING -->
+
+  <section class="content-section">
+    <p class="section-label reveal">What I Bring</p>
+    <h2 class="section-heading reveal" style="color: var(--ink-mid);">What I contribute to a team.</h2>
+    <div class="bring-grid">
+      <div class="bring-item reveal">
+        <div class="bring-num">01</div>
+        <div class="bring-title">Behavioral Diagnosis</div>
+        <div class="bring-desc">I start by asking where behavior is actually breaking down — and why. That lens changes what gets built and where resources get focused, before any creative or messaging decisions are made.</div>
+      </div>
+      <div class="bring-item reveal">
+        <div class="bring-num">02</div>
+        <div class="bring-title">Decision Architecture</div>
+        <div class="bring-desc">I design campaigns and communications around how people actually decide. That means reducing friction, sequencing messages to match behavioral windows, and making the next step feel obvious rather than effortful.</div>
+      </div>
+      <div class="bring-item reveal">
+        <div class="bring-num">03</div>
+        <div class="bring-title">Strategic Clarity</div>
+        <div class="bring-desc">I translate insight into execution. Clear channel roles, repeatable workflows, and systems that don&rsquo;t collapse when one person is out — that&rsquo;s what good strategy looks like in practice.</div>
+      </div>
+      <div class="bring-item reveal">
+        <div class="bring-num">04</div>
+        <div class="bring-title">Brand &amp; Identity Thinking</div>
+        <div class="bring-desc">Behavior is shaped by how people see themselves. I connect brand identity to behavioral context — building messaging that meets audiences at the intersection of who they are and what they&rsquo;re deciding.</div>
+      </div>
+      <div class="bring-item reveal">
+        <div class="bring-num">05</div>
+        <div class="bring-title">Cross-Funnel Strategy</div>
+        <div class="bring-desc">From awareness through retention, I account for how behavior shifts at every stage. Each touchpoint should be doing a specific job — and I build strategies that know the difference.</div>
+      </div>
+      <div class="bring-item reveal">
+        <div class="bring-num">06</div>
+        <div class="bring-title">Active Practitioner</div>
+        <div class="bring-desc">I write and publish on behavioral marketing because staying current and articulate about the field makes me a better strategist. It&rsquo;s not a separate track — it&rsquo;s how I keep the work sharp.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORKS -->
+
+  <section class="content-section dark">
+    <p class="section-label reveal">How I Work</p>
+    <h2 class="section-heading reveal">Two frameworks I use to organize the work.</h2>
+    <div class="frameworks-grid reveal">
+      <div class="framework-item">
+        <div class="framework-tag">Audience Intelligence</div>
+        <div class="framework-name">ACE</div>
+        <div class="framework-full">Audience · Cores · Echoes</div>
+        <div class="framework-desc">A model for understanding audience behavior as context-dependent, not fixed. ACE separates stable identity from situational behavior — because the same person shows up differently depending on what&rsquo;s in front of them, and strategy should account for that.</div>
+        <a href="#" class="framework-link">Learn more &rarr;</a>
+      </div>
+      <div class="framework-item">
+        <div class="framework-tag">Marketing Diagnostics</div>
+        <div class="framework-name">BEAM</div>
+        <div class="framework-full">Behavioral · Engagement · Architecture · Model</div>
+        <div class="framework-desc">A diagnostic approach for identifying where marketing systems lose people at the behavioral level. BEAM helps map the gap between what audiences are told and what they actually do — and points toward the structural fixes that close it.</div>
+        <a href="#" class="framework-link">Learn more &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+
+  <div class="cta-band">
+    <div class="cta-band-text">
+      <h2 class="cta-band-heading">Let&rsquo;s work together.</h2>
+      <p class="cta-band-sub">Whether you&rsquo;re building a team or a strategy — I&rsquo;d like to be part of the conversation.</p>
+    </div>
+    <div class="cta-band-actions">
+      <a href="index.html#contact" class="btn-primary">Get In Touch &rarr;</a>
+      <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <span class="footer-name">Megan Oliver</span>
+    <span class="footer-copy">&copy; 2025 &middot; Brand &amp; Behavioral Strategist &middot; meganoliver.com</span>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
