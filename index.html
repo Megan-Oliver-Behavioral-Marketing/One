@@ -1960,14 +1960,15 @@ function openCaseStudy2() {
   }
  
   // ── Escape key closes all overlays ──
-  document.addEventListener('keydown', function(e) {
+ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-     closeCaseStudy();
+      closeCaseStudy();
       closeCaseStudy2();
       closeCaseStudy3();
       closeArticle();
       closeArticle2();
       closeArticle3();
+    }
   });
  
 </script>
