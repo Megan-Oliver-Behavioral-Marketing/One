@@ -1078,7 +1078,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Work</a></li>
         <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#frameworks">Frameworks</a></li>
+<li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -1235,6 +1236,38 @@
     </div>
   </section>
  
+<!-- FRAMEWORKS -->
+<section class="section section--green" id="frameworks">
+  <div class="section-header">
+    <span class="section-eyebrow section-eyebrow--light">Frameworks</span>
+    <h2 class="section-title section-title--light">Behavioral Frameworks</h2>
+    <div class="section-rule section-rule--light"></div>
+  </div>
+  <div class="portfolio-grid">
+
+    <!-- CORE Framework -->
+    <div class="cs-card" onclick="openFramework1()" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+      <div class="cs-card-eyebrow" style="color:rgba(255,255,255,0.5);">Framework &middot; Decision Environment</div>
+      <div class="cs-card-title" style="color:var(--cream);">C.O.R.E</div>
+      <div class="cs-card-body" style="color:rgba(255,255,255,0.6);">Most marketing is built around who someone is. C.O.R.E is built around what someone is standing in front of when they decide — and how to design around that moment.</div>
+      <div style="margin-top:1.25rem;">
+        <span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span>
+      </div>
+    </div>
+
+    <!-- BEAM Framework -->
+    <div class="cs-card" onclick="openFramework2()" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+      <div class="cs-card-eyebrow" style="color:rgba(255,255,255,0.5);">Framework &middot; Behavioral Diagnosis</div>
+      <div class="cs-card-title" style="color:var(--cream);">B.E.A.M</div>
+      <div class="cs-card-body" style="color:rgba(255,255,255,0.6);">When behavior isn't happening, the default response is to fix the message. B.E.A.M diagnoses what's actually blocking action — and identifies the intervention that matches what the person is experiencing.</div>
+      <div style="margin-top:1.25rem;">
+        <span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
   <!-- WRITING -->
   <section class="section section--dark" id="writing">
     <div class="section-header">
@@ -1884,6 +1917,30 @@
 
 <script>
  
+// ── Framework 1 ──
+  function openFramework1() {
+    const page = document.getElementById('frameworkPage1');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeFramework1() {
+    document.getElementById('frameworkPage1').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── Framework 2 ──
+  function openFramework2() {
+    const page = document.getElementById('frameworkPage2');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeFramework2() {
+    document.getElementById('frameworkPage2').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
 // ── Case Study 2 ──
 // ── Case Study 3 ──
   function openCaseStudy3() {
@@ -1908,6 +1965,216 @@ function openCaseStudy2() {
     document.body.style.overflow = '';
   } 
 
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- FRAMEWORK 1 OVERLAY: C.O.R.E                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="cs-page" id="frameworkPage1">
+
+  <div class="cs-topbar">
+    <span class="cs-topbar-brand">Megan Oliver</span>
+    <button class="cs-back-btn" onclick="closeFramework1()">
+      <span>&larr;</span> Back to Frameworks
+    </button>
+  </div>
+
+  <div class="cs-hero">
+    <p class="cs-hero-eyebrow">Framework &middot; Decision Environment</p>
+    <h1>C.O.R.E<br/>A Behavioral Approach to Marketing Strategy</h1>
+    <div class="glance-strip" style="margin-top:2.5rem;">
+      <div class="glance-item">
+        <div class="glance-label">Type</div>
+        <div class="glance-value">Strategic Framework</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Focus</div>
+        <div class="glance-value">Decision Environment Design</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Application</div>
+        <div class="glance-value">Marketing Strategy</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Core Shift</div>
+        <div class="glance-value">From audience profiles to decision moments</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-content">
+
+    <div class="cs-section-label">The Problem</div>
+    <h2>Most Marketing Is Built<br/>Around Who Someone Is.</h2>
+    <p>Demographics. Personas. Interests. Identity. That's useful — but it's incomplete. Because behavior doesn't happen at the level of identity. It happens in moments.</p>
+    <p>Marketing often assumes that if the message is right, the behavior will follow. Better storytelling. Stronger positioning. More precise targeting. Sometimes that works. But when it doesn't, the problem usually isn't the message. <strong>It's the moment.</strong></p>
+
+    <div class="cs-insight">
+      <div class="cs-insight-label">Core Shift</div>
+      <p>&ldquo;What someone is experiencing when they encounter the message matters just as much as what the message says.&rdquo;</p>
+    </div>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">The Shift</div>
+    <h2>From Identity to<br/>Decision Moment.</h2>
+    <p>Instead of asking: <em>Who is this person? What do they care about?</em></p>
+    <p>This approach asks: <em>What is happening when they have to decide?</em></p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">What Shapes Behavior</div>
+    <h2>Five Factors at the<br/>Point of Decision.</h2>
+    <p>At the moment of decision, behavior is influenced by a combination of factors:</p>
+
+    <div class="cs-callout">
+      <div class="cs-callout-label">The Five Decision Factors</div>
+      <p><strong>Context</strong> — where they are, what they're doing, what just happened. <strong>Timing</strong> — whether the moment supports action or delay. <strong>Friction</strong> — how much effort, uncertainty, or complexity sits between intent and action. <strong>Default paths</strong> — what is easiest, most visible, or requires the least thought. <strong>Emotional state</strong> — what they're feeling in that moment, not just what they believe overall.</p>
+    </div>
+
+    <p>These factors determine whether someone moves forward, hesitates, or does nothing at all.</p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">What Changes in Practice</div>
+    <h2>From Optimizing Messages<br/>to Designing Environments.</h2>
+    <p>This shifts the work from optimizing messages to designing decision environments. Instead of focusing only on audience profiles, messaging variations, and creative concepts — the focus expands to how easy it is to act, what the next step looks like, when the message shows up, and what the environment is encouraging or discouraging.</p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">How It's Applied</div>
+    <h2>Start With the Behavior<br/>That Isn&rsquo;t Happening.</h2>
+    <p>The work starts by identifying the behavior that isn't happening. Then analyzing what the person is encountering at that moment, identifying where friction, ambiguity, or misalignment exists, and restructuring the path so the action becomes clearer and easier.</p>
+    <p>Sometimes that means changing messaging. Often it means changing structure, timing, sequencing, or the environment itself.</p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">The Outcome</div>
+    <h2>When the Moment<br/>Makes Sense.</h2>
+    <div class="cs-insight">
+      <div class="cs-insight-label">Core Idea</div>
+      <p>&ldquo;Knowing your audience isn&rsquo;t enough. You have to understand what they&rsquo;re standing in front of when they decide — and design around that.&rdquo;</p>
+    </div>
+
+    <div class="cs-footer-links">
+      <a href="#frameworks" class="cs-footer-link" onclick="closeFramework1()">See B.E.A.M Framework &rarr;</a>
+      <a href="#portfolio" class="cs-footer-link" onclick="closeFramework1()">View case studies &rarr;</a>
+      <a href="#contact" class="cs-footer-link" onclick="closeFramework1()">Get in touch &rarr;</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- FRAMEWORK 2 OVERLAY: B.E.A.M                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="cs-page" id="frameworkPage2">
+
+  <div class="cs-topbar">
+    <span class="cs-topbar-brand">Megan Oliver</span>
+    <button class="cs-back-btn" onclick="closeFramework2()">
+      <span>&larr;</span> Back to Frameworks
+    </button>
+  </div>
+
+  <div class="cs-hero">
+    <p class="cs-hero-eyebrow">Framework &middot; Behavioral Diagnosis</p>
+    <h1>B.E.A.M<br/>A Behavioral Approach to Diagnosing Action</h1>
+    <div class="glance-strip" style="margin-top:2.5rem;">
+      <div class="glance-item">
+        <div class="glance-label">Type</div>
+        <div class="glance-value">Diagnostic Framework</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Focus</div>
+        <div class="glance-value">Barrier Identification</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Application</div>
+        <div class="glance-value">Behavioral Marketing</div>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Core Shift</div>
+        <div class="glance-value">From better messaging to removing barriers</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-content">
+
+    <div class="cs-section-label">The Problem</div>
+    <h2>When Behavior Isn&rsquo;t Happening,<br/>We Fix the Wrong Thing.</h2>
+    <p>When behavior isn't happening, the default response is to fix the message. Make it clearer. More persuasive. More targeted. But most of the time, the issue isn't the message. <strong>It's what's happening at the moment someone has to act.</strong></p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">The Core Idea</div>
+    <h2>Behavior Fails for a<br/>Limited Number of Reasons.</h2>
+    <p>Either the person can't act, the environment doesn't support action, or the moment doesn't feel right. And even when the barrier is clear, the intervention only works if it matches what the person is experiencing in that moment.</p>
+
+    <div class="cs-callout">
+      <div class="cs-callout-label">Start Here</div>
+      <p>Begin with the actual behavior — not awareness, not engagement. The specific action: submit the form, book the appointment, click through, attend the event, complete the purchase. If that action isn't happening, something is blocking it.</p>
+    </div>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">Three Primary Barriers</div>
+    <h2>What Gets<br/>in the Way.</h2>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num" style="font-size:1.5rem;">Ability</div>
+        <div class="outcome-label">The person can't act</div>
+        <div class="outcome-note">Unclear next step, too much information, uncertainty, low confidence</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num" style="font-size:1.5rem;">Environment</div>
+        <div class="outcome-label">The path isn't supported</div>
+        <div class="outcome-note">Too many steps, poor timing, low visibility, unnecessary friction</div>
+      </div>
+      <div class="outcome-card" style="background:var(--green-mid);">
+        <div class="outcome-num" style="font-size:1.5rem;">Motivation</div>
+        <div class="outcome-label">No pull to act now</div>
+        <div class="outcome-note">Low urgency, weak relevance, competing priorities, emotional resistance</div>
+      </div>
+    </div>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">Emotional State</div>
+    <h2>What the Person Is<br/>Experiencing at That Moment.</h2>
+    <p>At the point of decision, behavior is shaped by emotional state — not in a broad, identity-driven sense, but in the moment. Confusion slows action. Overwhelm delays action. Anxiety avoids action. Indifference ignores action. Confidence enables action. Curiosity encourages exploration.</p>
+    <p>The goal isn't to map every emotion. It's to identify the one most influencing the decision.</p>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">The Intervention</div>
+    <h2>Four Moments That<br/>Shift Behavior.</h2>
+
+    <div class="cs-callout">
+      <div class="cs-callout-label">Clarification</div>
+      <p>Removes ambiguity and makes the next step obvious. Used when people are confused or overwhelmed.</p>
+    </div>
+    <div class="cs-callout">
+      <div class="cs-callout-label">Elevation</div>
+      <p>Increases attention and urgency. Used when people are disengaged or delaying.</p>
+    </div>
+    <div class="cs-callout">
+      <div class="cs-callout-label">Reinforcement</div>
+      <p>Builds confidence and reduces hesitation. Used when people are uncertain or lack confidence.</p>
+    </div>
+    <div class="cs-callout">
+      <div class="cs-callout-label">Connection</div>
+      <p>Builds trust and emotional safety. Used when people are skeptical or disconnected.</p>
+    </div>
+
+    <hr class="cs-rule">
+    <div class="cs-section-label">The Outcome</div>
+    <h2>When Barrier, State, and<br/>Intervention Are Aligned.</h2>
+    <div class="cs-insight">
+      <div class="cs-insight-label">Core Idea</div>
+      <p>&ldquo;If someone isn&rsquo;t acting, something is blocking them. The job isn&rsquo;t just to communicate better. It&rsquo;s to identify what&rsquo;s in the way — and remove it.&rdquo;</p>
+    </div>
+
+    <div class="cs-footer-links">
+      <a href="#frameworks" class="cs-footer-link" onclick="closeFramework2()">See C.O.R.E Framework &rarr;</a>
+      <a href="#portfolio" class="cs-footer-link" onclick="closeFramework2()">View case studies &rarr;</a>
+      <a href="#contact" class="cs-footer-link" onclick="closeFramework2()">Get in touch &rarr;</a>
+    </div>
+
+  </div>
+</div>
 
 // ── Case Study ──
   function openCaseStudy() {
@@ -1965,6 +2232,8 @@ function openCaseStudy2() {
       closeCaseStudy();
       closeCaseStudy2();
       closeCaseStudy3();
+      closeFramework1();
+closeFramework2();
       closeArticle();
       closeArticle2();
       closeArticle3();
