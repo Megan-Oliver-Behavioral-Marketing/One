@@ -1246,7 +1246,7 @@
   <div class="portfolio-grid">
 
     <!-- CORE Framework -->
-    <div class="cs-card" onclick="openFramework1()" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+    <div class="cs-card" onclick="openFramework1()" style="background:var(--white);">
       <div class="cs-card-eyebrow" style="color:rgba(255,255,255,0.5);">Framework &middot; Decision Environment</div>
       <div class="cs-card-title" style="color:var(--cream);">C.O.R.E</div>
       <div class="cs-card-body" style="color:rgba(255,255,255,0.6);">Most marketing is built around who someone is. C.O.R.E is built around what someone is standing in front of when they decide — and how to design around that moment.</div>
@@ -1256,7 +1256,7 @@
     </div>
 
     <!-- BEAM Framework -->
-    <div class="cs-card" onclick="openFramework2()" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);">
+    <div class="cs-card" onclick="openFramework2()" style="background:var(--white);">
       <div class="cs-card-eyebrow" style="color:rgba(255,255,255,0.5);">Framework &middot; Behavioral Diagnosis</div>
       <div class="cs-card-title" style="color:var(--cream);">B.E.A.M</div>
       <div class="cs-card-body" style="color:rgba(255,255,255,0.6);">When behavior isn't happening, the default response is to fix the message. B.E.A.M diagnoses what's actually blocking action — and identifies the intervention that matches what the person is experiencing.</div>
@@ -1915,56 +1915,6 @@
   </div>
 </div>
 
-<script>
- 
-// ── Framework 1 ──
-  function openFramework1() {
-    const page = document.getElementById('frameworkPage1');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeFramework1() {
-    document.getElementById('frameworkPage1').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // ── Framework 2 ──
-  function openFramework2() {
-    const page = document.getElementById('frameworkPage2');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeFramework2() {
-    document.getElementById('frameworkPage2').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-// ── Case Study 2 ──
-// ── Case Study 3 ──
-  function openCaseStudy3() {
-    const page = document.getElementById('csPage3');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeCaseStudy3() {
-    document.getElementById('csPage3').classList.remove('open');
-    document.body.style.overflow = '';
-  } 
-
-function openCaseStudy2() {
-    const page = document.getElementById('csPage2');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeCaseStudy2() {
-    document.getElementById('csPage2').classList.remove('open');
-    document.body.style.overflow = '';
-  } 
-
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- FRAMEWORK 1 OVERLAY: C.O.R.E                        -->
 <!-- ═══════════════════════════════════════════════════ -->
@@ -2175,6 +2125,57 @@ function openCaseStudy2() {
 
   </div>
 </div>
+
+<script>
+ 
+// ── Framework 1 ──
+  function openFramework1() {
+    const page = document.getElementById('frameworkPage1');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeFramework1() {
+    document.getElementById('frameworkPage1').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── Framework 2 ──
+  function openFramework2() {
+    const page = document.getElementById('frameworkPage2');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeFramework2() {
+    document.getElementById('frameworkPage2').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+// ── Case Study 2 ──
+// ── Case Study 3 ──
+  function openCaseStudy3() {
+    const page = document.getElementById('csPage3');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeCaseStudy3() {
+    document.getElementById('csPage3').classList.remove('open');
+    document.body.style.overflow = '';
+  } 
+
+function openCaseStudy2() {
+    const page = document.getElementById('csPage2');
+    page.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+  }
+  function closeCaseStudy2() {
+    document.getElementById('csPage2').classList.remove('open');
+    document.body.style.overflow = '';
+  } 
+
 
 // ── Case Study ──
   function openCaseStudy() {
