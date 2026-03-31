@@ -8,9 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
- 
   <style>
-    /* ── TOKENS ── */
     :root {
       --green:      #2d5a45;
       --green-mid:  #3a7057;
@@ -25,1102 +23,162 @@
       --accent:     #c4a35a;
       --nav-h:      64px;
     }
- 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
- 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
- 
-    /* ── HEADER & NAV ── */
-    header.main-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 3.5rem;
-      background: #1f2124;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      animation: fadeDown 0.5s ease both;
-    }
- 
-    .nav-logo, .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: #ffffff;
-      text-decoration: none;
-    }
- 
-    .nav-links {
-      display: flex;
-      gap: 2.25rem;
-      list-style: none;
-    }
- 
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.67rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
- 
-    .nav-links a:hover,
-    .nav-links a.active { color: #ffffff; }
-
-    /* ── HAMBURGER BUTTON ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 300;
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: rgba(255,255,255,0.7);
-      transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s;
-      transform-origin: center;
-    }
-
-    .nav-hamburger.open span:nth-child(1) {
-      transform: translateY(6.5px) rotate(45deg);
-    }
-    .nav-hamburger.open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    .nav-hamburger.open span:nth-child(3) {
-      transform: translateY(-6.5px) rotate(-45deg);
-    }
-
-    /* ── MOBILE MENU DRAWER ── */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: var(--nav-h);
-      left: 0;
-      right: 0;
-      z-index: 190;
-      background: #1f2124;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 1.5rem 2rem 2rem;
-      flex-direction: column;
-      gap: 0;
-      transform: translateY(-10px);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    .mobile-menu.open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .mobile-menu a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: color 0.2s;
-      display: block;
-    }
-
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    header.main-header { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 3.5rem; background: #1f2124; border-bottom: 1px solid rgba(255,255,255,0.07); animation: fadeDown 0.5s ease both; }
+    .nav-logo, .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #ffffff; text-decoration: none; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 300; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.7); transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s; transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 190; background: #1f2124; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1.5rem 2rem 2rem; flex-direction: column; gap: 0; transform: translateY(-10px); opacity: 0; pointer-events: none; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; display: block; }
+    .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { color: #ffffff; }
- 
-    /* ── PAGE WRAPPER ── */
     .page { padding-top: var(--nav-h); }
- 
-    /* ── SECTION SHARED ── */
     .section { padding: 6.5rem 3.5rem; }
     .section--dark  { background: var(--ink); }
     .section--green { background: var(--green); }
     .section--white { background: var(--white); }
     .section--cream { background: var(--cream); }
- 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.25rem;
-      margin-bottom: 4rem;
-    }
- 
-    .section-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      flex-shrink: 0;
-    }
- 
+    .section-header { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: 4rem; }
+    .section-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.17em; text-transform: uppercase; color: var(--ink-light); flex-shrink: 0; }
     .section-eyebrow--light { color: rgba(255,255,255,0.35); }
     .section-eyebrow--green { color: var(--green-mid); }
- 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--ink);
-    }
- 
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; line-height: 1.1; color: var(--ink); }
     .section-title--light { color: var(--cream); }
- 
-    .section-rule {
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
-      min-width: 2rem;
-    }
- 
+    .section-rule { flex: 1; height: 1px; background: var(--rule); min-width: 2rem; }
     .section-rule--light { background: rgba(255,255,255,0.12); }
- 
-    /* ── BUTTON ── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.85rem 1.75rem;
-      transition: gap 0.2s, background 0.2s, color 0.2s;
-      cursor: pointer;
-      border: none;
-    }
- 
-    .btn--green  { background: var(--green);  color: var(--cream); }
-    .btn--green:hover  { background: var(--green-mid); gap: 1rem; }
-    .btn--cream  { background: var(--cream);  color: var(--green); }
-    .btn--cream:hover  { background: #ebe7e0; gap: 1rem; }
-    .btn--outline-light {
-      background: transparent;
-      color: var(--cream);
-      border: 1px solid rgba(255,255,255,0.3);
-    }
+    .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.75rem; transition: gap 0.2s, background 0.2s, color 0.2s; cursor: pointer; border: none; }
+    .btn--green { background: var(--green); color: var(--cream); }
+    .btn--green:hover { background: var(--green-mid); gap: 1rem; }
+    .btn--cream { background: var(--cream); color: var(--green); }
+    .btn--cream:hover { background: #ebe7e0; gap: 1rem; }
+    .btn--outline-light { background: transparent; color: var(--cream); border: 1px solid rgba(255,255,255,0.3); }
     .btn--outline-light:hover { background: rgba(255,255,255,0.07); gap: 1rem; }
- 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      padding: 2rem 3.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
- 
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-    }
- 
-    .footer-nav {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
- 
-    .footer-nav a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
- 
+    footer { background: var(--ink); padding: 2rem 3.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-nav { display: flex; gap: 2rem; list-style: none; }
+    .footer-nav a { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
     .footer-nav a:hover { color: rgba(255,255,255,0.6); }
- 
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.18);
-      width: 100%;
-      text-align: right;
-    }
- 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
- 
-    /* ── REVEAL ── */
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.18); width: 100%; text-align: right; }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     .reveal { opacity: 1; transform: none; }
- 
-    /* ── HERO ── */
-    .hero {
-      min-height: calc(100vh - var(--nav-h));
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
- 
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 3.5rem 5rem;
-      animation: fadeUp 0.8s 0.2s both;
-    }
- 
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.67rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 1.25rem;
-    }
- 
-    h1.hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.2rem);
-      font-weight: 700;
-      line-height: 1.02;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-    }
- 
-    h1.hero-title em {
-      font-style: italic;
-      color: var(--green);
-    }
- 
-    .hero-descriptor {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      padding: 1.25rem 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 2rem;
-    }
- 
-    .hero-sub {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--ink-mid);
-      max-width: 500px;
-      margin-bottom: 2.5rem;
-    }
- 
+    .hero { min-height: calc(100vh - var(--nav-h)); display: grid; grid-template-columns: 1.1fr 0.9fr; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 3.5rem 5rem; animation: fadeUp 0.8s 0.2s both; }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem; }
+    h1.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 5.5vw, 5.2rem); font-weight: 700; line-height: 1.02; color: var(--ink); margin-bottom: 0.75rem; }
+    h1.hero-title em { font-style: italic; color: var(--green); }
+    .hero-descriptor { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 2rem; }
+    .hero-sub { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 500px; margin-bottom: 2.5rem; }
     .hero-sub strong { font-weight: 500; color: var(--ink); }
- 
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
- 
-    .hero-right {
-      background: var(--green);
-      position: relative;
-      overflow: hidden;
-      animation: fadeIn 0.9s 0.4s both;
-    }
- 
-    .hero-right::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        -50deg,
-        transparent,
-        transparent 48px,
-        rgba(255,255,255,0.025) 48px,
-        rgba(255,255,255,0.025) 49px
-      );
-    }
- 
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 560px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
- 
-    /* ── STAT STRIP ── */
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--rule);
-    }
- 
-    .stat-item {
-      background: var(--white);
-      padding: 1.75rem 2rem;
-    }
- 
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
- 
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
- 
-    /* ── ABOUT SECTION ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
- 
-    .about-sidebar {}
- 
-    .sidebar-block {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
- 
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-right { background: var(--green); position: relative; overflow: hidden; animation: fadeIn 0.9s 0.4s both; }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-50deg, transparent, transparent 48px, rgba(255,255,255,0.025) 48px, rgba(255,255,255,0.025) 49px); }
+    .hero-photo-placeholder { width: 100%; height: 100%; min-height: 560px; display: flex; align-items: flex-end; justify-content: center; padding: 2.5rem; position: relative; z-index: 1; }
+    .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); }
+    .stat-item { background: var(--white); padding: 1.75rem 2rem; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 0.3rem; }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-light); }
+    .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; align-items: start; }
+    .sidebar-block { padding: 1.2rem 0; border-bottom: 1px solid var(--rule); }
     .sidebar-block:first-child { border-top: 1px solid var(--rule); }
- 
-    .sidebar-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.3rem;
-    }
- 
-    .sidebar-value {
-      font-size: 0.875rem;
-      font-weight: 300;
-      line-height: 1.6;
-      color: var(--ink-mid);
-    }
- 
-    .about-body p {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--ink-mid);
-      margin-bottom: 1.25rem;
-    }
- 
+    .sidebar-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.3rem; }
+    .sidebar-value { font-size: 0.875rem; font-weight: 300; line-height: 1.6; color: var(--ink-mid); }
+    .about-body p { font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1.25rem; }
     .about-body p strong { font-weight: 500; color: var(--ink); }
- 
-    .about-pullquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--green);
-      line-height: 1.45;
-      border-left: 3px solid var(--green);
-      padding-left: 1.5rem;
-      margin: 2rem 0;
-    }
- 
-    /* ── PORTFOLIO / CASE STUDY ── */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5px;
-      background: var(--rule);
-    }
- 
-    .cs-card {
-      background: var(--white);
-      padding: 2.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
- 
+    .about-pullquote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--green); line-height: 1.45; border-left: 3px solid var(--green); padding-left: 1.5rem; margin: 2rem 0; }
+    .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--rule); }
+    .cs-card { background: var(--white); padding: 2.75rem; display: flex; flex-direction: column; gap: 0.75rem; cursor: pointer; transition: background 0.2s; }
     .cs-card:hover { background: var(--green-pale); }
- 
-    .cs-card-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-    }
- 
-    .cs-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.2;
-    }
- 
-    .cs-card-body {
-      font-size: 0.875rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--ink-light);
-      flex: 1;
-    }
- 
-    .cs-card-outcomes {
-      display: flex;
-      gap: 1.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--rule);
-      margin-top: 0.5rem;
-    }
- 
-    .cs-outcome {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
- 
-    .cs-outcome-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-    }
- 
-    .cs-outcome-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
- 
-    /* ── WRITING SECTION ── */
-    .writing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5px;
-      background: var(--rule);
-    }
- 
-    .writing-featured {
-      grid-column: 1 / -1;
-      background: var(--ink);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      cursor: pointer;
-      border-left: 4px solid var(--accent);
-      transition: background 0.2s;
-    }
- 
+    .cs-card-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+    .cs-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+    .cs-card-body { font-size: 0.875rem; font-weight: 300; line-height: 1.75; color: var(--ink-light); flex: 1; }
+    .cs-card-outcomes { display: flex; gap: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); margin-top: 0.5rem; }
+    .cs-outcome { display: flex; flex-direction: column; gap: 0.15rem; }
+    .cs-outcome-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--green); line-height: 1; }
+    .cs-outcome-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+    .writing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: var(--rule); }
+    .writing-featured { grid-column: 1 / -1; background: var(--ink); padding: 3rem; display: flex; flex-direction: column; gap: 0.75rem; cursor: pointer; border-left: 4px solid var(--accent); transition: background 0.2s; }
     .writing-featured:hover { background: #252523; }
- 
-    .writing-featured .writing-platform {
-      color: var(--accent);
-    }
- 
-    .writing-featured .writing-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: var(--cream);
-      line-height: 1.2;
-    }
- 
-    .writing-featured .writing-excerpt {
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: rgba(245,242,238,0.6);
-      max-width: 640px;
-    }
- 
-    .writing-item {
-      background: var(--white);
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
- 
+    .writing-featured .writing-platform { color: var(--accent); }
+    .writing-featured .writing-title { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: var(--cream); line-height: 1.2; }
+    .writing-featured .writing-excerpt { font-size: 0.95rem; font-weight: 300; line-height: 1.75; color: rgba(245,242,238,0.6); max-width: 640px; }
+    .writing-item { background: var(--white); padding: 2.5rem; display: flex; flex-direction: column; gap: 0.6rem; cursor: pointer; transition: background 0.2s; }
     .writing-item:hover { background: var(--green-pale); }
- 
-    .writing-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
- 
-    .writing-platform {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-    }
- 
-    .writing-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      color: var(--ink-light);
-    }
- 
-    .writing-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.25;
-    }
- 
-    .writing-excerpt {
-      font-size: 0.875rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--ink-light);
-      flex: 1;
-    }
- 
-    .writing-read-more {
-      background: none;
-      border: none;
-      border-bottom: 1px solid rgba(196,163,90,0.3);
-      cursor: pointer;
-      padding: 0;
-      padding-bottom: 0.15rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      align-self: flex-start;
-      margin-top: 0.25rem;
-    }
- 
-    /* ── CONTACT SECTION ── */
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
- 
-    .contact-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      color: var(--cream);
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
-    }
- 
-    .contact-body {
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(245,242,238,0.6);
-      margin-bottom: 2rem;
-    }
- 
-    .contact-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      margin-bottom: 1.25rem;
-    }
- 
-    .contact-detail-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-    }
- 
-    .contact-detail-value {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-    }
- 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
- 
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
- 
-    .form-field label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-    }
- 
-    .form-field input,
-    .form-field textarea {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      padding: 0.8rem 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-      resize: none;
-      border-radius: 0;
-    }
- 
-    .form-field input::placeholder,
-    .form-field textarea::placeholder { color: rgba(255,255,255,0.2); }
- 
-    .form-field input:focus,
-    .form-field textarea:focus { border-color: rgba(255,255,255,0.35); }
- 
-    /* ── OVERLAY PAGES (article-page, cs-page) ── */
-    .article-page, .cs-page {
-      position: fixed;
-      inset: 0;
-      z-index: 500;
-      background: var(--cream);
-      overflow-y: auto;
-      transform: translateY(100%);
-      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    }
- 
-    .article-page.open, .cs-page.open {
-      transform: translateY(0);
-    }
- 
-    /* ── OVERLAY TOPBAR ── */
-    .article-topbar, .cs-topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--ink);
-      padding: 0 3.5rem;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
- 
-    .article-topbar-brand, .cs-topbar-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-    }
- 
-    .article-back-btn, .cs-back-btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s;
-    }
- 
+    .writing-meta { display: flex; align-items: center; gap: 0.75rem; }
+    .writing-platform { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .writing-date { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--ink-light); }
+    .writing-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+    .writing-excerpt { font-size: 0.875rem; font-weight: 300; line-height: 1.75; color: var(--ink-light); flex: 1; }
+    .writing-read-more { background: none; border: none; border-bottom: 1px solid rgba(196,163,90,0.3); cursor: pointer; padding: 0; padding-bottom: 0.15rem; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); align-self: flex-start; margin-top: 0.25rem; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; color: var(--cream); line-height: 1.1; margin-bottom: 1.25rem; }
+    .contact-body { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.6); margin-bottom: 2rem; }
+    .contact-detail { display: flex; flex-direction: column; gap: 0.2rem; margin-bottom: 1.25rem; }
+    .contact-detail-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .contact-detail-value { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.7); text-decoration: none; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .form-field label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .form-field input, .form-field textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; padding: 0.8rem 1rem; outline: none; transition: border-color 0.2s; resize: none; border-radius: 0; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-field input:focus, .form-field textarea:focus { border-color: rgba(255,255,255,0.35); }
+    .article-page, .cs-page { position: fixed; inset: 0; z-index: 500; background: var(--cream); overflow-y: auto; transform: translateY(100%); transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+    .article-page.open, .cs-page.open { transform: translateY(0); }
+    .article-topbar, .cs-topbar { position: sticky; top: 0; z-index: 10; background: var(--ink); padding: 0 3.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .article-topbar-brand, .cs-topbar-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .article-back-btn, .cs-back-btn { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
     .article-back-btn:hover, .cs-back-btn:hover { color: rgba(255,255,255,0.9); }
- 
-    /* ── ARTICLE HERO ── */
-    .article-hero {
-      background: var(--ink);
-      padding: 5rem 3.5rem 4rem;
-    }
- 
-    .article-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 1.25rem;
-    }
- 
-    .article-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 700;
-      color: var(--cream);
-      line-height: 1.08;
-      max-width: 780px;
-    }
- 
-    /* ── ARTICLE CONTENT ── */
-    .article-content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 4rem 3.5rem 6rem;
-    }
- 
-    .article-content p {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.9;
-      color: var(--ink-mid);
-      margin-bottom: 1.25rem;
-    }
- 
-    .article-h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      margin-top: 0.5rem;
-    }
- 
-    .article-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 2.5rem 0;
-    }
- 
-    .article-list {
-      list-style: none;
-      margin: 0.75rem 0 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
- 
-    .article-list li {
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--ink-mid);
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-    }
- 
-    .article-list li::before {
-      content: '—';
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--green);
-      flex-shrink: 0;
-    }
- 
-    .article-pullquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      color: var(--green);
-      line-height: 1.45;
-      border-left: 3px solid var(--green);
-      padding-left: 1.5rem;
-      margin: 2rem 0;
-    }
- 
-    .article-footer-links {
-      display: flex;
-      gap: 2rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--rule);
-      margin-top: 3rem;
-      flex-wrap: wrap;
-    }
- 
-    .article-footer-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(45,90,69,0.3);
-      padding-bottom: 0.1rem;
-      transition: border-color 0.2s;
-    }
- 
+    .article-hero { background: var(--ink); padding: 5rem 3.5rem 4rem; }
+    .article-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; color: var(--cream); line-height: 1.08; max-width: 780px; }
+    .article-content { max-width: 720px; margin: 0 auto; padding: 4rem 3.5rem 6rem; }
+    .article-content p { font-size: 1rem; font-weight: 300; line-height: 1.9; color: var(--ink-mid); margin-bottom: 1.25rem; }
+    .article-h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 600; color: var(--ink); line-height: 1.2; margin-bottom: 1rem; margin-top: 0.5rem; }
+    .article-rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+    .article-list { list-style: none; margin: 0.75rem 0 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .article-list li { font-size: 0.95rem; font-weight: 300; line-height: 1.65; color: var(--ink-mid); display: flex; align-items: baseline; gap: 0.75rem; }
+    .article-list li::before { content: '—'; font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--green); flex-shrink: 0; }
+    .article-pullquote { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--green); line-height: 1.45; border-left: 3px solid var(--green); padding-left: 1.5rem; margin: 2rem 0; }
+    .article-footer-links { display: flex; gap: 2rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); margin-top: 3rem; flex-wrap: wrap; }
+    .article-footer-link { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(45,90,69,0.3); padding-bottom: 0.1rem; transition: border-color 0.2s; }
     .article-footer-link:hover { border-color: var(--green); }
- 
-    /* ── CASE STUDY OVERLAY ── */
-    .cs-hero {
-      background: var(--ink);
-      padding: 5rem 3.5rem 4rem;
-    }
- 
-    .cs-hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 1.25rem;
-    }
- 
-    .cs-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 700;
-      color: var(--cream);
-      line-height: 1.08;
-      max-width: 780px;
-    }
- 
-    .glance-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.5px;
-      background: rgba(255,255,255,0.08);
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
- 
-    .glance-item {
-      background: var(--ink);
-      padding: 1.25rem 1.5rem;
-    }
- 
-    .glance-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.57rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 0.35rem;
-    }
- 
-    .glance-value {
-      font-size: 0.85rem;
-      font-weight: 300;
-      color: rgba(245,242,238,0.8);
-      line-height: 1.4;
-    }
- 
-    .cs-content {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 4rem 3.5rem 6rem;
-    }
- 
-    .cs-section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.75rem;
-    }
- 
-    .cs-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
- 
-    .cs-content p {
-      font-size: 0.975rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--ink-mid);
-      margin-bottom: 1.1rem;
-    }
- 
+    .cs-hero { background: var(--ink); padding: 5rem 3.5rem 4rem; }
+    .cs-hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; }
+    .cs-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; color: var(--cream); line-height: 1.08; max-width: 780px; }
+    .glance-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5px; background: rgba(255,255,255,0.08); border-top: 1px solid rgba(255,255,255,0.08); }
+    .glance-item { background: var(--ink); padding: 1.25rem 1.5rem; }
+    .glance-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.35rem; }
+    .glance-value { font-size: 0.85rem; font-weight: 300; color: rgba(245,242,238,0.8); line-height: 1.4; }
+    .cs-content { max-width: 780px; margin: 0 auto; padding: 4rem 3.5rem 6rem; }
+    .cs-section-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; }
+    .cs-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 600; color: var(--ink); line-height: 1.15; margin-bottom: 1.25rem; }
+    .cs-content p { font-size: 0.975rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1.1rem; }
     .cs-content p strong { font-weight: 500; color: var(--ink); }
- 
-    .cs-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 2.5rem 0;
-    }
- 
-    .cs-callout {
-      background: var(--green-pale);
-      border-left: 3px solid var(--green);
-      padding: 1.5rem 1.75rem;
-      margin: 1.75rem 0;
-    }
- 
-    .cs-callout-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
- 
+    .cs-rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+    .cs-callout { background: var(--green-pale); border-left: 3px solid var(--green); padding: 1.5rem 1.75rem; margin: 1.75rem 0; }
+    .cs-callout-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
     .cs-callout p { font-size: 0.9rem; color: var(--ink-mid); margin-bottom: 0; }
- 
-    .outcomes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--rule);
-      margin: 1.5rem 0;
-    }
- 
-    .outcome-card {
-      background: var(--green);
-      padding: 2rem 1.75rem;
-      text-align: center;
-    }
- 
-    .outcome-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--cream);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
- 
-    .outcome-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 0.5rem;
-    }
- 
-    .outcome-note {
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.5;
-    }
- 
-    .cs-insight {
-      background: var(--ink);
-      padding: 2rem 2.25rem;
-      margin: 2rem 0;
-    }
- 
-    .cs-insight-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 0.75rem;
-    }
- 
-    .cs-insight p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.5;
-      margin-bottom: 0;
-    }
- 
-    .cs-footer-links {
-      display: flex;
-      gap: 2rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--rule);
-      margin-top: 3rem;
-      flex-wrap: wrap;
-    }
- 
-    .cs-footer-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(45,90,69,0.3);
-      padding-bottom: 0.1rem;
-      transition: border-color 0.2s;
-    }
- 
+    .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); margin: 1.5rem 0; }
+    .outcome-card { background: var(--green); padding: 2rem 1.75rem; text-align: center; }
+    .outcome-num { font-family: 'Cormorant Garamond', serif; font-size: 2.75rem; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 0.4rem; }
+    .outcome-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.5rem; }
+    .outcome-note { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .cs-insight { background: var(--ink); padding: 2rem 2.25rem; margin: 2rem 0; }
+    .cs-insight-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.75rem; }
+    .cs-insight p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 0; }
+    .cs-footer-links { display: flex; gap: 2rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); margin-top: 3rem; flex-wrap: wrap; }
+    .cs-footer-link { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(45,90,69,0.3); padding-bottom: 0.1rem; transition: border-color 0.2s; }
     .cs-footer-link:hover { border-color: var(--green); }
- 
-    /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       header.main-header { padding: 0 1.5rem; }
       .nav-links { gap: 1.25rem; }
@@ -1141,7 +199,6 @@
       .outcomes-grid { grid-template-columns: 1fr; }
       .stat-strip { grid-template-columns: 1fr; }
     }
- 
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -1151,7 +208,7 @@
 </head>
 <body>
 <div class="page">
- 
+
   <!-- NAV -->
   <header class="main-header">
     <a href="#" class="nav-logo logo">Megan Oliver</a>
@@ -1160,36 +217,31 @@
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Work</a></li>
         <li><a href="Articles.html">Writing</a></li>
-        <li><a href="#frameworks">Frameworks</a></li>
+        <li><a href="Frameworks.html">Frameworks</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <!-- Hamburger (mobile only) -->
     <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- Mobile Menu Drawer -->
+  <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <a href="#about" class="mobile-nav-link">About</a>
     <a href="#portfolio" class="mobile-nav-link">Work</a>
     <a href="Articles.html" class="mobile-nav-link">Writing</a>
-    <a href="#frameworks" class="mobile-nav-link">Frameworks</a>
+    <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
   </nav>
- 
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <p class="hero-eyebrow">Behavioral Marketing Strategist</p>
       <h1 class="hero-title">Megan<br /><em>Oliver</em></h1>
       <p class="hero-descriptor">10 years turning behavioral insight into commercial results</p>
-      <p class="hero-sub">
-        Most campaigns are built around <strong>who the audience is.</strong> The ones that convert are built around <strong>the specific conditions</strong> that make that audience act. I find those conditions — and build strategy around them.
-      </p>
+      <p class="hero-sub">Most campaigns are built around <strong>who the audience is.</strong> The ones that convert are built around <strong>the specific conditions</strong> that make that audience act. I find those conditions — and build strategy around them.</p>
       <div class="hero-actions">
         <a href="#about" class="btn btn--green">About Me &rarr;</a>
         <a href="#portfolio" class="btn btn--outline-light" style="color:var(--ink);border-color:var(--rule);">See My Work &rarr;</a>
@@ -1197,28 +249,18 @@
     </div>
     <div class="hero-right">
       <div class="hero-photo-placeholder">
-        <img src="Megan headshot maybe white.png
-" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+        <img src="Megan headshot maybe white.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
       </div>
     </div>
   </section>
- 
+
   <!-- STAT STRIP -->
   <div class="stat-strip">
-    <div class="stat-item">
-      <div class="stat-num">10</div>
-      <div class="stat-label">Years of Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">+125%</div>
-      <div class="stat-label">Organic Engagement Lift</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">+23%</div>
-      <div class="stat-label">Conversion Improvement</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Years of Experience</div></div>
+    <div class="stat-item"><div class="stat-num">+125%</div><div class="stat-label">Organic Engagement Lift</div></div>
+    <div class="stat-item"><div class="stat-num">+23%</div><div class="stat-label">Conversion Improvement</div></div>
   </div>
- 
+
   <!-- ABOUT -->
   <section class="section section--white" id="about">
     <div class="section-header">
@@ -1228,30 +270,12 @@
     </div>
     <div class="about-grid">
       <aside class="about-sidebar">
-        <div class="sidebar-block">
-          <div class="sidebar-label">Title</div>
-          <div class="sidebar-value">Behavioral Marketing Strategist</div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Experience</div>
-          <div class="sidebar-value">10 Years</div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Based In</div>
-          <div class="sidebar-value">Memphis, TN</div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Focus Areas</div>
-          <div class="sidebar-value">Decision-Making<br/>Conversion Behavior<br/>Brand Strategy<br/>Marketing Systems</div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Open To</div>
-          <div class="sidebar-value">Senior strategy roles </div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Connect</div>
-          <div class="sidebar-value"><a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" style="color:var(--green);">LinkedIn</a></div>
-        </div>
+        <div class="sidebar-block"><div class="sidebar-label">Title</div><div class="sidebar-value">Behavioral Marketing Strategist</div></div>
+        <div class="sidebar-block"><div class="sidebar-label">Experience</div><div class="sidebar-value">10 Years</div></div>
+        <div class="sidebar-block"><div class="sidebar-label">Based In</div><div class="sidebar-value">Memphis, TN</div></div>
+        <div class="sidebar-block"><div class="sidebar-label">Focus Areas</div><div class="sidebar-value">Decision-Making<br/>Conversion Behavior<br/>Brand Strategy<br/>Marketing Systems</div></div>
+        <div class="sidebar-block"><div class="sidebar-label">Open To</div><div class="sidebar-value">Senior strategy roles</div></div>
+        <div class="sidebar-block"><div class="sidebar-label">Connect</div><div class="sidebar-value"><a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" style="color:var(--green);">LinkedIn</a></div></div>
       </aside>
       <div class="about-body">
         <p>I'm a Behavioral Marketing Strategist with 10 years of experience building strategies that close the gap between audience awareness and audience action. That gap is almost always behavioral — and it requires a different kind of analysis than most marketing teams apply to it.</p>
@@ -1262,7 +286,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- PORTFOLIO -->
   <section class="section section--cream" id="portfolio">
     <div class="section-header">
@@ -1271,99 +295,60 @@
       <div class="section-rule"></div>
     </div>
     <div class="portfolio-grid">
-
-      <!-- FEATURED: The Write Lane -->
       <div class="cs-card" onclick="openCaseStudy3()" style="grid-column: 1 / -1; border-left: 4px solid var(--green);">
         <div class="cs-card-eyebrow">Case Study &middot; Early-Stage Growth / Day Zero</div>
         <div class="cs-card-title">Creating Demand from Zero</div>
         <div class="cs-card-body">At launch, The Write Lane had no audience, no client base, and no existing demand. The challenge wasn't improving performance — it was creating it. I built behavioral momentum through community-based exposure, positioning clarity, and low-friction entry points that made first engagement feel easy and repeatable.</div>
         <div class="cs-card-outcomes">
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">0 → Waitlist</div>
-            <div class="cs-outcome-label">Client Growth</div>
-          </div>
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">Hired</div>
-            <div class="cs-outcome-label">Additional Teachers to Meet Demand</div>
-          </div>
+          <div class="cs-outcome"><div class="cs-outcome-num">0 → Waitlist</div><div class="cs-outcome-label">Client Growth</div></div>
+          <div class="cs-outcome"><div class="cs-outcome-num">Hired</div><div class="cs-outcome-label">Additional Teachers to Meet Demand</div></div>
         </div>
-        <div style="margin-top:1.25rem;">
-          <span class="btn btn--green" style="pointer-events:none;">Read Case Study &rarr;</span>
-        </div>
+        <div style="margin-top:1.25rem;"><span class="btn btn--green" style="pointer-events:none;">Read Case Study &rarr;</span></div>
       </div>
-
-      <!-- CARD: Community/Nonprofit -->
       <div class="cs-card" onclick="openCaseStudy()">
         <div class="cs-card-eyebrow">Case Study &middot; Community / Nonprofit</div>
         <div class="cs-card-title">Rebuilding Engagement Through Decision-Focused Communication</div>
         <div class="cs-card-body">The organization had consistent activity — but inconsistent participation. I diagnosed where behavior was breaking down and rebuilt the system around how people actually decide to participate.</div>
         <div class="cs-card-outcomes">
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">+125%</div>
-            <div class="cs-outcome-label">Organic Social</div>
-          </div>
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">+23%</div>
-            <div class="cs-outcome-label">Livestream Views</div>
-          </div>
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">+20%</div>
-            <div class="cs-outcome-label">First-Time Participation</div>
-          </div>
+          <div class="cs-outcome"><div class="cs-outcome-num">+125%</div><div class="cs-outcome-label">Organic Social</div></div>
+          <div class="cs-outcome"><div class="cs-outcome-num">+23%</div><div class="cs-outcome-label">Livestream Views</div></div>
+          <div class="cs-outcome"><div class="cs-outcome-num">+20%</div><div class="cs-outcome-label">First-Time Participation</div></div>
         </div>
       </div>
-
-      <!-- CARD: Seafood/Nonprofit -->
       <div class="cs-card" onclick="openCaseStudy2()">
         <div class="cs-card-eyebrow">Case Study &middot; National Nonprofit / Public Health</div>
         <div class="cs-card-title">Closing the Gap Between Awareness and Action</div>
         <div class="cs-card-body">Audiences already knew seafood was healthy. They weren't buying it. The barrier wasn't informational — it was behavioral. I diagnosed friction points and rebuilt messaging around the actual conditions under which people decide what to eat.</div>
         <div class="cs-card-outcomes">
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">5×</div>
-            <div class="cs-outcome-label">Click-Through Rate</div>
-          </div>
-          <div class="cs-outcome">
-            <div class="cs-outcome-num">+63%</div>
-            <div class="cs-outcome-label">Social Engagement</div>
-          </div>
+          <div class="cs-outcome"><div class="cs-outcome-num">5×</div><div class="cs-outcome-label">Click-Through Rate</div></div>
+          <div class="cs-outcome"><div class="cs-outcome-num">+63%</div><div class="cs-outcome-label">Social Engagement</div></div>
         </div>
       </div>
-
     </div>
   </section>
- 
-<!-- FRAMEWORKS -->
-<section class="section section--green" id="frameworks">
-  <div class="section-header">
-    <span class="section-eyebrow section-eyebrow--light">Frameworks</span>
-    <h2 class="section-title section-title--light">Behavioral Frameworks</h2>
-    <div class="section-rule section-rule--light"></div>
-  </div>
-  <div class="portfolio-grid">
 
-    <!-- CORE Framework -->
-    <div class="cs-card" onclick="openFramework1()" style="background:var(--white);">
-      <div class="cs-card-eyebrow" style="color:var(--ink-light);">Framework &middot; Decision Environment</div>
-      <div class="cs-card-title" style="color:var(--ink);">C.O.R.E</div>
-      <div class="cs-card-body" style="color:var(--ink-mid);">Most marketing is built around who someone is. C.O.R.E is built around what someone is standing in front of when they decide — and how to design around that moment.</div>
-      <div style="margin-top:1.25rem;">
-        <span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span>
+  <!-- FRAMEWORKS -->
+  <section class="section section--green" id="frameworks">
+    <div class="section-header">
+      <span class="section-eyebrow section-eyebrow--light">Frameworks</span>
+      <h2 class="section-title section-title--light">Behavioral Frameworks</h2>
+      <div class="section-rule section-rule--light"></div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="cs-card" onclick="openFramework1()" style="background:var(--white);">
+        <div class="cs-card-eyebrow" style="color:var(--ink-light);">Framework &middot; Decision Environment</div>
+        <div class="cs-card-title" style="color:var(--ink);">C.O.R.E</div>
+        <div class="cs-card-body" style="color:var(--ink-mid);">Most marketing is built around who someone is. C.O.R.E is built around what someone is standing in front of when they decide — and how to design around that moment.</div>
+        <div style="margin-top:1.25rem;"><span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span></div>
+      </div>
+      <div class="cs-card" onclick="openFramework2()" style="background:var(--white);">
+        <div class="cs-card-eyebrow" style="color:var(--ink-light);">Framework &middot; Behavioral Diagnosis</div>
+        <div class="cs-card-title" style="color:var(--ink);">B.E.A.M</div>
+        <div class="cs-card-body" style="color:var(--ink-mid);">When behavior isn't happening, the default response is to fix the message. B.E.A.M diagnoses what's actually blocking action — and identifies the intervention that matches what the person is experiencing.</div>
+        <div style="margin-top:1.25rem;"><span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span></div>
       </div>
     </div>
-
-    <!-- BEAM Framework -->
-    <div class="cs-card" onclick="openFramework2()" style="background:var(--white);">
-      <div class="cs-card-eyebrow" style="color:var(--ink-light);">Framework &middot; Behavioral Diagnosis</div>
-      <div class="cs-card-title" style="color:var(--ink);">B.E.A.M</div>
-      <div class="cs-card-body" style="color:var(--ink-mid);">When behavior isn't happening, the default response is to fix the message. B.E.A.M diagnoses what's actually blocking action — and identifies the intervention that matches what the person is experiencing.</div>
-      <div style="margin-top:1.25rem;">
-        <span class="btn btn--cream" style="pointer-events:none;">Read Framework &rarr;</span>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- WRITING -->
   <section class="section section--dark" id="writing">
@@ -1373,8 +358,6 @@
       <div class="section-rule section-rule--light"></div>
     </div>
     <div class="writing-grid">
- 
-      <!-- Featured Article 1 -->
       <div class="writing-featured reveal" onclick="openArticle()">
         <div class="writing-meta">
           <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" class="writing-platform">LinkedIn</a>
@@ -1384,8 +367,6 @@
         <div class="writing-excerpt">Personas answer the wrong question. They tell you who someone is — not what they're about to do. And marketing that optimizes for identity instead of behavior misses the decision entirely.</div>
         <button class="writing-read-more" style="color:var(--accent);border-color:rgba(196,163,90,0.3);margin-top:0.5rem;">Read full article &rarr;</button>
       </div>
- 
-      <!-- Article 2 -->
       <div class="writing-item reveal" onclick="openArticle2()">
         <div class="writing-meta">
           <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" class="writing-platform">LinkedIn</a>
@@ -1395,23 +376,18 @@
         <div class="writing-excerpt" style="cursor:pointer;">People rarely correct decisions once they've started them. It's not irrational — it's predictable. And most marketing teams are optimizing for the wrong moment.</div>
         <button onclick="openArticle2()" class="writing-read-more">Read full article &rarr;</button>
       </div>
- 
-     <!-- Article 3 -->
-<div class="writing-item reveal" onclick="openArticle3()">
-  <div class="writing-meta">
-    <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" class="writing-platform">LinkedIn</a>
-    <span class="writing-date">2025</span>
-  </div>
-  <div class="writing-title" style="cursor:pointer;">When Personalization Breaks Recognition</div>
-  <div class="writing-excerpt" style="cursor:pointer;">Most platforms assume that changing what you show will make something more relevant. Sometimes it does. But sometimes it interferes with something more important: recognition. Not every surface should be personalized.</div>
-  <button onclick="openArticle3()" class="writing-read-more">Read full article &rarr;</button>
-</div>
-
+      <div class="writing-item reveal" onclick="openArticle3()">
+        <div class="writing-meta">
+          <a href="https://www.linkedin.com/in/megan-oliver-behavioral-marketing/" target="_blank" rel="noopener" class="writing-platform">LinkedIn</a>
+          <span class="writing-date">2025</span>
+        </div>
+        <div class="writing-title" style="cursor:pointer;">When Personalization Breaks Recognition</div>
+        <div class="writing-excerpt" style="cursor:pointer;">Most platforms assume that changing what you show will make something more relevant. Sometimes it does. But sometimes it interferes with something more important: recognition.</div>
+        <button onclick="openArticle3()" class="writing-read-more">Read full article &rarr;</button>
       </div>
- 
     </div>
   </section>
- 
+
   <!-- CONTACT -->
   <section class="section section--green" id="contact">
     <div class="contact-inner">
@@ -1424,23 +400,14 @@
         </div>
       </div>
       <form class="contact-form" action="https://formspree.io/f/mlgobrwz" method="POST">
-        <div class="form-field">
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Your name" />
-        </div>
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="your@email.com" />
-        </div>
-        <div class="form-field">
-          <label>Message</label>
-          <textarea name="message" rows="5" placeholder="Tell me what's on your mind..."></textarea>
-        </div>
-       <button type="submit" class="btn btn--cream">Send Message &rarr;</button>
+        <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+        <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="your@email.com" /></div>
+        <div class="form-field"><label>Message</label><textarea name="message" rows="5" placeholder="Tell me what's on your mind..."></textarea></div>
+        <button type="submit" class="btn btn--cream">Send Message &rarr;</button>
       </form>
     </div>
   </section>
- 
+
   <!-- FOOTER -->
   <footer>
     <a href="#" class="footer-logo">Megan Oliver</a>
@@ -1448,894 +415,323 @@
       <li><a href="#about">About</a></li>
       <li><a href="#portfolio">Work</a></li>
       <li><a href="Articles.html">Writing</a></li>
+      <li><a href="Frameworks.html">Frameworks</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <span class="footer-copy">&copy; 2025 Megan Oliver &middot; Behavioral Marketing Strategist</span>
   </footer>
- 
+
 </div><!-- /page -->
- 
- 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- CASE STUDY OVERLAY                                  -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+
+<!-- CASE STUDY 1 OVERLAY -->
 <div class="cs-page" id="csPage">
- 
-  <div class="cs-topbar">
-    <span class="cs-topbar-brand">Megan Oliver</span>
-    <button class="cs-back-btn" onclick="closeCaseStudy()">
-      <span>&larr;</span> Back to Work
-    </button>
-  </div>
- 
+  <div class="cs-topbar"><span class="cs-topbar-brand">Megan Oliver</span><button class="cs-back-btn" onclick="closeCaseStudy()"><span>&larr;</span> Back to Work</button></div>
   <div class="cs-hero">
     <p class="cs-hero-eyebrow">Case Study &middot; Community / Nonprofit</p>
     <h1>Rebuilding Engagement Through<br/>Decision-Focused Communication</h1>
     <div class="glance-strip" style="margin-top:2.5rem;">
-      <div class="glance-item">
-        <div class="glance-label">Industry</div>
-        <div class="glance-value">Community / Nonprofit</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Behavioral Marketing Strategy</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Core Problem</div>
-        <div class="glance-value">Engagement breakdown at the decision level</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Approach</div>
-        <div class="glance-value">Decision-focused communication system redesign</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Timeframe</div>
-        <div class="glance-value">3 months</div>
-      </div>
+      <div class="glance-item"><div class="glance-label">Industry</div><div class="glance-value">Community / Nonprofit</div></div>
+      <div class="glance-item"><div class="glance-label">Focus</div><div class="glance-value">Behavioral Marketing Strategy</div></div>
+      <div class="glance-item"><div class="glance-label">Core Problem</div><div class="glance-value">Engagement breakdown at the decision level</div></div>
+      <div class="glance-item"><div class="glance-label">Approach</div><div class="glance-value">Decision-focused communication system redesign</div></div>
+      <div class="glance-item"><div class="glance-label">Timeframe</div><div class="glance-value">3 months</div></div>
     </div>
   </div>
- 
   <div class="cs-content">
- 
     <div class="cs-section-label">Overview</div>
     <h2>Engagement Was Consistent.<br/>Participation Wasn&rsquo;t.</h2>
     <p>The organization had consistent activity — but inconsistent participation. The issue wasn't effort. It was structure.</p>
     <p>Communication, programming, and execution weren't designed to guide people toward action in the moment they encountered the message. My role was to diagnose where behavior was breaking down and rebuild the system around <strong>how people actually decide to participate</strong> — not how leadership assumed they did.</p>
- 
     <hr class="cs-rule">
     <div class="cs-section-label">The Problem</div>
     <h2>People Weren&rsquo;t Disengaged.<br/>They Were Unclear.</h2>
     <p>Engagement wasn't low because people weren't interested. It was low because the path to action was unclear. Communications were inconsistent across platforms. Messaging between services, events, and outreach wasn't aligned. Members didn't know what was happening, when, or why it mattered now.</p>
     <p>People weren't disengaged from the organization. They were disengaged from <strong>what to do, when to do it, and why it mattered now.</strong></p>
- 
-    <hr class="cs-rule">
-    <div class="cs-section-label">Behavioral Diagnosis</div>
-    <h2>The Breakdown Was at<br/>the Decision Level.</h2>
-    <p>Communication was built around information, announcements, and isolated updates — but not around timing, reinforcement, or clear next steps. There was no structured reason for someone to act in the moment they saw the message.</p>
- 
     <hr class="cs-rule">
     <div class="cs-section-label">What Changed</div>
     <h2>Four Behavioral Levers<br/>Applied Systematically.</h2>
     <p><strong>1 — Unified Weekly Narrative.</strong> Each week operated as a coordinated system. Messaging aligned across services, events, and outreach — every channel reinforced the same "why now."</p>
     <p><strong>2 — Reinforced Decision Cycles Across Channels.</strong> Social → awareness. Email → clarity. Livestream → reinforcement. In-person → action.</p>
- 
-    <div class="cs-callout">
-      <div class="cs-callout-label">Behavioral Lever: Trigger Timing vs. Intent</div>
-      <p>We shifted the primary email trigger to <strong>35 minutes before the live engagement</strong> — aligning with the transition window when users move from passive routines into Sunday intentions. This drove a <strong>+23% increase in livestream viewership</strong> without increasing send volume.</p>
-    </div>
- 
-    <p><strong>3 — Friction Reduction in Participation.</strong> Every message was redesigned around a singular, clear next step. Messaging hierarchy was simplified. Timing and cadence became consistent.</p>
-    <p><strong>4 — System-Based Execution.</strong> Repeatable workflows replaced one-offs. Volunteers worked inside defined roles. Reliance on individual talent decreased.</p>
- 
+    <div class="cs-callout"><div class="cs-callout-label">Behavioral Lever: Trigger Timing vs. Intent</div><p>We shifted the primary email trigger to <strong>35 minutes before the live engagement</strong> — aligning with the transition window when users move from passive routines into Sunday intentions. This drove a <strong>+23% increase in livestream viewership</strong> without increasing send volume.</p></div>
+    <p><strong>3 — Friction Reduction in Participation.</strong> Every message was redesigned around a singular, clear next step.</p>
+    <p><strong>4 — System-Based Execution.</strong> Repeatable workflows replaced one-offs. Volunteers worked inside defined roles.</p>
     <hr class="cs-rule">
     <div class="cs-section-label">Outcomes &middot; 3 Months</div>
     <h2>Each Lift Mapped to<br/>a Specific Behavioral Lever.</h2>
     <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-num">+125%</div>
-        <div class="outcome-label">Organic Social Engagement</div>
-        <div class="outcome-note">Driven by unified narrative and clear channel roles</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num">+20%</div>
-        <div class="outcome-label">First-Time Participation</div>
-        <div class="outcome-note">Tied to friction reduction and behavior-specific CTAs</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num">+23%</div>
-        <div class="outcome-label">Livestream Viewership</div>
-        <div class="outcome-note">Directly linked to the 35-minute trigger timing shift</div>
-      </div>
+      <div class="outcome-card"><div class="outcome-num">+125%</div><div class="outcome-label">Organic Social Engagement</div><div class="outcome-note">Driven by unified narrative and clear channel roles</div></div>
+      <div class="outcome-card"><div class="outcome-num">+20%</div><div class="outcome-label">First-Time Participation</div><div class="outcome-note">Tied to friction reduction and behavior-specific CTAs</div></div>
+      <div class="outcome-card"><div class="outcome-num">+23%</div><div class="outcome-label">Livestream Viewership</div><div class="outcome-note">Directly linked to the 35-minute trigger timing shift</div></div>
     </div>
- 
     <hr class="cs-rule">
-    <div class="cs-section-label">Key Insight</div>
-    <h2>More Communication Wasn&rsquo;t<br/>the Answer. Clearer Conditions Were.</h2>
-    <div class="cs-insight">
-      <div class="cs-insight-label">Key Insight</div>
-      <p>"Engagement doesn&rsquo;t increase because you communicate more. It increases when people understand why acting now makes sense — and how to act immediately."</p>
-    </div>
- 
+    <div class="cs-insight"><div class="cs-insight-label">Key Insight</div><p>"Engagement doesn&rsquo;t increase because you communicate more. It increases when people understand why acting now makes sense — and how to act immediately."</p></div>
     <div class="cs-footer-links">
-      <a href="#writing" class="cs-footer-link" onclick="closeCaseStudy()">Explore behavioral marketing insights &rarr;</a>
+      <a href="Articles.html" class="cs-footer-link" onclick="closeCaseStudy()">Explore behavioral marketing insights &rarr;</a>
       <a href="#about" class="cs-footer-link" onclick="closeCaseStudy()">About my approach &rarr;</a>
       <a href="#contact" class="cs-footer-link" onclick="closeCaseStudy()">Get in touch &rarr;</a>
     </div>
- 
   </div>
 </div>
- 
- 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- ARTICLE 1 OVERLAY                                   -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+
+<!-- ARTICLE 1 OVERLAY -->
 <div class="article-page" id="articlePage">
- 
-  <div class="article-topbar">
-    <span class="article-topbar-brand">Megan Oliver</span>
-   <a href="#writing" class="article-back-btn" onclick="document.getElementById('articlePage').classList.remove('open'); document.body.style.overflow='';">&larr; Back to Writing</a>
-  </div>
- 
-  <div class="article-hero">
-    <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
-    <h1 class="article-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</h1>
-  </div>
- 
+  <div class="article-topbar"><span class="article-topbar-brand">Megan Oliver</span><a href="#writing" class="article-back-btn" onclick="document.getElementById('articlePage').classList.remove('open'); document.body.style.overflow='';">&larr; Back to Writing</a></div>
+  <div class="article-hero"><p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p><h1 class="article-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</h1></div>
   <div class="article-content">
- 
     <p>Personas are built around identity. Job title, age range, values, lifestyle. They answer one question very well: <em>who is this person?</em></p>
     <p>They answer a different question very poorly: <em>what are they about to do?</em></p>
     <p>And that second question is the one that actually determines whether your campaign converts.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Core Problem</h2>
+    <hr class="article-rule"><h2 class="article-h2">The Core Problem</h2>
     <p>Identity is stable. Behavior is contextual. The same person who ignores your email on Monday is your most responsive prospect on Thursday — not because they changed, but because their context did.</p>
     <p>A persona doesn't capture that. It can't. It's a static snapshot of a dynamic system.</p>
     <p>So when you build strategy around a persona, you're optimizing for who someone is. When you should be optimizing for the state someone is in.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">What Behavioral Segmentation Does Instead</h2>
+    <hr class="article-rule"><h2 class="article-h2">What Behavioral Segmentation Does Instead</h2>
     <p>Instead of asking "who is our customer," behavioral strategy asks: what conditions have to exist for this person to act? And more importantly: which of those conditions can we create, time to, or remove friction from?</p>
-    <p>This reframe changes everything:</p>
     <ul class="article-list">
       <li>You segment by decision state, not demographic</li>
       <li>You sequence messages around behavioral triggers, not calendar logic</li>
       <li>You measure conversion conditions, not awareness metrics</li>
       <li>You design for the moment of action, not the moment of exposure</li>
     </ul>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Practical Shift</h2>
-    <p>This doesn't mean personas are useless. It means they're incomplete. They tell you who you're talking to. Behavioral strategy tells you when, under what conditions, and how to reduce the distance between intent and action.</p>
-    <p>The brands that convert consistently aren't the ones with the most detailed personas. They're the ones with the clearest model of the decision environment.</p>
- 
-    <div class="article-pullquote">Personas answer &ldquo;who.&rdquo; Behavioral strategy answers &ldquo;when, why, and what removes the barrier.&rdquo;</div>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Reframe</h2>
+    <hr class="article-rule"><h2 class="article-h2">The Reframe</h2>
     <p>Stop asking: who is our customer?</p>
     <p>Start asking: what state is our customer in when they're most ready to act — and how do we build strategy around that state?</p>
-    <p>That's the shift from identity-based marketing to behavioral marketing. And it changes every downstream decision: how you segment, how you sequence, what you say, and what you measure.</p>
- 
+    <div class="article-pullquote">Personas answer &ldquo;who.&rdquo; Behavioral strategy answers &ldquo;when, why, and what removes the barrier.&rdquo;</div>
     <div class="article-footer-links">
-      <a href="#writing" class="article-footer-link" onclick="closeArticle()">More thought leadership &rarr;</a>
+      <a href="Articles.html" class="article-footer-link" onclick="closeArticle()">More thought leadership &rarr;</a>
       <a href="#about" class="article-footer-link" onclick="closeArticle()">About my approach &rarr;</a>
       <a href="#contact" class="article-footer-link" onclick="closeArticle()">Get in touch &rarr;</a>
     </div>
- 
   </div>
 </div>
- 
- 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- ARTICLE 2 OVERLAY                                   -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+
+<!-- ARTICLE 2 OVERLAY -->
 <div class="article-page" id="articlePage2">
- 
-  <div class="article-topbar">
-    <span class="article-topbar-brand">Megan Oliver</span>
- <a href="#writing" class="article-back-btn" onclick="document.getElementById('articlePage2').classList.remove('open'); document.body.style.overflow='';">&larr; Back to Writing</a>
-  </div>
- 
-  <div class="article-hero">
-    <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
-    <h1 class="article-title">Why People Don&rsquo;t Fix Bad Decisions (And What It Means for Marketing)</h1>
-  </div>
- 
+  <div class="article-topbar"><span class="article-topbar-brand">Megan Oliver</span><a href="#writing" class="article-back-btn" onclick="document.getElementById('articlePage2').classList.remove('open'); document.body.style.overflow='';">&larr; Back to Writing</a></div>
+  <div class="article-hero"><p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p><h1 class="article-title">Why People Don&rsquo;t Fix Bad Decisions (And What It Means for Marketing)</h1></div>
   <div class="article-content">
- 
     <p>I grabbed three drinks at Kroger. Not because I wanted three. Because I couldn&rsquo;t find the one I was actually looking for. So I hedged — one safe option, one &ldquo;maybe this works&rdquo; option. Then, right before checkout, I saw the one I actually wanted. And grabbed it immediately.</p>
     <p>This is a small example of a bigger pattern: people rarely correct decisions once they&rsquo;ve started them.</p>
-    <p>It wasn&rsquo;t hard to buy the third drink. It was harder to undo it.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Mechanism</h2>
-    <p>We like to think bad decisions come from bad thinking. They don&rsquo;t. They come from timing.</p>
-    <p>There are two phases happening in the brain:</p>
+    <hr class="article-rule"><h2 class="article-h2">The Mechanism</h2>
+    <p>We like to think bad decisions come from bad thinking. They don&rsquo;t. They come from timing. There are two phases happening in the brain:</p>
     <ul class="article-list">
       <li><strong>Fast Action (System 1):</strong> intuitive, effortless, momentum-driven</li>
       <li><strong>Delayed Evaluation (System 2):</strong> analytical, slow, effort-heavy</li>
     </ul>
-    <p>You act quickly. You evaluate slowly. And by the time evaluation shows up, it&rsquo;s already easier to continue than to correct. Returning something. Putting it back. Undoing the step. Starting over. All of that costs more mental energy than just&hellip; continuing.</p>
     <div class="article-pullquote">People don&rsquo;t optimize decisions. They continue them.</div>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Pattern</h2>
-    <p>Once you see it, you see it everywhere.</p>
-    <ul class="article-list">
-      <li>You add something at checkout and never remove it</li>
-      <li>You keep a subscription longer than you should</li>
-      <li>You move through a funnel even when you&rsquo;re unsure</li>
-      <li>You stick with a tool or service you&rsquo;ve already outgrown</li>
-    </ul>
-    <p>Not because those decisions are correct. Because correcting them requires more effort than continuing.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">What This Means for Marketing</h2>
-    <p>Most marketing teams ask the wrong questions: Why didn&rsquo;t they switch? Why didn&rsquo;t they cancel? Why didn&rsquo;t they choose the better option? Behavior isn&rsquo;t driven by what&rsquo;s best. It&rsquo;s driven by what&rsquo;s easiest to do next.</p>
-    <ul class="article-list">
-      <li>Upsells convert &mdash; they&rsquo;re easy to add in the moment</li>
-      <li>Churn lags &mdash; cancellation requires friction</li>
-      <li>&ldquo;Better&rdquo; products don&rsquo;t always win &mdash; switching is a cognitive load</li>
-    </ul>
-    <p>This isn&rsquo;t irrational behavior. It&rsquo;s predictable.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Strategy Layer</h2>
-    <p><strong>1 &mdash; Reduce the Cognitive Cost of Continuing.</strong> Design environments where the next step is obvious, low-effort, and already aligned with the momentum they&rsquo;re in. You&rsquo;re not persuading. You&rsquo;re removing the need for System 2 to wake up.</p>
-    <p><strong>2 &mdash; Introduce Decisions at the Peak of Momentum.</strong> The best time to ask for action is when someone is already acting. This is why upgrades work at checkout, bundling works mid-flow, and add-ons work when the cart is open.</p>
+    <hr class="article-rule"><h2 class="article-h2">The Strategy Layer</h2>
+    <p><strong>1 &mdash; Reduce the Cognitive Cost of Continuing.</strong> Design environments where the next step is obvious, low-effort, and already aligned with the momentum they&rsquo;re in.</p>
+    <p><strong>2 &mdash; Introduce Decisions at the Peak of Momentum.</strong> The best time to ask for action is when someone is already acting.</p>
     <p><strong>3 &mdash; Design to Avoid Re-Evaluation.</strong> The biggest threat to conversion isn&rsquo;t confusion — it&rsquo;s pause. A pause triggers System 2. System 2 triggers reconsideration. Reconsideration triggers abandonment.</p>
-    <div class="article-pullquote">The real goal is to reduce friction at the point of action — and remove every obstacle between the person and the decision they&rsquo;re already inclined to make.</div>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Reframe</h2>
-    <p>Most marketing focuses on reducing friction. That&rsquo;s incomplete. Because decisions don&rsquo;t happen in isolation. They happen in motion.</p>
-    <p>People don&rsquo;t always choose what&rsquo;s best. They continue with what&rsquo;s easiest.</p>
- 
     <div class="article-footer-links">
-      <a href="#writing" class="article-footer-link" onclick="closeArticle2()">More thought leadership &rarr;</a>
+      <a href="Articles.html" class="article-footer-link" onclick="closeArticle2()">More thought leadership &rarr;</a>
       <a href="#about" class="article-footer-link" onclick="closeArticle2()">About my approach &rarr;</a>
       <a href="#contact" class="article-footer-link" onclick="closeArticle2()">Get in touch &rarr;</a>
     </div>
- 
   </div>
 </div>
- 
- 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- ARTICLE 3 OVERLAY                                   -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+
+<!-- ARTICLE 3 OVERLAY -->
 <div class="article-page" id="articlePage3">
- 
-  <div class="article-topbar">
-    <span class="article-topbar-brand">Megan Oliver</span>
-   <a href="#writing" class="article-back-btn">&larr; Back to Writing</a>
-  </div>
- 
-  <div class="article-hero">
-    <p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p>
-    <h1 class="article-title">When Personalization Breaks Recognition</h1>
-  </div>
- 
+  <div class="article-topbar"><span class="article-topbar-brand">Megan Oliver</span><a href="#writing" class="article-back-btn">&larr; Back to Writing</a></div>
+  <div class="article-hero"><p class="article-eyebrow">Thought Leadership &middot; LinkedIn &middot; 2025</p><h1 class="article-title">When Personalization Breaks Recognition</h1></div>
   <div class="article-content">
- 
     <p>I was scrolling through my shows and couldn&rsquo;t find Billions. Not because it wasn&rsquo;t there. Because I was looking for it. I kept scanning past it. Paused. Scrolled back. Still missed it.</p>
-    <p>Until I realized what changed. The cover image. Instead of the cast I associate with the show, it was a different character. Still from the show. Still relevant. But not what I use to recognize it.</p>
-    <p>It didn&rsquo;t change the show. It changed how I find it. And that&rsquo;s the point.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">This is where personalization breaks.</h2>
-    <p>Most platforms assume that changing what you show will make something more relevant. Sometimes it does. But sometimes it interferes with something more important: recognition.</p>
-    <p>People don&rsquo;t navigate interfaces by reading. They scan. They rely on familiar visuals, repeated patterns, and quick identification. You don&rsquo;t search for what you&rsquo;ve already chosen. You look for what you recognize.</p>
-    <p>So when that visual anchor changes, even slightly, the cost isn&rsquo;t confusion. It&rsquo;s friction. Not enough to stop you completely. Just enough to slow you down. Make you second guess. Make you miss it once. Then twice. That&rsquo;s enough to break the experience.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Misunderstanding</h2>
-    <p>This wasn&rsquo;t random. It was likely an attempt at personalization, or representation, or both. That&rsquo;s not the issue. The issue is the system misunderstood the job of that surface.</p>
-    <p>The cover image isn&rsquo;t there to experiment. It isn&rsquo;t there to optimize identity. It isn&rsquo;t even there to drive engagement. It exists to do one thing: help you recognize what you&rsquo;re looking for immediately. When that function is disrupted, everything downstream gets harder.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Behavioral Layer</h2>
-    <p>Not every surface should be personalized. Not every interaction should be optimized. Not every variable should be tested. Because different parts of a system do different jobs &mdash; and optimizing one can break another.</p>
-    <ul class="article-list">
-      <li>Some surfaces are for discovery, persuasion, exploration</li>
-      <li>Others are for retrieval</li>
-    </ul>
-    <p>And retrieval depends on stability. Consistency. Familiarity. When you personalize a retrieval layer, you risk breaking recognition. And once recognition breaks, navigation slows.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Broader Pattern</h2>
-    <p>This doesn&rsquo;t just happen in streaming. It shows up everywhere.</p>
-    <ul class="article-list">
-      <li>Product thumbnails that change too often</li>
-      <li>Navigation labels that get &ldquo;optimized&rdquo; into ambiguity</li>
-      <li>Landing pages that shift structure between visits</li>
-      <li>Interfaces that prioritize novelty over recognition</li>
-    </ul>
-    <p>I saw this working with a fashion brand. The creative team wanted to display clothes in editorial, high-concept styling &mdash; interesting for awareness, compelling for brand identity. But the product pages were pulling from the same imagery. Someone arriving to buy a specific jacket wasn&rsquo;t exploring. They were retrieving. The editorial images weren&rsquo;t wrong. They were in the wrong place.</p>
-    <div class="article-pullquote">When you put discovery-layer content on a retrieval-layer surface, you don&rsquo;t elevate the experience. You interrupt it.</div>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Strategic Takeaway</h2>
+    <p>Until I realized what changed. The cover image. It didn&rsquo;t change the show. It changed how I find it. And that&rsquo;s the point.</p>
+    <hr class="article-rule"><h2 class="article-h2">This is where personalization breaks.</h2>
+    <p>People don&rsquo;t navigate interfaces by reading. They scan. They rely on familiar visuals, repeated patterns, and quick identification. When that visual anchor changes, the cost isn&rsquo;t confusion. It&rsquo;s friction.</p>
+    <hr class="article-rule"><h2 class="article-h2">The Strategic Takeaway</h2>
     <p>Separate the decision layer from the recognition layer.</p>
     <ul class="article-list">
       <li><strong>Personalize where people are deciding:</strong> recommendations, offers, messaging</li>
       <li><strong>Stabilize where people are navigating:</strong> labels, structure, visual anchors</li>
     </ul>
-    <p>Search results, navigation, and &ldquo;continue watching&rdquo; modules should stay highly stable. Hero banners, carousels, and promotional tiles can carry the personalization. Because those are not the same job.</p>
- 
-    <hr class="article-rule">
-    <h2 class="article-h2">The Reframe</h2>
-    <p>Personalization is often treated as universally good. More relevance. More engagement. Better outcomes. But relevance isn&rsquo;t always about what you show. Sometimes it&rsquo;s about how easily someone can find what they already decided they want.</p>
-    <p>If you change how something is recognized, you change how it&rsquo;s used. And not every system can afford to trade recognition for relevance.</p>
- 
+    <div class="article-pullquote">When you put discovery-layer content on a retrieval-layer surface, you don&rsquo;t elevate the experience. You interrupt it.</div>
     <div class="article-footer-links">
-      <a href="#writing" class="article-footer-link" onclick="closeArticle3()">More thought leadership &rarr;</a>
+      <a href="Articles.html" class="article-footer-link" onclick="closeArticle3()">More thought leadership &rarr;</a>
       <a href="#about" class="article-footer-link" onclick="closeArticle3()">About my approach &rarr;</a>
       <a href="#contact" class="article-footer-link" onclick="closeArticle3()">Get in touch &rarr;</a>
     </div>
- 
   </div>
 </div>
- 
- 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- CASE STUDY 2 OVERLAY                                -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+
+<!-- CASE STUDY 2 OVERLAY -->
 <div class="cs-page" id="csPage2">
-
-  <div class="cs-topbar">
-    <span class="cs-topbar-brand">Megan Oliver</span>
-    <button class="cs-back-btn" onclick="closeCaseStudy2()">
-      <span>&larr;</span> Back to Work
-    </button>
-  </div>
-
+  <div class="cs-topbar"><span class="cs-topbar-brand">Megan Oliver</span><button class="cs-back-btn" onclick="closeCaseStudy2()"><span>&larr;</span> Back to Work</button></div>
   <div class="cs-hero">
     <p class="cs-hero-eyebrow">Case Study &middot; National Nonprofit / Public Health</p>
     <h1>Closing the Gap Between<br/>Awareness and Action</h1>
     <div class="glance-strip" style="margin-top:2.5rem;">
-      <div class="glance-item">
-        <div class="glance-label">Industry</div>
-        <div class="glance-value">National Nonprofit / Public Health</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Role</div>
-        <div class="glance-value">Social Media &amp; Email Marketing Lead</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Core Problem</div>
-        <div class="glance-value">Awareness not converting to behavior</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Approach</div>
-        <div class="glance-value">Friction reduction at the decision level</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Behavioral barrier diagnosis &amp; messaging redesign</div>
-      </div>
+      <div class="glance-item"><div class="glance-label">Industry</div><div class="glance-value">National Nonprofit / Public Health</div></div>
+      <div class="glance-item"><div class="glance-label">Role</div><div class="glance-value">Social Media &amp; Email Marketing Lead</div></div>
+      <div class="glance-item"><div class="glance-label">Core Problem</div><div class="glance-value">Awareness not converting to behavior</div></div>
+      <div class="glance-item"><div class="glance-label">Approach</div><div class="glance-value">Friction reduction at the decision level</div></div>
+      <div class="glance-item"><div class="glance-label">Focus</div><div class="glance-value">Behavioral barrier diagnosis &amp; messaging redesign</div></div>
     </div>
   </div>
-
   <div class="cs-content">
-
     <div class="cs-section-label">Overview</div>
     <h2>Awareness Was High.<br/>Behavior Wasn&rsquo;t Changing.</h2>
-    <p>Audiences were already exposed to the nutritional benefits of seafood. They knew it was good for them. But that awareness wasn't translating into consistent behavior at the moment of decision — the grocery store, the meal plan, the dinner table.</p>
+    <p>Audiences were already exposed to the nutritional benefits of seafood. They knew it was good for them. But that awareness wasn't translating into consistent behavior at the moment of decision.</p>
     <p>The gap wasn't informational. It was behavioral. My role was to diagnose the friction points preventing action and rebuild the messaging system around <strong>the actual conditions under which people decide what to eat.</strong></p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">The Problem</div>
-    <h2>The Barrier Was at<br/>the Moment of Decision.</h2>
-    <p>Surveys and informal focus groups conducted at health fairs surfaced a consistent pattern. People weren't avoiding seafood because they didn't know it was healthy. They were avoiding it because the decision to buy and prepare it carried too much perceived friction.</p>
-
-    <div class="cs-callout">
-      <div class="cs-callout-label">Behavioral Diagnosis: Four Key Friction Points</div>
-      <p><strong>Perceived cost</strong> — seafood felt less affordable than alternatives. <strong>Limited exposure</strong> — low familiarity with different types. <strong>Low cooking confidence</strong> — uncertainty around preparation. <strong>Abstract benefits</strong> — nutrition messaging lacked personal relevance at the moment of choice.</p>
-    </div>
-
-    <p>Each of these barriers created friction at the decision point — not at awareness. More information wasn't going to close the gap. A different strategy would.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Strategy</div>
-    <h2>Reduce Friction.<br/>Don&rsquo;t Add Information.</h2>
-    <p>The strategy was built around accessibility and confidence — not nutrition facts. If the barriers were cost, unfamiliarity, and preparation anxiety, the messaging needed to directly reduce those barriers at the moment someone was deciding.</p>
-    <p><strong>Messaging was simplified</strong> to make seafood feel approachable and immediately actionable. <strong>Content highlighted affordable options</strong> and easy meal ideas rather than health statistics. <strong>Educational content built confidence</strong> around preparation in practical, low-barrier formats.</p>
-    <p><strong>Email campaigns were segmented</strong> based on audience interests and behavioral timing. <strong>Social and email were coordinated</strong> to do different jobs — social drove repeated exposure and normalization; email drove deeper engagement and direct next steps.</p>
-
-    <div class="cs-insight">
-      <div class="cs-insight-label">Strategic Principle</div>
-      <p>&ldquo;Awareness does not drive behavior. Reducing friction at the point of decision does.&rdquo;</p>
-    </div>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Execution</div>
-    <h2>In-Person Insight.<br/>Channel-Specific Roles.</h2>
-    <p>In-person health fair campaigns were used for two purposes: gathering behavioral insight directly from the audience, and capturing attention at a moment of existing engagement with health topics.</p>
-    <p>Social media content normalized seafood consumption through repeated, low-friction exposure — showing it as an ordinary, accessible dinner choice rather than a nutritional challenge. Segmented email campaigns then spoke directly to the specific barrier each audience segment had identified, with clear, low-effort next steps.</p>
-    <p>Messaging and content were refined based on engagement patterns throughout the campaign — adjusting what was working and cutting what wasn't.</p>
-
+    <div class="cs-callout"><div class="cs-callout-label">Behavioral Diagnosis: Four Key Friction Points</div><p><strong>Perceived cost</strong> — seafood felt less affordable. <strong>Limited exposure</strong> — low familiarity with different types. <strong>Low cooking confidence</strong> — uncertainty around preparation. <strong>Abstract benefits</strong> — nutrition messaging lacked personal relevance at the moment of choice.</p></div>
+    <div class="cs-insight"><div class="cs-insight-label">Strategic Principle</div><p>&ldquo;Awareness does not drive behavior. Reducing friction at the point of decision does.&rdquo;</p></div>
     <hr class="cs-rule">
     <div class="cs-section-label">Outcomes</div>
     <h2>From Passive Exposure<br/>to Active Engagement.</h2>
     <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-num">5×</div>
-        <div class="outcome-label">Click-Through Rate</div>
-        <div class="outcome-note">Increased from 0.5% to 2.7%</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num">+63%</div>
-        <div class="outcome-label">Social Media Engagement</div>
-        <div class="outcome-note">Driven by normalized, accessible content</div>
-      </div>
-      <div class="outcome-card" style="background: var(--green-mid);">
-        <div class="outcome-num" style="font-size:1.6rem; padding-top:0.5rem;">Behavioral</div>
-        <div class="outcome-label">Shift Achieved</div>
-        <div class="outcome-note">Messaging moved from informative to actionable</div>
-      </div>
+      <div class="outcome-card"><div class="outcome-num">5×</div><div class="outcome-label">Click-Through Rate</div><div class="outcome-note">Increased from 0.5% to 2.7%</div></div>
+      <div class="outcome-card"><div class="outcome-num">+63%</div><div class="outcome-label">Social Media Engagement</div><div class="outcome-note">Driven by normalized, accessible content</div></div>
+      <div class="outcome-card" style="background: var(--green-mid);"><div class="outcome-num" style="font-size:1.6rem; padding-top:0.5rem;">Behavioral</div><div class="outcome-label">Shift Achieved</div><div class="outcome-note">Messaging moved from informative to actionable</div></div>
     </div>
-    <p>The improvement in click-through rate suggested the messaging was no longer just informative — it was actionable. It was reaching people at the right moment, with the right framing, and reducing enough friction to produce a next step.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Key Insight</div>
-    <h2>The Right Message at<br/>the Right Friction Point.</h2>
-    <div class="cs-insight">
-      <div class="cs-insight-label">Key Insight</div>
-      <p>&ldquo;When messaging is built around the barriers people actually face at the moment of decision, the gap between awareness and action closes — not because people were persuaded, but because the path forward got easier.&rdquo;</p>
-    </div>
-
     <div class="cs-footer-links">
-      <a href="#writing" class="cs-footer-link" onclick="closeCaseStudy2()">Explore behavioral marketing insights &rarr;</a>
+      <a href="Articles.html" class="cs-footer-link" onclick="closeCaseStudy2()">Explore behavioral marketing insights &rarr;</a>
       <a href="#about" class="cs-footer-link" onclick="closeCaseStudy2()">About my approach &rarr;</a>
       <a href="#contact" class="cs-footer-link" onclick="closeCaseStudy2()">Get in touch &rarr;</a>
     </div>
-
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- CASE STUDY 3 OVERLAY                                -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- CASE STUDY 3 OVERLAY -->
 <div class="cs-page" id="csPage3">
-
-  <div class="cs-topbar">
-    <span class="cs-topbar-brand">Megan Oliver</span>
-    <button class="cs-back-btn" onclick="closeCaseStudy3()">
-      <span>&larr;</span> Back to Work
-    </button>
-  </div>
-
+  <div class="cs-topbar"><span class="cs-topbar-brand">Megan Oliver</span><button class="cs-back-btn" onclick="closeCaseStudy3()"><span>&larr;</span> Back to Work</button></div>
   <div class="cs-hero">
     <p class="cs-hero-eyebrow">Case Study &middot; Early-Stage Growth / Day Zero</p>
     <h1>Creating Demand<br/>from Zero</h1>
     <div class="glance-strip" style="margin-top:2.5rem;">
-      <div class="glance-item">
-        <div class="glance-label">Organization</div>
-        <div class="glance-value">The Write Lane</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Role</div>
-        <div class="glance-value">Marketing Strategist (Day Zero)</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Core Problem</div>
-        <div class="glance-value">No audience, no demand, no behavioral precedent</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Approach</div>
-        <div class="glance-value">Community-driven behavioral momentum</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Early-stage growth &amp; client acquisition</div>
-      </div>
+      <div class="glance-item"><div class="glance-label">Organization</div><div class="glance-value">The Write Lane</div></div>
+      <div class="glance-item"><div class="glance-label">Role</div><div class="glance-value">Marketing Strategist (Day Zero)</div></div>
+      <div class="glance-item"><div class="glance-label">Core Problem</div><div class="glance-value">No audience, no demand, no behavioral precedent</div></div>
+      <div class="glance-item"><div class="glance-label">Approach</div><div class="glance-value">Community-driven behavioral momentum</div></div>
+      <div class="glance-item"><div class="glance-label">Focus</div><div class="glance-value">Early-stage growth &amp; client acquisition</div></div>
     </div>
   </div>
-
   <div class="cs-content">
-
     <div class="cs-section-label">Overview</div>
     <h2>The Challenge Wasn&rsquo;t<br/>Low Conversion. It Was None.</h2>
-    <p>At launch, The Write Lane had no audience, no client base, and no existing demand. Most marketing frameworks assume some baseline of awareness or interest to work with. This engagement started at zero.</p>
-    <p>The primary risk at this stage isn't low conversion. It's <strong>no behavior at all.</strong> People weren't choosing between options — they were deciding whether to engage with something they'd never heard of.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Behavioral Diagnosis</div>
-    <h2>The Barrier Was<br/>Motivation, Not Messaging.</h2>
-    <p>Before any messaging could work, the underlying behavioral barriers had to be identified. Three core obstacles were present from day one.</p>
-
-    <div class="cs-callout">
-      <div class="cs-callout-label">Behavioral Diagnosis: Three Zero-Stage Barriers</div>
-      <p><strong>No familiarity or trust</strong> — there was no existing relationship to build on. <strong>No established reason to engage</strong> — the value proposition had never been tested against a real audience. <strong>No behavioral precedent</strong> — there was no social proof, no word of mouth, no pattern of participation to reference.</p>
-    </div>
-
-    <p>People were not choosing between The Write Lane and a competitor. They were deciding whether to engage at all — which requires a completely different strategic approach than conversion optimization.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Strategy</div>
-    <h2>Build Momentum Before<br/>Optimizing for Scale.</h2>
-    <p>The strategy focused on creating behavioral momentum through community-based exposure and clear value communication. The goal was not immediate scale — it was to make the first interaction feel easy, relevant, and repeatable.</p>
-    <p><strong>Positioning clarity</strong> ensured the value was immediately understandable to someone with zero prior context. <strong>Local and community-driven marketing</strong> reduced the distance between awareness and action by meeting people where existing trust already lived. <strong>Consistent presence</strong> built familiarity over time, replacing the social proof that didn't yet exist. <strong>Accessible entry points</strong> made initial engagement feel low-risk and natural.</p>
-
-    <div class="cs-insight">
-      <div class="cs-insight-label">Strategic Principle</div>
-      <p>&ldquo;Early-stage growth doesn&rsquo;t come from optimizing conversion. It comes from making the first interaction easy enough to happen — and repeatable enough to grow.&rdquo;</p>
-    </div>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Execution</div>
-    <h2>Community First.<br/>Campaigns Second.</h2>
-    <p>Early awareness was built through community engagement and local outreach — channels where trust already existed and where a new organization could borrow credibility rather than build it from scratch.</p>
-    <p>Messaging was reinforced through consistent communication and presence across touchpoints. Every interaction was designed to create a clear, low-friction pathway for initial participation. The approach was adapted continuously based on observed demand signals and participation patterns — not assumptions.</p>
-
+    <p>At launch, The Write Lane had no audience, no client base, and no existing demand. The primary risk at this stage isn't low conversion. It's <strong>no behavior at all.</strong></p>
+    <div class="cs-callout"><div class="cs-callout-label">Three Zero-Stage Barriers</div><p><strong>No familiarity or trust.</strong> <strong>No established reason to engage.</strong> <strong>No behavioral precedent</strong> — no social proof, no word of mouth, no pattern of participation to reference.</p></div>
+    <div class="cs-insight"><div class="cs-insight-label">Strategic Principle</div><p>&ldquo;Early-stage growth doesn&rsquo;t come from optimizing conversion. It comes from making the first interaction easy enough to happen — and repeatable enough to grow.&rdquo;</p></div>
     <hr class="cs-rule">
     <div class="cs-section-label">Outcomes</div>
     <h2>From No Demand<br/>to Operational Pressure.</h2>
     <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-num" style="font-size:2rem;">0 → Waitlist</div>
-        <div class="outcome-label">Client Growth</div>
-        <div class="outcome-note">From no clients to a full waitlist</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num" style="font-size:2rem;">Hired</div>
-        <div class="outcome-label">Additional Teachers</div>
-        <div class="outcome-note">Required to meet demand created by the campaign</div>
-      </div>
-      <div class="outcome-card" style="background: var(--green-mid);">
-        <div class="outcome-num" style="font-size:1.6rem; padding-top:0.5rem;">Acquired</div>
-        <div class="outcome-label">Business Traction</div>
-        <div class="outcome-note">Sufficient value established to support acquisition</div>
-      </div>
+      <div class="outcome-card"><div class="outcome-num" style="font-size:2rem;">0 → Waitlist</div><div class="outcome-label">Client Growth</div><div class="outcome-note">From no clients to a full waitlist</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="font-size:2rem;">Hired</div><div class="outcome-label">Additional Teachers</div><div class="outcome-note">Required to meet demand created by the campaign</div></div>
+      <div class="outcome-card" style="background: var(--green-mid);"><div class="outcome-num" style="font-size:1.6rem; padding-top:0.5rem;">Acquired</div><div class="outcome-label">Business Traction</div><div class="outcome-note">Sufficient value established to support acquisition</div></div>
     </div>
-    <p>The growth was not driven by isolated campaigns. It was driven by consistently reducing the barriers to initial engagement and reinforcing participation over time — until demand created its own momentum.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Key Insight</div>
-    <h2>Make the First Interaction<br/>Easy Enough to Happen.</h2>
-    <div class="cs-insight">
-      <div class="cs-insight-label">Key Insight</div>
-      <p>&ldquo;When there is no existing demand, the job of marketing is not persuasion. It is friction removal — making the first interaction feel natural, low-risk, and worth repeating.&rdquo;</p>
-    </div>
-
     <div class="cs-footer-links">
-      <a href="#writing" class="cs-footer-link" onclick="closeCaseStudy3()">Explore behavioral marketing insights &rarr;</a>
+      <a href="Articles.html" class="cs-footer-link" onclick="closeCaseStudy3()">Explore behavioral marketing insights &rarr;</a>
       <a href="#about" class="cs-footer-link" onclick="closeCaseStudy3()">About my approach &rarr;</a>
       <a href="#contact" class="cs-footer-link" onclick="closeCaseStudy3()">Get in touch &rarr;</a>
     </div>
-
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- FRAMEWORK 1 OVERLAY: C.O.R.E                        -->
-<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- FRAMEWORK 1 OVERLAY -->
 <div class="cs-page" id="frameworkPage1">
-
-  <div class="cs-topbar">
-    <span class="cs-topbar-brand">Megan Oliver</span>
-    <button class="cs-back-btn" onclick="closeFramework1()">
-      <span>&larr;</span> Back to Frameworks
-    </button>
-  </div>
-
+  <div class="cs-topbar"><span class="cs-topbar-brand">Megan Oliver</span><button class="cs-back-btn" onclick="closeFramework1()"><span>&larr;</span> Back to Frameworks</button></div>
   <div class="cs-hero">
     <p class="cs-hero-eyebrow">Framework &middot; Decision Environment</p>
     <h1>C.O.R.E<br/>A Behavioral Approach to Marketing Strategy</h1>
     <div class="glance-strip" style="margin-top:2.5rem;">
-      <div class="glance-item">
-        <div class="glance-label">Type</div>
-        <div class="glance-value">Strategic Framework</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Decision Environment Design</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Application</div>
-        <div class="glance-value">Marketing Strategy</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Core Shift</div>
-        <div class="glance-value">From audience profiles to decision moments</div>
-      </div>
+      <div class="glance-item"><div class="glance-label">Type</div><div class="glance-value">Strategic Framework</div></div>
+      <div class="glance-item"><div class="glance-label">Focus</div><div class="glance-value">Decision Environment Design</div></div>
+      <div class="glance-item"><div class="glance-label">Application</div><div class="glance-value">Marketing Strategy</div></div>
+      <div class="glance-item"><div class="glance-label">Core Shift</div><div class="glance-value">From audience profiles to decision moments</div></div>
     </div>
   </div>
-
   <div class="cs-content">
-
     <div class="cs-section-label">The Problem</div>
     <h2>Most Marketing Is Built<br/>Around Who Someone Is.</h2>
     <p>Demographics. Personas. Interests. Identity. That's useful — but it's incomplete. Because behavior doesn't happen at the level of identity. It happens in moments.</p>
-    <p>Marketing often assumes that if the message is right, the behavior will follow. Better storytelling. Stronger positioning. More precise targeting. Sometimes that works. But when it doesn't, the problem usually isn't the message. <strong>It's the moment.</strong></p>
-
-    <div class="cs-insight">
-      <div class="cs-insight-label">Core Shift</div>
-      <p>&ldquo;What someone is experiencing when they encounter the message matters just as much as what the message says.&rdquo;</p>
-    </div>
-
+    <div class="cs-insight"><div class="cs-insight-label">Core Shift</div><p>&ldquo;What someone is experiencing when they encounter the message matters just as much as what the message says.&rdquo;</p></div>
     <hr class="cs-rule">
-    <div class="cs-section-label">The Shift</div>
-    <h2>From Identity to<br/>Decision Moment.</h2>
-    <p>Instead of asking: <em>Who is this person? What do they care about?</em></p>
-    <p>This approach asks: <em>What is happening when they have to decide?</em></p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">What Shapes Behavior</div>
-    <h2>Five Factors at the<br/>Point of Decision.</h2>
-    <p>At the moment of decision, behavior is influenced by a combination of factors:</p>
-
-    <div class="cs-callout">
-      <div class="cs-callout-label">The Five Decision Factors</div>
-      <p><strong>Context</strong> — where they are, what they're doing, what just happened. <strong>Timing</strong> — whether the moment supports action or delay. <strong>Friction</strong> — how much effort, uncertainty, or complexity sits between intent and action. <strong>Default paths</strong> — what is easiest, most visible, or requires the least thought. <strong>Emotional state</strong> — what they're feeling in that moment, not just what they believe overall.</p>
-    </div>
-
-    <p>These factors determine whether someone moves forward, hesitates, or does nothing at all.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">What Changes in Practice</div>
-    <h2>From Optimizing Messages<br/>to Designing Environments.</h2>
-    <p>This shifts the work from optimizing messages to designing decision environments. Instead of focusing only on audience profiles, messaging variations, and creative concepts — the focus expands to how easy it is to act, what the next step looks like, when the message shows up, and what the environment is encouraging or discouraging.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">How It's Applied</div>
-    <h2>Start With the Behavior<br/>That Isn&rsquo;t Happening.</h2>
-    <p>The work starts by identifying the behavior that isn't happening. Then analyzing what the person is encountering at that moment, identifying where friction, ambiguity, or misalignment exists, and restructuring the path so the action becomes clearer and easier.</p>
-    <p>Sometimes that means changing messaging. Often it means changing structure, timing, sequencing, or the environment itself.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">The Outcome</div>
-    <h2>When the Moment<br/>Makes Sense.</h2>
-    <div class="cs-insight">
-      <div class="cs-insight-label">Core Idea</div>
-      <p>&ldquo;Knowing your audience isn&rsquo;t enough. You have to understand what they&rsquo;re standing in front of when they decide — and design around that.&rdquo;</p>
-    </div>
-
+    <div class="cs-callout"><div class="cs-callout-label">The Five Decision Factors</div><p><strong>Context</strong> — where they are, what they're doing, what just happened. <strong>Timing</strong> — whether the moment supports action or delay. <strong>Friction</strong> — how much effort sits between intent and action. <strong>Default paths</strong> — what is easiest or requires the least thought. <strong>Emotional state</strong> — what they're feeling in that moment.</p></div>
+    <div class="cs-insight"><div class="cs-insight-label">Core Idea</div><p>&ldquo;Knowing your audience isn&rsquo;t enough. You have to understand what they&rsquo;re standing in front of when they decide — and design around that.&rdquo;</p></div>
     <div class="cs-footer-links">
-      <a href="#frameworks" class="cs-footer-link" onclick="closeFramework1()">See B.E.A.M Framework &rarr;</a>
+      <a href="Frameworks.html" class="cs-footer-link" onclick="closeFramework1()">See all frameworks &rarr;</a>
       <a href="#portfolio" class="cs-footer-link" onclick="closeFramework1()">View case studies &rarr;</a>
       <a href="#contact" class="cs-footer-link" onclick="closeFramework1()">Get in touch &rarr;</a>
     </div>
-
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- FRAMEWORK 2 OVERLAY: B.E.A.M                        -->
-<!-- ═══════════════════════════════════════════════════ -->
+<!-- FRAMEWORK 2 OVERLAY -->
 <div class="cs-page" id="frameworkPage2">
-
-  <div class="cs-topbar">
-    <span class="cs-topbar-brand">Megan Oliver</span>
-    <button class="cs-back-btn" onclick="closeFramework2()">
-      <span>&larr;</span> Back to Frameworks
-    </button>
-  </div>
-
+  <div class="cs-topbar"><span class="cs-topbar-brand">Megan Oliver</span><button class="cs-back-btn" onclick="closeFramework2()"><span>&larr;</span> Back to Frameworks</button></div>
   <div class="cs-hero">
     <p class="cs-hero-eyebrow">Framework &middot; Behavioral Diagnosis</p>
     <h1>B.E.A.M<br/>A Behavioral Approach to Diagnosing Action</h1>
     <div class="glance-strip" style="margin-top:2.5rem;">
-      <div class="glance-item">
-        <div class="glance-label">Type</div>
-        <div class="glance-value">Diagnostic Framework</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Barrier Identification</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Application</div>
-        <div class="glance-value">Behavioral Marketing</div>
-      </div>
-      <div class="glance-item">
-        <div class="glance-label">Core Shift</div>
-        <div class="glance-value">From better messaging to removing barriers</div>
-      </div>
+      <div class="glance-item"><div class="glance-label">Type</div><div class="glance-value">Diagnostic Framework</div></div>
+      <div class="glance-item"><div class="glance-label">Focus</div><div class="glance-value">Barrier Identification</div></div>
+      <div class="glance-item"><div class="glance-label">Application</div><div class="glance-value">Behavioral Marketing</div></div>
+      <div class="glance-item"><div class="glance-label">Core Shift</div><div class="glance-value">From better messaging to removing barriers</div></div>
     </div>
   </div>
-
   <div class="cs-content">
-
     <div class="cs-section-label">The Problem</div>
     <h2>When Behavior Isn&rsquo;t Happening,<br/>We Fix the Wrong Thing.</h2>
-    <p>When behavior isn't happening, the default response is to fix the message. Make it clearer. More persuasive. More targeted. But most of the time, the issue isn't the message. <strong>It's what's happening at the moment someone has to act.</strong></p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">The Core Idea</div>
-    <h2>Behavior Fails for a<br/>Limited Number of Reasons.</h2>
-    <p>Either the person can't act, the environment doesn't support action, or the moment doesn't feel right. And even when the barrier is clear, the intervention only works if it matches what the person is experiencing in that moment.</p>
-
-    <div class="cs-callout">
-      <div class="cs-callout-label">Start Here</div>
-      <p>Begin with the actual behavior — not awareness, not engagement. The specific action: submit the form, book the appointment, click through, attend the event, complete the purchase. If that action isn't happening, something is blocking it.</p>
-    </div>
-
+    <p>When behavior isn't happening, the default response is to fix the message. But most of the time, the issue isn't the message. <strong>It's what's happening at the moment someone has to act.</strong></p>
+    <div class="cs-callout"><div class="cs-callout-label">Start Here</div><p>Begin with the actual behavior — not awareness, not engagement. The specific action: submit the form, book the appointment, click through, attend the event, complete the purchase. If that action isn't happening, something is blocking it.</p></div>
     <hr class="cs-rule">
     <div class="cs-section-label">Three Primary Barriers</div>
-    <h2>What Gets<br/>in the Way.</h2>
-
+    <h2>What Gets in the Way.</h2>
     <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-num" style="font-size:1.5rem;">Ability</div>
-        <div class="outcome-label">The person can't act</div>
-        <div class="outcome-note">Unclear next step, too much information, uncertainty, low confidence</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num" style="font-size:1.5rem;">Environment</div>
-        <div class="outcome-label">The path isn't supported</div>
-        <div class="outcome-note">Too many steps, poor timing, low visibility, unnecessary friction</div>
-      </div>
-      <div class="outcome-card" style="background:var(--green-mid);">
-        <div class="outcome-num" style="font-size:1.5rem;">Motivation</div>
-        <div class="outcome-label">No pull to act now</div>
-        <div class="outcome-note">Low urgency, weak relevance, competing priorities, emotional resistance</div>
-      </div>
+      <div class="outcome-card"><div class="outcome-num" style="font-size:1.5rem;">Ability</div><div class="outcome-label">The person can't act</div><div class="outcome-note">Unclear next step, too much information, uncertainty, low confidence</div></div>
+      <div class="outcome-card"><div class="outcome-num" style="font-size:1.5rem;">Environment</div><div class="outcome-label">The path isn't supported</div><div class="outcome-note">Too many steps, poor timing, low visibility, unnecessary friction</div></div>
+      <div class="outcome-card" style="background:var(--green-mid);"><div class="outcome-num" style="font-size:1.5rem;">Motivation</div><div class="outcome-label">No pull to act now</div><div class="outcome-note">Low urgency, weak relevance, competing priorities, emotional resistance</div></div>
     </div>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">Emotional State</div>
-    <h2>What the Person Is<br/>Experiencing at That Moment.</h2>
-    <p>At the point of decision, behavior is shaped by emotional state — not in a broad, identity-driven sense, but in the moment. Confusion slows action. Overwhelm delays action. Anxiety avoids action. Indifference ignores action. Confidence enables action. Curiosity encourages exploration.</p>
-    <p>The goal isn't to map every emotion. It's to identify the one most influencing the decision.</p>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">The Intervention</div>
-    <h2>Four Moments That<br/>Shift Behavior.</h2>
-
-    <div class="cs-callout">
-      <div class="cs-callout-label">Clarification</div>
-      <p>Removes ambiguity and makes the next step obvious. Used when people are confused or overwhelmed.</p>
-    </div>
-    <div class="cs-callout">
-      <div class="cs-callout-label">Elevation</div>
-      <p>Increases attention and urgency. Used when people are disengaged or delaying.</p>
-    </div>
-    <div class="cs-callout">
-      <div class="cs-callout-label">Reinforcement</div>
-      <p>Builds confidence and reduces hesitation. Used when people are uncertain or lack confidence.</p>
-    </div>
-    <div class="cs-callout">
-      <div class="cs-callout-label">Connection</div>
-      <p>Builds trust and emotional safety. Used when people are skeptical or disconnected.</p>
-    </div>
-
-    <hr class="cs-rule">
-    <div class="cs-section-label">The Outcome</div>
-    <h2>When Barrier, State, and<br/>Intervention Are Aligned.</h2>
-    <div class="cs-insight">
-      <div class="cs-insight-label">Core Idea</div>
-      <p>&ldquo;If someone isn&rsquo;t acting, something is blocking them. The job isn&rsquo;t just to communicate better. It&rsquo;s to identify what&rsquo;s in the way — and remove it.&rdquo;</p>
-    </div>
-
+    <div class="cs-callout"><div class="cs-callout-label">Clarification</div><p>Removes ambiguity. Used when people are confused or overwhelmed.</p></div>
+    <div class="cs-callout"><div class="cs-callout-label">Elevation</div><p>Increases urgency. Used when people are disengaged or delaying.</p></div>
+    <div class="cs-callout"><div class="cs-callout-label">Reinforcement</div><p>Builds confidence. Used when people are uncertain or lack confidence.</p></div>
+    <div class="cs-callout"><div class="cs-callout-label">Connection</div><p>Builds trust. Used when people are skeptical or disconnected.</p></div>
+    <div class="cs-insight"><div class="cs-insight-label">Core Idea</div><p>&ldquo;If someone isn&rsquo;t acting, something is blocking them. The job isn&rsquo;t just to communicate better. It&rsquo;s to identify what&rsquo;s in the way — and remove it.&rdquo;</p></div>
     <div class="cs-footer-links">
-      <a href="#frameworks" class="cs-footer-link" onclick="closeFramework2()">See C.O.R.E Framework &rarr;</a>
+      <a href="Frameworks.html" class="cs-footer-link" onclick="closeFramework2()">See all frameworks &rarr;</a>
       <a href="#portfolio" class="cs-footer-link" onclick="closeFramework2()">View case studies &rarr;</a>
       <a href="#contact" class="cs-footer-link" onclick="closeFramework2()">Get in touch &rarr;</a>
     </div>
-
   </div>
 </div>
 
+
 <script>
- 
-  // ── Framework 1 ──
-  function openFramework1() {
-    const page = document.getElementById('frameworkPage1');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeFramework1() {
-    document.getElementById('frameworkPage1').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  function openFramework1() { const p=document.getElementById('frameworkPage1'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeFramework1() { document.getElementById('frameworkPage1').classList.remove('open'); document.body.style.overflow=''; }
+  function openFramework2() { const p=document.getElementById('frameworkPage2'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeFramework2() { document.getElementById('frameworkPage2').classList.remove('open'); document.body.style.overflow=''; }
+  function openCaseStudy3() { const p=document.getElementById('csPage3'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeCaseStudy3() { document.getElementById('csPage3').classList.remove('open'); document.body.style.overflow=''; }
+  function openCaseStudy2() { const p=document.getElementById('csPage2'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeCaseStudy2() { document.getElementById('csPage2').classList.remove('open'); document.body.style.overflow=''; }
+  function openCaseStudy() { const p=document.getElementById('csPage'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeCaseStudy() { document.getElementById('csPage').classList.remove('open'); document.body.style.overflow=''; }
+  function openArticle() { const p=document.getElementById('articlePage'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeArticle() { document.getElementById('articlePage').classList.remove('open'); document.body.style.overflow=''; document.getElementById('writing').scrollIntoView(); }
+  function openArticle2() { const p=document.getElementById('articlePage2'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeArticle2() { document.getElementById('articlePage2').classList.remove('open'); document.body.style.overflow=''; document.getElementById('writing').scrollIntoView(); }
+  function openArticle3() { const p=document.getElementById('articlePage3'); p.classList.add('open'); document.body.style.overflow='hidden'; p.scrollTop=0; }
+  function closeArticle3() { document.getElementById('articlePage3').classList.remove('open'); document.body.style.overflow=''; }
 
-  // ── Framework 2 ──
-  function openFramework2() {
-    const page = document.getElementById('frameworkPage2');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeFramework2() {
-    document.getElementById('frameworkPage2').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // ── Case Study 3 ──
-  function openCaseStudy3() {
-    const page = document.getElementById('csPage3');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeCaseStudy3() {
-    document.getElementById('csPage3').classList.remove('open');
-    document.body.style.overflow = '';
-  } 
-
-  // ── Case Study 2 ──
-  function openCaseStudy2() {
-    const page = document.getElementById('csPage2');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeCaseStudy2() {
-    document.getElementById('csPage2').classList.remove('open');
-    document.body.style.overflow = '';
-  } 
-
-  // ── Case Study ──
-  function openCaseStudy() {
-    const page = document.getElementById('csPage');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeCaseStudy() {
-    document.getElementById('csPage').classList.remove('open');
-    document.body.style.overflow = '';
-  }
- 
-  // ── Article 1 ──
-  function openArticle() {
-    const page = document.getElementById('articlePage');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeArticle() {
-    document.getElementById('articlePage').classList.remove('open');
-    document.body.style.overflow = '';
-    document.getElementById('writing').scrollIntoView();
-  }
- 
-  // ── Article 2 ──
-  function openArticle2() {
-    const page = document.getElementById('articlePage2');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeArticle2() {
-    document.getElementById('articlePage2').classList.remove('open');
-    document.body.style.overflow = '';
-    document.getElementById('writing').scrollIntoView();
-  }
- 
-  // ── Article 3 ──
-  function openArticle3() {
-    const page = document.getElementById('articlePage3');
-    page.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-  }
-  function closeArticle3() {
-    document.getElementById('articlePage3').classList.remove('open');
-    document.body.style.overflow = '';
-  }
- 
-  // ── Escape key closes all overlays ──
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      closeCaseStudy();
-      closeCaseStudy2();
-      closeCaseStudy3();
-      closeFramework1();
-      closeFramework2();
-      closeArticle();
-      closeArticle2();
-      closeArticle3();
+      closeCaseStudy(); closeCaseStudy2(); closeCaseStudy3();
+      closeFramework1(); closeFramework2();
+      closeArticle(); closeArticle2(); closeArticle3();
       closeMobileMenu();
     }
   });
 
-  // ── Mobile Menu ──
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
@@ -2348,9 +744,8 @@
 
   hamburgerBtn.addEventListener('click', function() {
     const isOpen = mobileMenu.classList.contains('open');
-    if (isOpen) {
-      closeMobileMenu();
-    } else {
+    if (isOpen) { closeMobileMenu(); }
+    else {
       hamburgerBtn.classList.add('open');
       mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
@@ -2358,12 +753,10 @@
     }
   });
 
-  // Close mobile menu when a link is clicked
   document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
     link.addEventListener('click', closeMobileMenu);
   });
-
 </script>
- 
+
 </body>
 </html>
