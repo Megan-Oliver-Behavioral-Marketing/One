@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Persona Knows Who They Are. It Has No Idea What They're About to Do. | Megan Oliver</title>
+  <meta name="description" content="Personas answer the wrong question. They tell you who someone is — not what they're about to do. And marketing that optimizes for identity instead of behavior misses the decision entirely." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:      #2d5a45;
+      --green-mid:  #3a7057;
+      --green-pale: #e8f0ec;
+      --cream:      #f5f2ee;
+      --white:      #ffffff;
+      --ink:        #1a1a18;
+      --ink-mid:    #3d3d38;
+      --ink-light:  #7a7a72;
+      --rule:       #d4d0c8;
+      --gold:       #b8935a;
+      --accent:     #c4a35a;
+      --nav-h:      64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+    /* HERO */
+    .article-hero {
+      background: var(--ink);
+      padding: 8rem 3.5rem 5rem;
+      margin-top: var(--nav-h);
+    }
+
+    .article-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .article-eyebrow a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-eyebrow a:hover { color: #fff; }
+
+    .article-eyebrow span { color: rgba(255,255,255,0.2); }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.08;
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+
+    .article-meta-strip {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* CONTENT */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 3.5rem 7rem;
+    }
+
+    .article-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body p strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .article-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .article-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .article-list {
+      list-style: none;
+      margin: 0.75rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .article-list li {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.9rem;
+    }
+
+    .article-list li::before {
+      content: '—';
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .article-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.45;
+      border-left: 3px solid var(--green);
+      padding: 0.5rem 0 0.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER NAV */
+    .article-footer {
+      background: var(--ink);
+      padding: 3rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-back:hover { color: #fff; }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* RELATED STRIP */
+    .related-strip {
+      background: var(--green-pale);
+      padding: 3rem 3.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .related-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+
+    .related-card {
+      background: var(--white);
+      padding: 1.75rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .related-card:hover { background: #f0f7f3; }
+
+    .related-card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.57rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .related-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .article-hero { padding: 6rem 1.5rem 3.5rem; }
+      .article-body { padding: 3rem 1.5rem 5rem; }
+      .related-strip { padding: 2.5rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      .article-footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Work</a></li>
+        <li><a href="Articles.html" class="active">Writing</a></li>
+        <li><a href="index.html#frameworks">Frameworks</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="article-hero">
+    <p class="article-eyebrow">
+      <a href="Articles.html">Writing</a>
+      <span>/</span>
+      Behavioral Marketing &middot; 2025
+    </p>
+    <h1 class="article-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</h1>
+    <div class="article-meta-strip">
+      <div class="meta-item">
+        <span class="meta-label">Author</span>
+        <span class="meta-value">Megan Oliver</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Topic</span>
+        <span class="meta-value">Behavioral Segmentation</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Published</span>
+        <span class="meta-value">2025 &middot; LinkedIn</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>Personas are built around identity. Job title, age range, values, lifestyle. They answer one question very well: <em>who is this person?</em></p>
+    <p>They answer a different question very poorly: <em>what are they about to do?</em></p>
+    <p>And that second question is the one that actually determines whether your campaign converts.</p>
+
+    <hr class="article-rule" />
+    <h2 class="article-h2">The Core Problem</h2>
+    <p>Identity is stable. Behavior is contextual. The same person who ignores your email on Monday is your most responsive prospect on Thursday — not because they changed, but because their context did.</p>
+    <p>A persona doesn't capture that. It can't. It's a static snapshot of a dynamic system.</p>
+    <p>So when you build strategy around a persona, you're optimizing for who someone is. When you should be optimizing for the <strong>state someone is in.</strong></p>
+
+    <hr class="article-rule" />
+    <h2 class="article-h2">What Behavioral Segmentation Does Instead</h2>
+    <p>Instead of asking "who is our customer," behavioral strategy asks: what conditions have to exist for this person to act? And more importantly: which of those conditions can we create, time to, or remove friction from?</p>
+    <p>This reframe changes everything:</p>
+    <ul class="article-list">
+      <li>You segment by decision state, not demographic</li>
+      <li>You sequence messages around behavioral triggers, not calendar logic</li>
+      <li>You measure conversion conditions, not awareness metrics</li>
+      <li>You design for the moment of action, not the moment of exposure</li>
+    </ul>
+
+    <hr class="article-rule" />
+    <h2 class="article-h2">The Practical Shift</h2>
+    <p>This doesn't mean personas are useless. It means they're incomplete. They tell you who you're talking to. Behavioral strategy tells you when, under what conditions, and how to reduce the distance between intent and action.</p>
+    <p>The brands that convert consistently aren't the ones with the most detailed personas. They're the ones with the clearest model of the decision environment.</p>
+
+    <div class="article-pullquote">Personas answer &ldquo;who.&rdquo; Behavioral strategy answers &ldquo;when, why, and what removes the barrier.&rdquo;</div>
+
+    <hr class="article-rule" />
+    <h2 class="article-h2">The Reframe</h2>
+    <p>Stop asking: who is our customer?</p>
+    <p>Start asking: what state is our customer in when they're most ready to act — and how do we build strategy around that state?</p>
+    <p>That's the shift from identity-based marketing to behavioral marketing. And it changes every downstream decision: how you segment, how you sequence, what you say, and what you measure.</p>
+
+  </div>
+
+  <div class="related-strip">
+    <div class="related-label">Continue Reading</div>
+    <div class="related-grid">
+      <a href="why-people-dont-fix-bad-decisions.html" class="related-card">
+        <span class="related-card-label">Next Article</span>
+        <div class="related-card-title">Why People Don&rsquo;t Fix Bad Decisions (And What It Means for Marketing)</div>
+      </a>
+      <a href="when-personalization-breaks-recognition.html" class="related-card">
+        <span class="related-card-label">Also Worth Reading</span>
+        <div class="related-card-title">When Personalization Breaks Recognition</div>
+      </a>
+    </div>
+  </div>
+
+  <footer class="article-footer">
+    <a href="Articles.html" class="footer-back">&larr; All Writing</a>
+    <nav class="footer-nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#portfolio">Work</a>
+      <a href="index.html#frameworks">Frameworks</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
