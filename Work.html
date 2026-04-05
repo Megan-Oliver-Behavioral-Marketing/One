@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research | Megan Oliver</title>
+  <title>Work | Megan Oliver</title>
   <meta name="description" content="Behavioral research and analysis by Megan Oliver, Behavioral Marketing Strategist." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +41,6 @@
     /* ── TOPBAR ── */
     .r-topbar { background: var(--ink); padding: 0 3.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .r-topbar-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-    .r-back-btn { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: color 0.2s; }
-    .r-back-btn:hover { color: rgba(255,255,255,0.9); }
 
     /* ── SECTION WRAPPER ── */
     .section-block { padding: 5rem 3.5rem; }
@@ -60,36 +58,40 @@
 
     /* ── CASE STUDY CARDS ── */
     .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+    .cs-grid--featured { grid-template-columns: 1fr; }
+
     .cs-card { background: #22252a; padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1.25rem; transition: background 0.25s; cursor: pointer; position: relative; overflow: hidden; }
     .cs-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
     .cs-card:hover { background: #272b31; }
     .cs-card:hover::before { opacity: 1; }
+    .cs-card--featured { border-left: 4px solid var(--green); }
+    .cs-card--featured::before { background: linear-gradient(90deg, var(--green), transparent); }
+
     .cs-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+    .cs-card--featured .cs-tag { color: var(--green-mid); }
     .cs-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); line-height: 1.25; }
-    .cs-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.75; color: rgba(245,242,238,0.38); flex: 1; }
+    .cs-card--featured .cs-title { font-size: 1.6rem; }
+    .cs-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.75; color: rgba(245,242,238,0.55); flex: 1; }
+    .cs-outcomes { display: flex; gap: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07); flex-wrap: wrap; }
+    .cs-outcome { display: flex; flex-direction: column; gap: 0.2rem; }
+    .cs-outcome-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--green-mid); line-height: 1; }
+    .cs-outcome-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
     .cs-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
-    .cs-status { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); display: flex; align-items: center; gap: 0.45rem; }
-    .cs-status::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .cs-read-more { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
+    .cs-card--featured .cs-read-more { color: var(--cream); background: var(--green); padding: 0.7rem 1.5rem; }
     .cs-arrow { font-size: 0.75rem; color: rgba(255,255,255,0.2); transition: color 0.2s, transform 0.2s; }
     .cs-card:hover .cs-arrow { color: var(--accent); transform: translateX(4px); }
 
     /* ── RESEARCH CARDS ── */
     .r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .r-card { border: 1px solid var(--rule); background: var(--white); padding: 2.25rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.25s, box-shadow 0.25s; cursor: pointer; position: relative; }
-    .r-card:hover { border-color: var(--ink-light); box-shadow: 0 4px 24px rgba(26,26,24,0.08); }
+    .r-card { border: 1px solid var(--rule); background: var(--white); padding: 2.25rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.25s, box-shadow 0.25s; position: relative; }
     .r-card-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); }
     .r-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
     .r-card-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.75; color: var(--ink-light); flex: 1; }
     .r-card-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 1.1rem; border-top: 1px solid var(--rule); margin-top: auto; }
     .r-card-status { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); display: flex; align-items: center; gap: 0.45rem; }
     .r-card-status::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--rule); }
-    .r-card-arrow { font-size: 0.75rem; color: var(--rule); transition: color 0.2s, transform 0.2s; }
-    .r-card:hover .r-card-arrow { color: var(--ink); transform: translateX(4px); }
-
-    /* ── SHARED BTN ── */
-    .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.75rem; transition: gap 0.2s, background 0.2s; }
-    .btn--outline-light { background: transparent; color: var(--cream); border: 1px solid rgba(255,255,255,0.3); }
-    .btn--outline-light:hover { background: rgba(255,255,255,0.07); gap: 1rem; }
+    .r-card-arrow { font-size: 0.75rem; color: var(--rule); }
 
     /* ── FOOTER ── */
     footer { background: var(--ink); padding: 2rem 3.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.07); }
@@ -101,7 +103,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .cs-grid, .r-grid { grid-template-columns: 1fr 1fr; }
+      .cs-grid { grid-template-columns: 1fr 1fr; }
+      .r-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 860px) {
       header.main-header, .r-topbar { padding: 0 1.5rem; }
@@ -125,7 +128,7 @@
     <nav>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="Work.html" class="active">Work</a></li>
         <li><a href="Articles.html">Writing</a></li>
         <li><a href="Frameworks.html">Frameworks</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -138,7 +141,7 @@
 
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <a href="about.html">About</a>
-    <a href="work.html">Work</a>
+    <a href="Work.html">Work</a>
     <a href="Articles.html">Writing</a>
     <a href="Frameworks.html">Frameworks</a>
     <a href="index.html#contact">Contact</a>
@@ -146,10 +149,9 @@
 
   <div class="r-topbar">
     <span class="r-topbar-brand">Megan Oliver</span>
-    <a href="work.html#research" class="r-back-btn">&larr; Back to Work</a>
   </div>
 
-  <!-- ══ CASE STUDIES (top) ══ -->
+  <!-- ══ CASE STUDIES ══ -->
   <section class="section-block section-block--dark">
     <div class="section-header">
       <div>
@@ -159,41 +161,71 @@
       <span class="section-count">03 Projects</span>
     </div>
 
-    <div class="cs-grid">
+    <!-- Featured card -->
+    <div class="cs-grid cs-grid--featured" style="margin-bottom: 1.5px;">
+      <div class="cs-card cs-card--featured">
+        <span class="cs-tag">Case Study &middot; Early-Stage Growth / Day Zero</span>
+        <h3 class="cs-title">Creating Demand from Zero</h3>
+        <p class="cs-desc">At launch, The Write Lane had no audience, no client base, and no existing demand. The challenge wasn't improving performance — it was creating it. I built behavioral momentum through community-based exposure, positioning clarity, and low-friction entry points that made first engagement feel easy and repeatable.</p>
+        <div class="cs-outcomes">
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">0 → Waitlist</div>
+            <div class="cs-outcome-label">Client Growth</div>
+          </div>
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">Hired</div>
+            <div class="cs-outcome-label">Additional Teachers to Meet Demand</div>
+          </div>
+        </div>
+        <div><span class="cs-read-more">Read Case Study &rarr;</span></div>
+      </div>
+    </div>
 
-      <!-- Card 1 -->
+    <!-- Two-column cards -->
+    <div class="cs-grid" style="grid-template-columns: 1fr 1fr;">
       <div class="cs-card">
-        <span class="cs-tag">Retail &middot; Decision Architecture</span>
-        <h3 class="cs-title">Reframing Choice to Reduce Cart Abandonment</h3>
-        <p class="cs-desc">Placeholder — An exploration of how default-setting and loss-framing interventions reduced checkout drop-off across a mid-market e-commerce brand.</p>
+        <span class="cs-tag">Case Study &middot; Community / Nonprofit</span>
+        <h3 class="cs-title">Rebuilding Engagement Through Decision-Focused Communication</h3>
+        <p class="cs-desc">The organization had consistent activity — but inconsistent participation. I diagnosed where behavior was breaking down and rebuilt the system around how people actually decide to participate.</p>
+        <div class="cs-outcomes">
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">+125%</div>
+            <div class="cs-outcome-label">Organic Social</div>
+          </div>
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">+23%</div>
+            <div class="cs-outcome-label">Livestream Views</div>
+          </div>
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">+20%</div>
+            <div class="cs-outcome-label">First-Time Participation</div>
+          </div>
+        </div>
         <div class="cs-meta">
-          <span class="cs-status">Coming Soon</span>
+          <span class="cs-read-more">Read Case Study &rarr;</span>
           <span class="cs-arrow">&#8599;</span>
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="cs-card">
-        <span class="cs-tag">Finance &middot; Behavioral Segmentation</span>
-        <h3 class="cs-title">Trust Signals & the First-Time Investor Journey</h3>
-        <p class="cs-desc">Placeholder — A deep dive into how social proof sequencing and uncertainty reduction messaging shifted conversion among first-time investors.</p>
+        <span class="cs-tag">Case Study &middot; National Nonprofit / Public Health</span>
+        <h3 class="cs-title">Closing the Gap Between Awareness and Action</h3>
+        <p class="cs-desc">Audiences already knew seafood was healthy. They weren't buying it. The barrier wasn't informational — it was behavioral. I diagnosed friction points and rebuilt messaging around the actual conditions under which people decide what to eat.</p>
+        <div class="cs-outcomes">
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">5×</div>
+            <div class="cs-outcome-label">Click-Through Rate</div>
+          </div>
+          <div class="cs-outcome">
+            <div class="cs-outcome-num">+63%</div>
+            <div class="cs-outcome-label">Social Engagement</div>
+          </div>
+        </div>
         <div class="cs-meta">
-          <span class="cs-status">Coming Soon</span>
+          <span class="cs-read-more">Read Case Study &rarr;</span>
           <span class="cs-arrow">&#8599;</span>
         </div>
       </div>
-
-      <!-- Card 3 -->
-      <div class="cs-card">
-        <span class="cs-tag">Health &middot; Habit Formation</span>
-        <h3 class="cs-title">Commitment Devices in Preventive Care Adoption</h3>
-        <p class="cs-desc">Placeholder — Examining how pre-commitment framing and identity-based messaging increased follow-through on preventive health behaviors.</p>
-        <div class="cs-meta">
-          <span class="cs-status">Coming Soon</span>
-          <span class="cs-arrow">&#8599;</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -208,40 +240,35 @@
     </div>
 
     <div class="r-grid">
-
-      <!-- Card 1 -->
       <div class="r-card">
         <span class="r-card-tag">Consumer Behavior &middot; Attention</span>
         <h3 class="r-card-title">Where Attention Goes, Intent Follows</h3>
-        <p class="r-card-desc">Placeholder — Research in progress on the relationship between attention sequencing in digital environments and downstream purchase intent.</p>
+        <p class="r-card-desc">Research in progress on the relationship between attention sequencing in digital environments and downstream purchase intent.</p>
         <div class="r-card-meta">
           <span class="r-card-status">In Progress</span>
           <span class="r-card-arrow">&#8599;</span>
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="r-card">
         <span class="r-card-tag">Messaging &middot; Framing Effects</span>
         <h3 class="r-card-title">Gain vs. Loss: When the Frame Backfires</h3>
-        <p class="r-card-desc">Placeholder — An investigation into the conditions under which loss-framed messaging loses its effectiveness — and what replaces it.</p>
+        <p class="r-card-desc">An investigation into the conditions under which loss-framed messaging loses its effectiveness — and what replaces it.</p>
         <div class="r-card-meta">
           <span class="r-card-status">In Progress</span>
           <span class="r-card-arrow">&#8599;</span>
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="r-card">
         <span class="r-card-tag">Brand &middot; Identity Signaling</span>
         <h3 class="r-card-title">The Self-Concept Gap in Premium Brands</h3>
-        <p class="r-card-desc">Placeholder — Research examining how consumers use premium brand affiliation to close perceived gaps between actual and ideal self-image.</p>
+        <p class="r-card-desc">Research examining how consumers use premium brand affiliation to close perceived gaps between actual and ideal self-image.</p>
         <div class="r-card-meta">
           <span class="r-card-status">In Progress</span>
           <span class="r-card-arrow">&#8599;</span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -249,7 +276,7 @@
     <a href="index.html" class="footer-logo">Megan Oliver</a>
     <ul class="footer-nav">
       <li><a href="about.html">About</a></li>
-      <li><a href="work.html">Work</a></li>
+      <li><a href="Work.html">Work</a></li>
       <li><a href="Articles.html">Writing</a></li>
       <li><a href="Frameworks.html">Frameworks</a></li>
       <li><a href="index.html#contact">Contact</a></li>
