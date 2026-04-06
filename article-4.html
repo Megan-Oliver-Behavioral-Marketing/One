@@ -1,115 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>When Emotional Triggers Stop Driving Behavior</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When Emotional Triggers Stop Driving Behavior | Megan Oliver – Behavioral Marketing Strategist</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --mid: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ec;
+      --white: #ffffff;
+      --ink: #1a1018;
+      --ink-mid: #3d3d38;
+      --link-light: #7d7a72;
+      --rule: #d4d0cb;
+      --gold: #b89558;
+      --accent: #c4435a;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: #ffffff; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE BODY */
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+
+    .article-container h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    .article-container p {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      color: var(--ink-mid);
+    }
+
+    .article-container ul {
+      margin: 1.5rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .article-container li {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+    }
+
+    /* FOOTER */
+    .framework-footer {
+      background: var(--ink);
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .article-container { padding: 7rem 1.5rem 5rem; }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>When Emotional Triggers Stop Driving Behavior</h1>
+  <!-- NAV BAR -->
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-<p>Nike didn’t build its brand on shoes. They built it on emotion.</p>
+  <!-- ARTICLE CONTENT -->
+  <div class="article-container">
+    <h1>When Emotional Triggers Stop Driving Behavior</h1>
 
-<p>Athletes you cared about.<br>
-Moments you remembered.<br>
-Products tied to identity, status, belonging.<br>
-Drops engineered to create anticipation and urgency.</p>
+    <p>Nike didn’t build its brand on shoes. They built it on emotion.</p>
 
-<p>For years, that emotional system worked beautifully.</p>
+    <p>Athletes you cared about.<br>
+    Moments you remembered.<br>
+    Products tied to identity, status, belonging.<br>
+    Drops engineered to create anticipation and urgency.</p>
 
-<p>And it still does — just not in the same way.</p>
+    <p>For years, that emotional system worked beautifully.</p>
 
-<p>Because Nike isn’t the only one running that playbook anymore.</p>
+    <p>And it still does — just not in the same way.</p>
 
-<p>Under Armour has athletes.<br>
-Anta has cultural relevance.<br>
-New Balance has identity and nostalgia.<br>
-Everyone has limited releases.</p>
+    <p>Because Nike isn’t the only one running that playbook anymore.</p>
 
-<p>The emotional triggers didn’t disappear.<br>
-They multiplied.</p>
+    <p>Under Armour has athletes.<br>
+    Anta has cultural relevance.<br>
+    New Balance has identity and nostalgia.<br>
+    Everyone has limited releases.</p>
 
-<p>And that changes what those emotions <em>do</em>.</p>
+    <p>The emotional triggers didn’t disappear.<br>
+    They multiplied.</p>
 
-<p>For a long time, marketing relied on a familiar set of levers:</p>
+    <p>And that changes what those emotions <em>do</em>.</p>
 
-<ul>
-    <li>scarcity</li>
-    <li>FOMO</li>
-    <li>nostalgia</li>
-    <li>identity</li>
-    <li>aspiration</li>
-</ul>
+    <p>For a long time, marketing relied on a familiar set of levers:</p>
 
-<p>And they still create attention.<br>
-They still create interest.<br>
-They still create desire.</p>
+    <ul>
+      <li>scarcity</li>
+      <li>FOMO</li>
+      <li>nostalgia</li>
+      <li>identity</li>
+      <li>aspiration</li>
+    </ul>
 
-<p>But desire isn’t action.</p>
+    <p>And they still create attention.<br>
+    They still create interest.<br>
+    They still create desire.</p>
 
-<p>That’s the part most strategies miss.</p>
+    <p>But desire isn’t action.</p>
 
-<p>Because emotional triggers don’t operate in isolation — they operate in comparison.</p>
+    <p>That’s the part most strategies miss.</p>
 
-<p>When multiple brands create the <em>same</em> emotional response at the <em>same</em> time, the response loses force.</p>
+    <p>Because emotional triggers don’t operate in isolation — they operate in comparison.</p>
 
-<p>Not because the emotion is weaker.<br>
-But because it’s no longer unique.</p>
+    <p>When multiple brands create the <em>same</em> emotional response at the <em>same</em> time, the response loses force.</p>
 
-<p>So now, when a product sparks:</p>
+    <p>Not because the emotion is weaker.<br>
+    But because it’s no longer unique.</p>
 
-<ul>
-    <li>excitement</li>
-    <li>nostalgia</li>
-    <li>urgency</li>
-    <li>desire</li>
-</ul>
+    <p>So now, when a product sparks:</p>
 
-<p>…it’s competing with five other products sparking the same feeling.</p>
+    <ul>
+      <li>excitement</li>
+      <li>nostalgia</li>
+      <li>urgency</li>
+      <li>desire</li>
+    </ul>
 
-<p>That changes the internal math.</p>
+    <p>…it’s competing with five other products sparking the same feeling.</p>
 
-<p><strong>Before:</strong><br>
-“If I don’t get this, I miss out.”</p>
+    <p>That changes the internal math.</p>
 
-<p><strong>Now:</strong><br>
-“If I don’t get this, I’ll get something else.”</p>
+    <p><strong>Before:</strong><br>
+    “If I don’t get this, I miss out.”</p>
 
-<p>The consequence of inaction drops.<br>
-And when the consequence of inaction drops, urgency drops with it.</p>
+    <p><strong>Now:</strong><br>
+    “If I don’t get this, I’ll get something else.”</p>
 
-<p>That’s the behavioral shift.</p>
+    <p>The consequence of inaction drops.<br>
+    And when the consequence of inaction drops, urgency drops with it.</p>
 
-<p>Emotional marketing didn’t stop working.<br>
-The <em>context</em> changed.<br>
-And behavior always follows context.</p>
+    <p>That’s the behavioral shift.</p>
 
-<p>Emotions still create energy.<br>
-But energy doesn’t move people the same way in an environment full of substitutes.</p>
+    <p>Emotional marketing didn’t stop working.<br>
+    The <em>context</em> changed.<br>
+    And behavior always follows context.</p>
 
-<p>Because behavior doesn’t happen in isolation.<br>
-It happens inside a system.</p>
+    <p>Emotions still create energy.<br>
+    But energy doesn’t move people the same way in an environment full of substitutes.</p>
 
-<p>And when that system is saturated with comparable options, decision pressure weakens.</p>
+    <p>Because behavior doesn’t happen in isolation.<br>
+    It happens inside a system.</p>
 
-<p>The decision becomes optional instead of necessary.</p>
+    <p>And when that system is saturated with comparable options, decision pressure weakens.</p>
 
-<p>That’s where conversion softens.</p>
+    <p>The decision becomes optional instead of necessary.</p>
 
-<p>Not because people don’t care.<br>
-But because they don’t have to act.</p>
+    <p>That’s where conversion softens.</p>
 
-<p>So the real question isn’t:</p>
+    <p>Not because people don’t care.<br>
+    But because they don’t have to act.</p>
 
-<p><strong>“Are we using the right emotional triggers?”</strong></p>
+    <p>So the real question isn’t:</p>
 
-<p>It’s:</p>
+    <p><strong>“Are we using the right emotional triggers?”</strong></p>
 
-<p><strong>“How do these triggers function in the environment people are actually deciding in?”</strong></p>
+    <p>It’s:</p>
 
-<p>The levers didn’t break.<br>
-The environment changed.<br>
-And when context shifts, behavior shifts with it.</p>
+    <p><strong>“How do these triggers function in the environment people are actually deciding in?”</strong></p>
+
+    <p>The levers didn’t break.<br>
+    The environment changed.<br>
+    And when context shifts, behavior shifts with it.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="framework-footer">
+    <nav class="footer-nav-links">
+      <a href="./about.html">About</a>
+      <a href="./Work.html">Work</a>
+      <a href="./Articles.html">Writing</a>
+      <a href="./Frameworks.html">Frameworks</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
