@@ -5,21 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Funnel Loop Diagnosis & Behavioral Breakdown</title>
 
-  <!-- ✅ This pulls in your global styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- 🔥 Your entire site’s CSS lives here -->
+  <style>
+    /* ====== GLOBAL STYLES FROM INDEX.HTML ====== */
+    :root {
+      --ink: #1f2124;
+      --ink-light: #6b6e72;
+      --white: #ffffff;
+      --cream: #f7f5f2;
+      --rule: #e5e3df;
+      --green-mid: #4a7a6a;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    .section-block {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-light);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    /* Match spacing of your other case pages */
+    .case-body {
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ══ CASE STUDY ══ -->
-  <section class="section-block section-block--cream">
-    <div class="section-header section-header--light">
-      <div>
-        <p class="section-eyebrow" style="color: var(--green-mid);">Case Study</p>
-        <h1 class="section-title section-title--dark">Funnel Loop Diagnosis & Behavioral Breakdown</h1>
-        <p class="section-eyebrow">(Round Table Meetings — Speak Creative)</p>
-      </div>
-    </div>
+  <section class="section-block">
+    <p class="section-eyebrow">Case Study</p>
+    <h1 class="section-title">Funnel Loop Diagnosis & Behavioral Breakdown</h1>
+    <p class="section-eyebrow">(Round Table Meetings — Speak Creative)</p>
 
     <div class="case-body">
 
