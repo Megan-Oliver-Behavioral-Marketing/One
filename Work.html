@@ -84,7 +84,21 @@
 
     /* ── RESEARCH CARDS ── */
     .r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .r-card { border: 1px solid var(--rule); background: var(--white); padding: 2.25rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.25s, box-shadow 0.25s; position: relative; }
+     .r-card {
+  border: 1px solid var(--rule);
+  background: var(--white);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+
+  /* 🔥 Add these two lines */
+  text-decoration: none;
+  color: inherit;
+}
+
     .r-card-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); }
     .r-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
     .r-card-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.75; color: var(--ink-light); flex: 1; }
