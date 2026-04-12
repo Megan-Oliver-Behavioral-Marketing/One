@@ -1,0 +1,73 @@
+?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/0.9">
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://www.meganoliver.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/about.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Work -->
+  <url>
+    <loc>https://www.meganoliver.com/Work.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/Work-Funnel-Diagnosis.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/Work-Survey-Insitghts.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Articles -->
+  <url>
+    <loc>https://www.meganoliver.com/Articles.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/article-1.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/article-2.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/article-3.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/article-4.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Frameworks -->
+  <url>
+    <loc>https://www.meganoliver.com/Frameworks.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/beam-framework.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.meganoliver.com/core-framework.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
