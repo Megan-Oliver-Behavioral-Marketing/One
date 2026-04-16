@@ -79,6 +79,75 @@
 
     .nav-links a:hover, .nav-links a.active { color: #ffffff; }
 
+    /* ── Hamburger Button ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(255,255,255,0.75);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+
+    /* ── Mobile Menu Overlay ── */
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 250;
+      background: #1f2124;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    #mobileMenu.open {
+      display: flex;
+    }
+
+    #mobileMenu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    #mobileMenu a:hover { color: #fff; }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.75rem;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-close:hover { color: #fff; }
+
     /* HERO */
     .article-hero {
       background: var(--ink);
@@ -220,51 +289,6 @@
       margin: 2.5rem 0;
     }
 
-    /* FOOTER NAV */
-    .article-footer {
-      background: var(--ink);
-      padding: 3rem 3.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .footer-back {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-back:hover { color: #fff; }
-
-    .footer-nav-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
-
     /* RELATED STRIP */
     .related-strip {
       background: var(--green-pale);
@@ -315,9 +339,55 @@
       line-height: 1.25;
     }
 
+    /* FOOTER NAV */
+    .article-footer {
+      background: var(--ink);
+      padding: 3rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-back:hover { color: #fff; }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
     @media (max-width: 768px) {
       header.main-header { padding: 0 1.5rem; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       .article-hero { padding: 6rem 1.5rem 3.5rem; }
       .article-body { padding: 3rem 1.5rem 5rem; }
       .related-strip { padding: 2.5rem 1.5rem; }
@@ -328,22 +398,31 @@
 </head>
 <body>
 
- <header class="main-header">
-  <a href="./index.html" class="nav-logo">Megan Oliver</a>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="./about.html">About</a></li>
-      <li><a href="./Work.html">Work</a></li>
-      <li><a href="./Articles.html">Writing</a></li>
-      <li><a href="./Frameworks.html">Frameworks</a></li>
-      <li><a href="./index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu">
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+    <a href="./about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="./Work.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Work</a>
+    <a href="./Articles.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Writing</a>
+    <a href="./Frameworks.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Frameworks</a>
+    <a href="./index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+  </div>
 
   <div class="article-hero">
     <p class="article-eyebrow">
