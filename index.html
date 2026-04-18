@@ -271,29 +271,19 @@
       <li><a href="./index.html#contact">Contact</a></li>
     </ul>
   </nav>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </header>
-
-
-
-  <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
-  <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
-  <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-  <a href="index.html#portfolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Portfolio</a>
-  <a href="index.html#writing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Writing</a>
-  <a href="index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-</div>
   
   <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-nav-link">Home</a>
     <a href="about.html" class="mobile-nav-link">About</a>
     <a href="Work.html" class="mobile-nav-link">Work</a>
     <a href="Articles.html" class="mobile-nav-link">Writing</a>
     <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
-    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
   </nav>
 
   <!-- HERO -->
