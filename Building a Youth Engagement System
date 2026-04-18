@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Youth Engagement System | Megan Oliver – Behavioral Marketing Strategist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --mid: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ec;
+      --white: #ffffff;
+      --ink: #1a1018;
+      --ink-mid: #3d3d38;
+      --link-light: #7d7a72;
+      --rule: #d4d0cb;
+      --gold: #b89558;
+      --accent: #c4a35a;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: #ffffff; }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 300;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: rgba(255,255,255,0.7);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      z-index: 190;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: #ffffff; }
+
+    /* CONTENT */
+    .case-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 4rem) 2rem 6rem;
+    }
+
+    .case-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    h1.case-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    h2.case-section {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 3rem 0 1rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+
+    p strong { font-weight: 500; color: var(--ink); }
+
+    ul { margin: 1rem 0 1.5rem; padding-left: 1.25rem; }
+
+    li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 0.75rem;
+      font-weight: 300;
+    }
+
+    .case-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.45;
+      border-left: 3px solid var(--green);
+      padding: 0.5rem 0 0.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      margin: 2rem 0;
+    }
+
+    .outcome-item {
+      background: var(--green);
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    .outcome-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .outcome-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.57rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* FOOTER */
+    .framework-footer {
+      background: var(--ink);
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-back:hover { color: #fff; }
+
+    .footer-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .case-container { padding: 7rem 1.5rem 5rem; }
+      .outcome-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="Work.html" class="mobile-nav-link active">Work</a>
+    <a href="Articles.html" class="mobile-nav-link">Writing</a>
+    <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+
+  <div class="case-container">
+
+    <div class="case-eyebrow">Case Study &middot; Community / Youth Engagement</div>
+    <h1 class="case-title">Building a Youth Engagement System That Drove Consistent Participation and Growth</h1>
+
+    <h2 class="case-section">The Situation</h2>
+    <p>The youth group operated as an independent unit within a larger church, responsible for its own programming, communication, and engagement. Weekly participation was inconsistent, averaging around 15 attendees, with occasional spikes during special events.</p>
+    <p>The issue wasn't awareness — it was inconsistent behavior. Students showed up occasionally, but there was no system driving weekly participation.</p>
+
+    <h2 class="case-section">The Problem</h2>
+    <p>Early efforts leaned heavily on communicating with parents, assuming attendance would follow. It didn't.</p>
+    <p>I identified that parent-driven engagement wasn't enough to sustain participation. Students weren't personally invested, and attendance was being treated as an individual decision rather than something reinforced socially. The core behavioral problem wasn't interest — it was <strong>lack of ownership and lack of social reinforcement.</strong></p>
+
+    <h2 class="case-section">What Changed</h2>
+    <p>I made a deliberate shift from parent-driven communication to student-driven engagement and ownership:</p>
+    <ul>
+      <li>Prioritized direct communication with students alongside parents</li>
+      <li>Structured messaging to be consistent across touchpoints</li>
+      <li>Reframed participation from an individual choice to a collective behavior — something "we do," not something each person had to decide alone</li>
+      <li>Created a youth council that gave students a voice in programming, introducing internal influencers who could drive engagement from within</li>
+      <li>Introduced digital and social channels to extend engagement beyond physical gatherings and make participation more visible and continuous</li>
+    </ul>
+
+    <div class="case-pullquote">"The turning point came when students began to see the program as both theirs and shared. Ownership created stronger emotional investment, and the group dynamic reinforced attendance."</div>
+
+    <h2 class="case-section">Outcomes</h2>
+
+    <div class="outcome-grid">
+      <div class="outcome-item">
+        <div class="outcome-num">15 → 50</div>
+        <div class="outcome-label">Weekly Participants</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">200+</div>
+        <div class="outcome-label">Special Event Attendance</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-num">Habit</div>
+        <div class="outcome-label">Participation Became Routine</div>
+      </div>
+    </div>
+
+    <p>Engagement moved from sporadic attendance to repeat, habit-based participation — with less reliance on parent involvement and stronger direct connection with students.</p>
+
+    <h2 class="case-section">The Takeaway</h2>
+    <p>Sustained participation doesn't come from better communication alone or from targeting gatekeepers. It comes from <strong>designing systems where people feel ownership</strong> and where behavior is reinforced socially.</p>
+    <p>When showing up becomes something "we do" instead of a decision each individual has to make, participation becomes repeatable.</p>
+
+  </div>
+
+  <footer class="framework-footer">
+    <a href="./Work.html" class="footer-back">&larr; All Work</a>
+    <nav class="footer-nav-links">
+      <a href="./about.html">About</a>
+      <a href="./Work.html">Work</a>
+      <a href="./Articles.html">Writing</a>
+      <a href="./Frameworks.html">Frameworks</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburgerBtn.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) { closeMobileMenu(); } else {
+        hamburgerBtn.classList.add('open');
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+  </script>
+
+</body>
+</html>
