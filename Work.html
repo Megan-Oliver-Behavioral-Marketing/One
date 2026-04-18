@@ -129,7 +129,6 @@
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .mobile-menu { display: flex; }
       .cs-grid, .r-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -148,17 +147,18 @@
       <li><a href="./index.html#contact">Contact</a></li>
     </ul>
   </nav>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+ <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </header>
 
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="about.html">About</a>
-    <a href="Work.html">Work</a>
-    <a href="Articles.html">Writing</a>
-    <a href="Frameworks.html">Frameworks</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="Work.html" class="mobile-nav-link">Work</a>
+    <a href="Articles.html" class="mobile-nav-link">Writing</a>
+    <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
   </nav>
 
   <div class="r-topbar">
