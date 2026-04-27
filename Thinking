@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thinking | Megan Oliver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:      #2d5a45;
+      --green-mid:  #3a7057;
+      --cream:      #f5f2ee;
+      --ink:        #1a1a18;
+      --ink-mid:    #3d3d38;
+      --accent:     #c4a35a;
+      --nav-h:      64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #1a1a18;
+      color: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 300;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: rgba(255,255,255,0.7);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      z-index: 190;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover, .mobile-menu a.active { color: #ffffff; }
+
+    .page { padding-top: var(--nav-h); }
+
+    /* HERO */
+    .thinking-hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6rem 3.5rem 5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .thinking-hero::before {
+      content: '10';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-60%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(16rem, 30vw, 28rem);
+      font-weight: 700;
+      font-style: italic;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--cream);
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(245,242,238,0.45);
+      max-width: 520px;
+      border-left: 2px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    /* LESSONS */
+    .lessons-wrap { padding: 0; }
+
+    .lesson {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      opacity: 0.2;
+      transition: opacity 0.6s ease;
+    }
+
+    .lesson.is-active {
+      opacity: 1;
+    }
+
+    .lesson-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: rgba(255,255,255,0.08);
+      padding: 3.25rem 2rem 3rem 3.5rem;
+      line-height: 1;
+      display: flex;
+      align-items: flex-start;
+      transition: color 0.6s ease;
+    }
+
+    .lesson.is-active .lesson-num {
+      color: var(--accent);
+    }
+
+    .lesson-body {
+      padding: 3rem 3.5rem 3rem 2rem;
+      border-left: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.6s ease;
+    }
+
+    .lesson.is-active .lesson-body {
+      border-left-color: rgba(196,163,90,0.4);
+    }
+
+    .lesson-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .lesson-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(245,242,238,0.5);
+      max-width: 560px;
+    }
+
+    /* CLOSING */
+    .closing {
+      padding: 6rem 3.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .closing-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1.4;
+    }
+
+    .closing-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(245,242,238,0.45);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      transition: gap 0.2s, background 0.2s, color 0.2s;
+      cursor: pointer;
+      border: none;
+      flex-shrink: 0;
+    }
+
+    .btn--accent { background: var(--accent); color: var(--ink); }
+    .btn--accent:hover { gap: 1rem; }
+    .btn--outline-light {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn--outline-light:hover { background: rgba(255,255,255,0.05); gap: 1rem; }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: #1f2124;
+      padding: 2rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    .footer-nav { display: flex; gap: 2rem; list-style: none; }
+
+    .footer-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: rgba(255,255,255,0.6); }
+
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.18);
+      width: 100%;
+      text-align: right;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      header.main-header { padding: 0 1.5rem; }
+      .thinking-hero { padding: 5rem 1.5rem 4rem; min-height: 50vh; }
+      .lesson { grid-template-columns: 52px 1fr; }
+      .lesson-num { padding: 2.25rem 1rem 2rem 1.5rem; }
+      .lesson-body { padding: 2rem 1.5rem 2rem 1.25rem; }
+      .closing { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      footer { padding: 1.75rem 1.5rem; }
+      .footer-copy { text-align: left; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Thinking.html" class="active">Thinking</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="Work.html" class="mobile-nav-link">Work</a>
+    <a href="Articles.html" class="mobile-nav-link">Writing</a>
+    <a href="Thinking.html" class="mobile-nav-link active">Thinking</a>
+    <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+
+  <div class="thinking-hero">
+    <p class="hero-eyebrow">Megan Oliver &middot; 10 Years In</p>
+    <h1 class="hero-title">10 Lessons from<br/><em>10 Years</em> in Marketing</h1>
+    <p class="hero-sub">What I've learned about how people actually make decisions — and why most marketing misses it.</p>
+  </div>
+
+  <div class="lessons-wrap">
+
+    <div class="lesson">
+      <div class="lesson-num">01</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">02</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">03</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">04</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">05</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">06</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">07</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">08</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">09</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-num">10</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Your lesson title goes here</div>
+        <p class="lesson-desc">A sentence or two that unpacks the idea. Short, sharp, no fluff. The kind of thing that makes someone stop scrolling.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="closing">
+    <div class="closing-quote">"The gap between knowing and doing is almost always behavioral — not informational."</div>
+    <div>
+      <p class="closing-body">If any of this resonates, I'd like to talk. I'm open to senior strategy roles and occasional consulting engagements where the brief is strategic, not executional.</p>
+      <div class="btn-group">
+        <a href="index.html#contact" class="btn btn--accent">Get In Touch &rarr;</a>
+        <a href="Work.html" class="btn btn--outline-light">See My Work &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-logo">Megan Oliver</a>
+    <ul class="footer-nav">
+      <li><a href="about.html">About</a></li>
+      <li><a href="Work.html">Work</a></li>
+      <li><a href="Articles.html">Writing</a></li>
+      <li><a href="Thinking.html">Thinking</a></li>
+      <li><a href="Frameworks.html">Frameworks</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2025 Megan Oliver &middot; Behavioral Marketing Strategist</span>
+  </footer>
+
+</div>
+
+<script>
+  // Mobile menu
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    hamburgerBtn.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburgerBtn.addEventListener('click', function() {
+    const isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) { closeMobileMenu(); } else {
+      hamburgerBtn.classList.add('open');
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  // Scroll highlight effect
+  const lessons = document.querySelectorAll('.lesson');
+
+  function updateLessons() {
+    const viewportCenter = window.innerHeight / 2;
+    let closestLesson = null;
+    let closestDistance = Infinity;
+
+    lessons.forEach(function(lesson) {
+      const rect = lesson.getBoundingClientRect();
+      const lessonCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(lessonCenter - viewportCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestLesson = lesson;
+      }
+    });
+
+    lessons.forEach(function(lesson) {
+      lesson.classList.remove('is-active');
+    });
+
+    if (closestLesson) {
+      closestLesson.classList.add('is-active');
+    }
+  }
+
+  window.addEventListener('scroll', updateLessons, { passive: true });
+  updateLessons();
+</script>
+
+</body>
+</html>
