@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>If You Give a Mouse a Cookie | Megan Oliver</title>
+  <meta name="description" content="The mouse doesn't take the cookie and leave. One action leads to another. That's not just a children's story — it's how behavior actually works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:      #2d5a45;
+      --green-mid:  #3a7057;
+      --green-pale: #e8f0ec;
+      --cream:      #f5f2ee;
+      --white:      #ffffff;
+      --ink:        #1a1a18;
+      --ink-mid:    #3d3d38;
+      --ink-light:  #7a7a72;
+      --rule:       #d4d0c8;
+      --gold:       #b8935a;
+      --accent:     #c4a35a;
+      --nav-h:      64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 300;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: rgba(255,255,255,0.7);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      z-index: 190;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: #ffffff; }
+
+    .page { padding-top: var(--nav-h); }
+
+    /* TOPBAR */
+    .article-topbar {
+      background: var(--ink);
+      padding: 0 3.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .article-topbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .article-back-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .article-back-btn:hover { color: rgba(255,255,255,0.9); }
+
+    /* HERO */
+    .article-hero {
+      background: var(--ink);
+      padding: 5rem 3.5rem 4rem;
+    }
+
+    .article-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1.25rem;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.08;
+      max-width: 780px;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .article-meta-strip {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* CONTENT */
+    .article-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 3.5rem 7rem;
+    }
+
+    .article-content p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content p strong { font-weight: 500; color: var(--ink); }
+
+    /* Short punchy lines get their own treatment */
+    .article-content p.punchy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    .article-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .article-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.45;
+      border-left: 3px solid var(--green);
+      padding: 0.5rem 0 0.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    /* RELATED */
+    .related-strip {
+      background: var(--green-pale);
+      padding: 3rem 3.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .related-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+
+    .related-card {
+      background: var(--white);
+      padding: 1.75rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .related-card:hover { background: #f0f7f3; }
+
+    .related-card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.57rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .related-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    /* FOOTER */
+    .article-footer {
+      background: var(--ink);
+      padding: 3rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-back:hover { color: #fff; }
+
+    .footer-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 860px) {
+      header.main-header, .article-topbar { padding: 0 1.5rem; }
+      .article-hero { padding: 4rem 1.5rem 3rem; }
+      .article-content { padding: 3rem 1.5rem 5rem; }
+      .related-strip { padding: 2.5rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      .article-footer { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+  </style>
+
+</head>
+<body>
+<div class="page">
+
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html" class="active">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="Work.html" class="mobile-nav-link">Work</a>
+    <a href="Articles.html" class="mobile-nav-link active">Writing</a>
+    <a href="Frameworks.html" class="mobile-nav-link">Frameworks</a>
+    <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+
+  <div class="article-topbar">
+    <span class="article-topbar-brand">Megan Oliver</span>
+    <a href="Articles.html" class="article-back-btn">&larr; Back to Writing</a>
+  </div>
+
+  <div class="article-hero">
+    <p class="article-eyebrow">Thought Leadership &middot; Behavioral Marketing &middot; 2025</p>
+    <h1 class="article-title">If You Give a Mouse a Cookie,<br/><em>He's Not Leaving.</em></h1>
+    <div class="article-meta-strip">
+      <div class="meta-item">
+        <span class="meta-label">Author</span>
+        <span class="meta-value">Megan Oliver</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Topic</span>
+        <span class="meta-value">Behavioral Sequencing</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Published</span>
+        <span class="meta-value">2025 &middot; LinkedIn</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-content">
+
+```
+<p>Sometimes the best marketing lessons come from the things we learn as children.</p>
+
+<p>If you've ever read <em>If You Give a Mouse a Cookie</em>, you know how the story goes. Basically, the little guy moves in.</p>
+
+<p>And that's not just a children's story. It's a perfect example of how behavior actually works.</p>
+
+<div class="article-pullquote">The mouse doesn't take the cookie and leave. One action leads to another. Cookie to milk. Milk to a straw. Straw to a napkin. It keeps going.</div>
+
+<p>That's the model. Behavior doesn't end once it starts. It expands.</p>
+
+<hr class="article-rule" />
+
+<p>We tend to think of actions as isolated. Someone clicks. Someone buys. Someone signs up. Done.</p>
+
+<p>But that's not how it works.</p>
+
+<p class="punchy">One action creates a new context.<br/>That context creates a new need.<br/>That need creates the next action.</p>
+
+<p>Not because someone is being persuaded again. Because the situation changed.</p>
+
+<hr class="article-rule" />
+
+<p><strong>The first action isn't the outcome. It's the entry point.</strong></p>
+
+<p>Once someone starts, they're no longer deciding from zero. They're deciding from within a new environment — one where the next step feels more natural than stopping.</p>
+
+<p>That's where most strategies break. They're optimized for the first action. Clicks. Conversions. Sign-ups. But nothing is designed for what happens next.</p>
+
+<p>So behavior stalls. Not because people lost interest. Because there was no sequence.</p>
+
+<hr class="article-rule" />
+
+<p><strong>The real work is in the second step.</strong></p>
+
+<p>Getting someone to act once is not the hard part. Getting them to continue is.</p>
+
+<p>That's where retention lives. That's where engagement builds. That's where growth actually compounds.</p>
+
+<div class="article-pullquote">The best systems don't push behavior. They extend it. They make the next step obvious — not forced, not complicated. Just clear.</div>
+
+<p>That's why the mouse doesn't stop at the cookie. He comes back to it. Because the sequence loops.</p>
+
+<hr class="article-rule" />
+
+<p>That's the strategy. Not one action. A system that makes the next action obvious — and the one after that inevitable.</p>
+
+<p>Start the behavior. But don't stop there.</p>
+
+<p>Because the first action isn't the win. It's the beginning of everything that follows.</p>
+
+<p><strong>Design for what comes after the yes.</strong></p>
+```
+
+  </div>
+
+  <div class="related-strip">
+    <div class="related-label">Continue Reading</div>
+    <div class="related-grid">
+      <a href="article-2.html" class="related-card">
+        <span class="related-card-label">Related</span>
+        <div class="related-card-title">Why People Don&rsquo;t Fix Bad Decisions (And What It Means for Marketing)</div>
+      </a>
+      <a href="article-1.html" class="related-card">
+        <span class="related-card-label">Also Worth Reading</span>
+        <div class="related-card-title">Your Persona Knows Who They Are. It Has No Idea What They&rsquo;re About to Do.</div>
+      </a>
+    </div>
+  </div>
+
+  <footer class="article-footer">
+    <a href="Articles.html" class="footer-back">&larr; All Writing</a>
+    <nav class="footer-nav-links">
+      <a href="about.html">About</a>
+      <a href="Work.html">Work</a>
+      <a href="Frameworks.html">Frameworks</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    hamburgerBtn.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburgerBtn.addEventListener('click', function() {
+    const isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) { closeMobileMenu(); } else {
+      hamburgerBtn.classList.add('open');
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+</script>
+
+</body>
+</html>
