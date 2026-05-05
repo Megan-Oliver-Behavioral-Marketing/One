@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Strategic Brand Audit — Mitchell & Ness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Strategic brand audit for Fanatics Commerce / Mitchell & Ness by Megan Oliver, Category Marketing Strategist & Consultant.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="articles.html">Writing</a>
+      <a href="frameworks.html">Frameworks</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case-study">
+
+    <div class="case-study-eyebrow">STRATEGIC BRAND AUDIT</div>
+    <h1 class="case-study-title">Elevating Mitchell &amp; Ness Category Strategy via Behavioral Architecture</h1>
+
+    <section class="case-study-section">
+      <h2 class="section-label">TO</h2>
+      <p>Fanatics Commerce / Mitchell &amp; Ness Hiring Team</p>
+
+      <h2 class="section-label">FROM</h2>
+      <p>Megan Oliver, Category Marketing Strategist &amp; Consultant<span class="sup-cite">[1]</span></p>
+
+      <h2 class="section-label">SUBJECT</h2>
+      <p>Elevating Mitchell &amp; Ness Category Strategy via Behavioral Architecture</p>
+    </section>
+
+    <section class="case-study-section">
+      <h2 class="section-label">1. THE CHALLENGE: BALANCING HERITAGE WITH DEMAND</h2>
+      <p>
+        Mitchell &amp; Ness exists at the intersection of sports nostalgia and modern streetwear. The challenge is ensuring that category-level strategies do not just move product, but actively reinforce the brand’s storied legacy across a fragmented fan journey.
+      </p>
+    </section>
+
+    <section class="case-study-section">
+      <h2 class="section-label">2. THE DIAGNOSTIC: CATEGORY SYNERGY</h2>
+      <p>
+        To drive impact for specific product categories, marketing must move beyond basic awareness into <strong>Choice Architecture</strong><span class="sup-cite">[1]</span>.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Quarterbacking Execution:</strong> Leading cross-functional stakeholder groups—including Brand, Product, and Merchandising—to ensure seasonal business goals are met with operational excellence and on-time deliverables.
+        </li>
+        <li>
+          <strong>Consumer Insight Translation:</strong> Decoding the “why” behind fan behavior and translating complex category performance data into actionable marketing briefs that resonate with lifestyle and fashion audiences<span class="sup-cite">[1]</span>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="case-study-section">
+      <h2 class="section-label">3. THE PRESCRIPTION: PROPRIETARY FRAMEWORKS (ACE &amp; BEAM)</h2>
+      <p>I utilize a methodology rooted in behavioral science to align category narratives with fan psychology.</p>
+
+      <ul>
+        <li>
+          <strong>ACE Framework (Algorithmic Context Engine):</strong> A diagnostic tool I developed to identify the environmental contexts that drive purchase decisions, ensuring product categories show up authentically across digital and physical channels.
+        </li>
+        <li>
+          <strong>BEAM Modeling:</strong> Identifying “Brand Heat” triggers within specific categories (e.g., Authentic Jerseys vs. Streetwear) to bridge the gap between fan passion and commercial priority.
+        </li>
+      </ul>
+    </section>
+
+    <section class="case-study-section">
+      <h2 class="section-label">4. PROOF OF CONCEPT: CULTURAL &amp; MEASURABLE IMPACT</h2>
+
+      <ul>
+        <li>
+          <strong>Longitudinal Insight:</strong> 20 years as a Youth Program Director has provided a deep-rooted dataset on youth behavior and self-expression—key drivers for the “Limitless Entrepreneurial Spirit” Mitchell &amp; Ness embodies.
+        </li>
+        <li>
+          <strong>Visual Ethnography:</strong> A decade of documenting brands like Converse in street culture ensures my marketing recommendations are grounded in authentic visual storytelling and brand standards.
+        </li>
+        <li>
+          <strong>Performance Metrics:</strong> My strategic interventions have historically produced a <strong>24% conversion lift</strong> and <strong>700% social growth</strong> through intentional psychological framing and consumer-focused execution.
+        </li>
+      </ul>
+    </section>
+
+    <section class="case-study-section">
+      <h2 class="section-label">5. CONCLUSION</h2>
+      <p>
+        With a decade of experience navigating matrixed organizations and a background in communications, I am prepared to “quarterback” the Mitchell &amp; Ness category marketing strategy to delight fans and drive relentless growth.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
