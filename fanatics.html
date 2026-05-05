@@ -1,102 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Strategic Brand Audit — Mitchell & Ness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Strategic brand audit for Fanatics Commerce / Mitchell & Ness by Megan Oliver, Category Marketing Strategist & Consultant.">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategic Brand Audit: Mitchell &amp; Ness | Megan Oliver</title>
+  <meta name="description" content="A behavioral architecture audit for Mitchell & Ness — elevating category strategy through the ACE Framework and BEAM Modeling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
+  <style>
+    :root {
+      --green:      #2d5a45;
+      --green-mid:  #3a7057;
+      --green-pale: #e8f0ec;
+      --cream:      #f5f2ee;
+      --white:      #ffffff;
+      --ink:        #1a1a18;
+      --ink-mid:    #3d3d38;
+      --ink-light:  #7a7a72;
+      --rule:       #d4d0c8;
+      --gold:       #b8935a;
+      --accent:     #c4a35a;
+      --nav-h:      64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(255,255,255,0.75);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 250;
+      background: #1f2124;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    #mobileMenu.open { display: flex; }
+
+    #mobileMenu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    #mobileMenu a:hover { color: #fff; }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.75rem;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-close:hover { color: #fff; }
+
+    /* HERO */
+    .article-hero {
+      background: var(--ink);
+      padding: 8rem 3.5rem 5rem;
+      margin-top: var(--nav-h);
+    }
+
+    .article-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .article-eyebrow a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-eyebrow a:hover { color: #fff; }
+    .article-eyebrow span { color: rgba(255,255,255,0.2); }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.08;
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+
+    /* Memo header block */
+    .memo-header {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      max-width: 620px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .memo-key {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      padding-top: 0.1rem;
+    }
+
+    .memo-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    .article-meta-strip {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* CONTENT */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 3.5rem 7rem;
+    }
+
+    .article-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body p strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .article-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Section number badge */
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .article-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .article-list {
+      list-style: none;
+      margin: 0.75rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .article-list li {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.9rem;
+    }
+
+    .article-list li::before {
+      content: '—';
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .article-list li strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .article-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.45;
+      border-left: 3px solid var(--green);
+      padding: 0.5rem 0 0.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    /* Stat callouts */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      margin: 2rem 0;
+    }
+
+    .stat-cell {
+      background: var(--white);
+      padding: 1.5rem 1.75rem;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* Framework card */
+    .framework-card {
+      border: 1px solid var(--rule);
+      background: var(--white);
+      padding: 2rem 2.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .framework-card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .framework-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .framework-card p {
+      font-size: 0.95rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* FOOTER */
+    .article-footer {
+      background: var(--ink);
+      padding: 3rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-back:hover { color: #fff; }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .article-hero { padding: 6rem 1.5rem 3.5rem; }
+      .memo-header { grid-template-columns: 1fr; }
+      .article-body { padding: 3rem 1.5rem 5rem; }
+      .stat-row { grid-template-columns: 1fr; }
+      .article-footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
 <body>
 
-  <header class="site-header">
-    <nav class="nav">
-      <a href="about.html">About</a>
-      <a href="work.html">Work</a>
-      <a href="articles.html">Writing</a>
-      <a href="frameworks.html">Frameworks</a>
-      <a href="contact.html">Contact</a>
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
     </nav>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <main class="case-study">
+  <div id="mobileMenu">
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Close menu">&times;</button>
+    <a href="./about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="./Work.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Work</a>
+    <a href="./Articles.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Writing</a>
+    <a href="./Frameworks.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Frameworks</a>
+    <a href="./index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+  </div>
 
-    <div class="case-study-eyebrow">STRATEGIC BRAND AUDIT</div>
-    <h1 class="case-study-title">Elevating Mitchell &amp; Ness Category Strategy via Behavioral Architecture</h1>
+  <div class="article-hero">
+    <p class="article-eyebrow">
+      <a href="Work.html">Work</a>
+      <span>/</span>
+      Strategic Audit &middot; Category Marketing
+    </p>
+    <h1 class="article-title">Strategic Brand Audit: Mitchell &amp; Ness</h1>
 
-    <section class="case-study-section">
-      <h2 class="section-label">TO</h2>
-      <p>Fanatics Commerce / Mitchell &amp; Ness Hiring Team</p>
+    <div class="memo-header">
+      <span class="memo-key">To</span>
+      <span class="memo-val">Fanatics Commerce / Mitchell &amp; Ness Hiring Team</span>
+      <span class="memo-key">From</span>
+      <span class="memo-val">Megan Oliver, Category Marketing Strategist &amp; Consultant</span>
+      <span class="memo-key">Re</span>
+      <span class="memo-val">Elevating Mitchell &amp; Ness Category Strategy via Behavioral Architecture</span>
+    </div>
 
-      <h2 class="section-label">FROM</h2>
-      <p>Megan Oliver, Category Marketing Strategist &amp; Consultant<span class="sup-cite">[1]</span></p>
+    <div class="article-meta-strip">
+      <div class="meta-item">
+        <span class="meta-label">Author</span>
+        <span class="meta-value">Megan Oliver</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Type</span>
+        <span class="meta-value">Strategic Brand Audit</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Brand</span>
+        <span class="meta-value">Mitchell &amp; Ness / Fanatics Commerce</span>
+      </div>
+    </div>
+  </div>
 
-      <h2 class="section-label">SUBJECT</h2>
-      <p>Elevating Mitchell &amp; Ness Category Strategy via Behavioral Architecture</p>
-    </section>
+  <div class="article-body">
 
-    <section class="case-study-section">
-      <h2 class="section-label">1. THE CHALLENGE: BALANCING HERITAGE WITH DEMAND</h2>
-      <p>
-        Mitchell &amp; Ness exists at the intersection of sports nostalgia and modern streetwear. The challenge is ensuring that category-level strategies do not just move product, but actively reinforce the brand’s storied legacy across a fragmented fan journey.
-      </p>
-    </section>
+    <span class="section-number">01 &mdash; The Challenge</span>
+    <h2 class="article-h2">Balancing Heritage with Demand</h2>
+    <p>Mitchell &amp; Ness exists at the intersection of sports nostalgia and modern streetwear. The challenge is ensuring that category-level strategies do not just move product, but actively reinforce the brand&rsquo;s storied legacy across a fragmented fan journey.</p>
+    <p>Heritage is not a given — it&rsquo;s earned at every touchpoint. For a brand built on authenticity, the gap between how fans feel the brand and how the brand shows up commercially is the most important gap to close.</p>
 
-    <section class="case-study-section">
-      <h2 class="section-label">2. THE DIAGNOSTIC: CATEGORY SYNERGY</h2>
-      <p>
-        To drive impact for specific product categories, marketing must move beyond basic awareness into <strong>Choice Architecture</strong><span class="sup-cite">[1]</span>.
-      </p>
+    <hr class="article-rule" />
 
-      <ul>
-        <li>
-          <strong>Quarterbacking Execution:</strong> Leading cross-functional stakeholder groups—including Brand, Product, and Merchandising—to ensure seasonal business goals are met with operational excellence and on-time deliverables.
-        </li>
-        <li>
-          <strong>Consumer Insight Translation:</strong> Decoding the “why” behind fan behavior and translating complex category performance data into actionable marketing briefs that resonate with lifestyle and fashion audiences<span class="sup-cite">[1]</span>.
-        </li>
-      </ul>
-    </section>
+    <span class="section-number">02 &mdash; The Diagnostic</span>
+    <h2 class="article-h2">Category Synergy &amp; Choice Architecture</h2>
+    <p>To drive impact for specific product categories, marketing must move beyond basic awareness into <strong>Choice Architecture</strong> — designing the conditions under which fans naturally select, not just discover.</p>
 
-    <section class="case-study-section">
-      <h2 class="section-label">3. THE PRESCRIPTION: PROPRIETARY FRAMEWORKS (ACE &amp; BEAM)</h2>
-      <p>I utilize a methodology rooted in behavioral science to align category narratives with fan psychology.</p>
+    <ul class="article-list">
+      <li><strong>Quarterbacking Execution:</strong> Leading cross-functional stakeholder groups — Brand, Product, and Merchandising — to ensure seasonal business goals are met with operational excellence and on-time deliverables.</li>
+      <li><strong>Consumer Insight Translation:</strong> Decoding the &ldquo;why&rdquo; behind fan behavior, translating complex category performance data into actionable marketing briefs that resonate with lifestyle and fashion audiences.</li>
+    </ul>
 
-      <ul>
-        <li>
-          <strong>ACE Framework (Algorithmic Context Engine):</strong> A diagnostic tool I developed to identify the environmental contexts that drive purchase decisions, ensuring product categories show up authentically across digital and physical channels.
-        </li>
-        <li>
-          <strong>BEAM Modeling:</strong> Identifying “Brand Heat” triggers within specific categories (e.g., Authentic Jerseys vs. Streetwear) to bridge the gap between fan passion and commercial priority.
-        </li>
-      </ul>
-    </section>
+    <div class="article-pullquote">The question isn&rsquo;t whether fans love the brand. It&rsquo;s whether the category strategy gives them the right moment to act on that love.</div>
 
-    <section class="case-study-section">
-      <h2 class="section-label">4. PROOF OF CONCEPT: CULTURAL &amp; MEASURABLE IMPACT</h2>
+    <hr class="article-rule" />
 
-      <ul>
-        <li>
-          <strong>Longitudinal Insight:</strong> 20 years as a Youth Program Director has provided a deep-rooted dataset on youth behavior and self-expression—key drivers for the “Limitless Entrepreneurial Spirit” Mitchell &amp; Ness embodies.
-        </li>
-        <li>
-          <strong>Visual Ethnography:</strong> A decade of documenting brands like Converse in street culture ensures my marketing recommendations are grounded in authentic visual storytelling and brand standards.
-        </li>
-        <li>
-          <strong>Performance Metrics:</strong> My strategic interventions have historically produced a <strong>24% conversion lift</strong> and <strong>700% social growth</strong> through intentional psychological framing and consumer-focused execution.
-        </li>
-      </ul>
-    </section>
+    <span class="section-number">03 &mdash; The Prescription</span>
+    <h2 class="article-h2">Proprietary Frameworks: ACE &amp; BEAM</h2>
+    <p>My methodology is rooted in behavioral science — aligning category narratives with fan psychology rather than demographic assumptions.</p>
 
-    <section class="case-study-section">
-      <h2 class="section-label">5. CONCLUSION</h2>
-      <p>
-        With a decade of experience navigating matrixed organizations and a background in communications, I am prepared to “quarterback” the Mitchell &amp; Ness category marketing strategy to delight fans and drive relentless growth.
-      </p>
-    </section>
+    <div class="framework-card">
+      <span class="framework-card-label">Framework 01 &mdash; ACE</span>
+      <div class="framework-card-title">Algorithmic Context Engine</div>
+      <p>A diagnostic tool developed to identify the environmental contexts that drive purchase decisions — ensuring product categories show up authentically across digital and physical channels. ACE maps the <em>when</em> and <em>where</em> of fan receptivity, not just who the fan is.</p>
+    </div>
 
-  </main>
+    <div class="framework-card">
+      <span class="framework-card-label">Framework 02 &mdash; BEAM</span>
+      <div class="framework-card-title">Brand Heat Modeling</div>
+      <p>Identifying &ldquo;Brand Heat&rdquo; triggers within specific categories — Authentic Jerseys vs. Streetwear, for example — to bridge the gap between fan passion and commercial priority. BEAM surfaces which cultural moments are convertible, and which are better left as equity plays.</p>
+    </div>
+
+    <hr class="article-rule" />
+
+    <span class="section-number">04 &mdash; Proof of Concept</span>
+    <h2 class="article-h2">Cultural &amp; Measurable Impact</h2>
+    <p>Strategy without evidence is speculation. Here is where the approach has already proven itself.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-number">24%</div>
+        <div class="stat-label">Conversion lift via behavioral framing</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">700%</div>
+        <div class="stat-label">Social growth through psychological sequencing</div>
+      </div>
+    </div>
+
+    <ul class="article-list">
+      <li><strong>Longitudinal Insight:</strong> 20 years as a Youth Program Director has produced a deep-rooted dataset on youth behavior and self-expression — the key drivers behind the &ldquo;Limitless Entrepreneurial Spirit&rdquo; Mitchell &amp; Ness embodies.</li>
+      <li><strong>Visual Ethnography:</strong> A decade documenting brands like Converse in street culture ensures marketing recommendations are grounded in authentic visual storytelling and brand standards — not trend-chasing.</li>
+      <li><strong>Performance Metrics:</strong> Strategic interventions have historically produced measurable lift through intentional psychological framing and consumer-focused execution.</li>
+    </ul>
+
+    <hr class="article-rule" />
+
+    <span class="section-number">05 &mdash; Conclusion</span>
+    <h2 class="article-h2">Ready to Quarterback Category Strategy</h2>
+    <p>With a decade of experience navigating matrixed organizations and a background in communications, I am prepared to lead the Mitchell &amp; Ness category marketing strategy — building the kind of consumer architecture that delights fans and drives relentless, defensible growth.</p>
+    <p>The opportunity is not just to move product. It is to deepen the relationship between a generational brand and the fans who built it. That is the work I am here to do.</p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="Work.html" class="footer-back">&larr; All Work</a>
+    <nav class="footer-nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#portfolio">Work</a>
+      <a href="index.html#frameworks">Frameworks</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
