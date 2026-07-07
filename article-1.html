@@ -14,7 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    <meta name="description" content="Why personas fail to predict behavior — and why behavioral strategy focuses on the moment someone decides." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Persona Knows Who They Are. It Has No Idea What They're About to Do. | Megan Oliver</title>
-  <meta name="description" content="Personas answer the wrong question. They tell you who someone is — not what they're about to do. And marketing that optimizes for identity instead of behavior misses the decision entirely." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -245,6 +244,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--ink);
     }
 
+    .article-body p a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-color: rgba(45,90,69,0.35);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .article-body p a:hover {
+      text-decoration-color: var(--green);
+    }
+
     .article-h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.75rem;
@@ -296,6 +307,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-left: 3px solid var(--green);
       padding: 0.5rem 0 0.5rem 1.75rem;
       margin: 2.5rem 0;
+    }
+
+    .article-proof-link {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .article-proof-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-proof-link p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
     }
 
     /* RELATED STRIP */
@@ -495,6 +527,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Stop asking: who is our customer?</p>
     <p>Start asking: what state is our customer in when they're most ready to act — and how do we build strategy around that state?</p>
     <p>That's the shift from identity-based marketing to behavioral marketing. And it changes every downstream decision: how you segment, how you sequence, what you say, and what you measure.</p>
+
+    <div class="article-proof-link">
+      <div class="article-proof-label">This Reframe, Applied</div>
+      <p>I saw this play out directly with a regional real estate firm whose content was built entirely around who buyers and sellers were — listings, service pages, agent bios — with nothing built around the decision they were actually in the middle of. <a href="Work-Regional-Real-Estate.html">See how shifting from listing-first to decision-first content changed the outcome &rarr;</a></p>
+    </div>
 
   </div>
 
