@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPL5CLXD');</script>
+<!-- End Google Tag Manager -->
+
+  <link rel="canonical" href="https://www.meganoliver.com/Work-Landscaping-Behavioral-Optimization.html"/>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turning a New Site Launch Into a Behavioral Optimization System | Megan Oliver – Behavioral Marketing Strategist</title>
+  <meta name="description" content="How a phased, behavior-first strategy turned a newly launched landscaping website into a measurable conversion system — without waiting on months of data to act." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --mid: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ec;
+      --white: #ffffff;
+      --ink: #1a1018;
+      --ink-mid: #3d3d38;
+      --link-light: #7d7a72;
+      --rule: #d4d0cb;
+      --gold: #b89558;
+      --accent: #c4435a;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: #ffffff; }
+
+    /* MOBILE MENU */
+    #mobileMenu {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 70%;
+      height: 100%;
+      background: #1f2124;
+      padding: 2rem;
+      transition: right 0.3s ease;
+      z-index: 300;
+    }
+
+    #mobileMenu.open { right: 0; }
+
+    #mobileMenu a {
+      display: block;
+      margin-bottom: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    /* CASE STUDY LAYOUT */
+    .case-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 4rem) 2rem 6rem;
+    }
+
+    .case-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .case-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .case-status::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    h1.case-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    h2.case-section {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 3rem 0 1rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+
+    ul { margin: 1rem 0 1.5rem; padding-left: 1.25rem; }
+    li { margin-bottom: 0.75rem; }
+
+    .case-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.5;
+      border-left: 3px solid var(--green);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    /* PHASE TIMELINE */
+    .phase-block {
+      margin: 2rem 0;
+      padding: 1.75rem 2rem;
+      background: var(--white);
+      border-left: 3px solid var(--green);
+    }
+
+    .phase-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .phase-block p { font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .phase-block ul { margin: 0.5rem 0 0; }
+    .phase-block li { font-size: 0.92rem; margin-bottom: 0.4rem; }
+
+    /* STAT GROUPS */
+    .stat-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin: 2rem 0 1rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      margin: 0.5rem 0 2rem;
+    }
+
+    .stat-grid.stat-grid--wide { grid-template-columns: repeat(4, 1fr); }
+
+    .stat-card {
+      background: var(--green);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .case-callout {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+    }
+
+    .case-callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .case-callout p { font-size: 0.95rem; margin-bottom: 0; }
+
+    .case-insight {
+      background: var(--ink);
+      padding: 2rem 2.25rem;
+      margin: 2rem 0;
+    }
+
+    .case-insight-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .case-insight p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .case-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    .case-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1.25rem;
+      background: var(--green);
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .case-cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.4;
+      margin: 0;
+      max-width: 480px;
+    }
+
+    .case-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      background: var(--cream);
+      color: var(--green);
+      white-space: nowrap;
+      transition: gap 0.2s, background 0.2s;
+    }
+
+    .case-cta-btn:hover { background: #ebe7e0; gap: 1rem; }
+
+    .case-footer-links {
+      display: flex;
+      gap: 2rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .case-footer-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,90,69,0.3);
+      padding-bottom: 0.1rem;
+      transition: border-color 0.2s;
+    }
+
+    .case-footer-link:hover { border-color: var(--green); }
+
+    /* FOOTER */
+    .framework-footer {
+      background: var(--ink);
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .case-container { padding: 7rem 1.5rem 5rem; }
+      .stat-grid, .stat-grid.stat-grid--wide { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPL5CLXD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu">
+    <a href="./about.html">About</a>
+    <a href="./Work.html">Work</a>
+    <a href="./Articles.html">Writing</a>
+    <a href="./Frameworks.html">Frameworks</a>
+    <a href="./index.html#contact">Contact</a>
+  </div>
+
+  <!-- NAV BAR -->
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html" class="active">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- CASE STUDY CONTENT -->
+  <div class="case-container">
+
+    <div class="case-eyebrow">Case Study &middot; Home Services / Landscaping</div>
+    <div class="case-status">Live Engagement &middot; Q2 Results</div>
+    <h1 class="case-title">Turning a New Site Launch Into a Behavioral Optimization System</h1>
+
+    <h2 class="case-section">The Challenge</h2>
+    <p>A regional landscaping company had just launched a new website. The immediate priority wasn't more traffic — it was understanding how people were actually using the new site, and turning that understanding into improvements fast.</p>
+    <p>Most teams wait months to accumulate "enough" data before acting. That approach trades speed for false certainty. The real question was: how do we start optimizing from week one, using behavior instead of guesswork?</p>
+
+    <h2 class="case-section">The Strategic Insight</h2>
+    <p>Rather than waiting on long-term data collection, the strategy centered on rapid behavioral analysis and iterative optimization — establishing a baseline fast, then acting on it immediately. This is the same principle behind my <a href="./core-framework.html" style="color:var(--green);">C.O.R.E framework</a>: context and timing matter more than volume of data.</p>
+    <div class="case-pullquote">The goal wasn't just to get people to the site. It was to understand what they were standing in front of when they arrived — and remove whatever was stopping them from moving forward.</div>
+
+    <div class="case-cta">
+      <p>Want to see how a decision-first strategy could work for your business?</p>
+      <a href="./index.html#contact" class="case-cta-btn">Let's Talk &rarr;</a>
+    </div>
+
+    <h2 class="case-section">The Strategy</h2>
+    <p>The approach was structured in three phases across the quarter, paired with a supporting paid media plan (Google Search, Meta, and Display/YouTube) to keep qualified traffic flowing into the site while the behavioral work took hold.</p>
+
+    <div class="phase-block">
+      <div class="phase-label">Phase 1 &middot; Behavioral Baseline &amp; Signal Detection</div>
+      <div class="phase-title">Establishing What Was Actually Happening</div>
+      <p>Before optimizing anything, the site needed clean signal: validating tracking on forms, click-to-call, CTAs, and key service pages, then mapping entry performance, navigation patterns, and early friction points.</p>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Phase 2 &middot; Conversion Path Optimization</div>
+      <div class="phase-title">Closing the Gap Between Engagement and Action</div>
+      <p>With friction points identified, the focus shifted to service page clarity, lower-commitment mid-funnel steps (explore projects, view examples), stronger internal linking, and reducing friction around contact and form submission — the ability and motivation barriers mapped in my <a href="./beam-framework.html" style="color:var(--green);">B.E.A.M framework</a>.</p>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Phase 3 &middot; Scale &amp; Refine</div>
+      <div class="phase-title">Expanding What Was Already Working</div>
+      <p>The final phase applied successful patterns across additional pages, expanded high-intent service content, and refined CTAs based on observed behavior — turning early wins into a repeatable structure for continued growth.</p>
+    </div>
+
+    <hr class="case-rule">
+
+    <h2 class="case-section">Early Results</h2>
+    <p>This engagement is ongoing, but the first 90 days already show the behavioral approach taking hold — both in lead activity and in how far new content is reaching.</p>
+
+    <div class="stat-group-label">Lead Generation</div>
+    <div class="stat-grid stat-grid--wide">
+      <div class="stat-card"><div class="stat-card-num">+88.6%</div><div class="stat-card-label">Form Starts</div></div>
+      <div class="stat-card"><div class="stat-card-num">+86.7%</div><div class="stat-card-label">Form Submissions</div></div>
+      <div class="stat-card"><div class="stat-card-num">+41.4%</div><div class="stat-card-label">Click-to-Call Events</div></div>
+      <div class="stat-card"><div class="stat-card-num">+28%</div><div class="stat-card-label">Contact Page Users</div></div>
+    </div>
+
+    <div class="stat-group-label">New Service Page Performance</div>
+    <div class="stat-grid stat-grid--wide">
+      <div class="stat-card"><div class="stat-card-num">+364%</div><div class="stat-card-label">Portfolio Page Views</div></div>
+      <div class="stat-card"><div class="stat-card-num">+310%</div><div class="stat-card-label">Pools &amp; Spas Page Views</div></div>
+      <div class="stat-card"><div class="stat-card-num">+286%</div><div class="stat-card-label">Outdoor Living Page Views</div></div>
+      <div class="stat-card"><div class="stat-card-num">+81%</div><div class="stat-card-label">Landscape Services Views</div></div>
+    </div>
+
+    <div class="stat-group-label">Organic Growth</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-card-num">+11.5%</div><div class="stat-card-label">New Users from Organic Search</div></div>
+      <div class="stat-card"><div class="stat-card-num">75%</div><div class="stat-card-label">Organic Engagement Rate (up from 71.6%)</div></div>
+    </div>
+
+    <div class="case-callout">
+      <div class="case-callout-label">What Phase 3 Is Watching Now</div>
+      <p>Baseline diagnostics also surfaced two active friction points heading into the next round of optimization: a 12.67% dead-click rate site-wide, and a Largest Contentful Paint of 2.6s flagged as "needs improvement." Both are now inputs into the ongoing conversion-path work.</p>
+    </div>
+
+    <hr class="case-rule">
+
+    <h2 class="case-section">Why It's Working</h2>
+    <p>The strategy is working because it treats behavior as the baseline to build from — not something to circle back to after the "real" work is done. Instead of waiting on months of data before touching the site, the plan started making decisions from the data available at day one, then layered paid acquisition on top to keep the sample size — and the learning — growing.</p>
+    <p>The early lift in form activity and click-to-call events shows the conversion-path work in Phase 2 is already closing gaps. The surge in service page traffic shows the content expansion in Phase 3 is reaching people who weren't finding those pages before.</p>
+
+    <div class="case-insight">
+      <div class="case-insight-label">Key Takeaway</div>
+      <p>&ldquo;You don't need six months of data to start improving a site. You need a fast, honest baseline — and a plan that keeps acting on what the behavior tells you.&rdquo;</p>
+    </div>
+
+    <div class="case-footer-links">
+      <a href="./Articles.html" class="case-footer-link">More behavioral marketing insights &rarr;</a>
+      <a href="./about.html" class="case-footer-link">About my approach &rarr;</a>
+      <a href="./index.html#contact" class="case-footer-link">Get in touch &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="framework-footer">
+    <nav class="footer-nav-links">
+      <a href="./about.html">About</a>
+      <a href="./Work.html">Work</a>
+      <a href="./Articles.html">Writing</a>
+      <a href="./Frameworks.html">Frameworks</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
