@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -113,7 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
+        <li><a href="Work.html">Work</a></li>
         <li><a href="Articles.html" class="active">Writing</a></li>
         <li><a href="Frameworks.html">Frameworks</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -126,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <a href="about.html">About</a>
-    <a href="work.html">Work</a>
+    <a href="Work.html">Work</a>
     <a href="Articles.html">Writing</a>
     <a href="Frameworks.html">Frameworks</a>
     <a href="index.html#contact">Contact</a>
@@ -192,7 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="article-footer-links">
       <a href="Articles.html" class="article-footer-link">More thought leadership &rarr;</a>
-      <a href="work.html" class="article-footer-link">See case studies &rarr;</a>
+      <a href="Work.html" class="article-footer-link">See case studies &rarr;</a>
       <a href="index.html#contact" class="article-footer-link">Get in touch &rarr;</a>
     </div>
 
@@ -204,7 +204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="index.html" class="footer-logo">Megan Oliver</a>
   <ul class="footer-nav">
     <li><a href="about.html">About</a></li>
-    <li><a href="work.html">Work</a></li>
+    <li><a href="Work.html">Work</a></li>
     <li><a href="Articles.html">Writing</a></li>
     <li><a href="Frameworks.html">Frameworks</a></li>
     <li><a href="index.html#contact">Contact</a></li>
