@@ -194,7 +194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Featured -->
-    <a href="Work-Healthcare-SaaS-Demand.html" class="cs-featured">
+    <a href="Work-Healthcare-SaaS-Demand.html" class="cs-featured" id="csFeatured" data-tags="saas b2b healthcare">
       <span class="cs-featured-tag">Featured &middot; B2B SaaS / Healthcare Foodservice Software</span>
       <h3 class="cs-featured-title">Turning Search Intent Into Demo Demand for a B2B Software Company</h3>
       <p class="cs-featured-desc">A healthcare foodservice software company needed a shorter-term demand-capture path while its organic content system matured. I built a 90-day SEO and Paid Search strategy that connected high-intent search behavior to clearer solution pages and a stronger demo pathway.</p>
@@ -407,6 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const paginationEl = document.getElementById('csPagination');
     const filterBtns = Array.from(document.querySelectorAll('#csFilterBar .filter-tag'));
     const rows = Array.from(rowsWrap.querySelectorAll('.cs-row'));
+    const featured = document.getElementById('csFeatured');
 
     let activeTag = 'all';
     let currentPage = 1;
@@ -416,6 +417,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (activeTag === 'all') return true;
         return row.dataset.tags.split(' ').includes(activeTag);
       });
+    }
+
+    function updateFeatured() {
+      if (!featured) return;
+      const matches = activeTag === 'all' || featured.dataset.tags.split(' ').includes(activeTag);
+      featured.style.display = matches ? 'block' : 'none';
     }
 
     function renderPagination(totalPages) {
@@ -446,6 +453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     function render() {
+      updateFeatured();
       const filtered = getFiltered();
       const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
       if (currentPage > totalPages) currentPage = totalPages;
