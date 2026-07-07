@@ -76,17 +76,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .cs-featured-link { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--cream); background: var(--green); padding: 0.8rem 1.6rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s, background 0.2s; }
     .cs-featured:hover .cs-featured-link { gap: 0.85rem; background: var(--green-mid); }
 
-    /* ── CASE STUDY ROW LIST ── */
-    .cs-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 3rem; padding: 2.25rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; cursor: pointer; transition: padding-left 0.25s; }
-    .cs-row:hover { padding-left: 0.75rem; }
-    .cs-row-main { max-width: 560px; }
-    .cs-row-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.6rem; display: block; }
-    .cs-row-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 0.6rem; transition: color 0.2s; }
-    .cs-row:hover .cs-row-title { color: var(--green); }
-    .cs-row-desc { font-size: 0.92rem; font-weight: 300; line-height: 1.7; color: var(--ink-light); }
-    .cs-row-outcomes { display: flex; gap: 2rem; flex-shrink: 0; }
-    .cs-row-outcome-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 0.25rem; }
-    .cs-row-outcome-label { font-family: 'DM Mono', monospace; font-size: 0.53rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-light); white-space: nowrap; }
+    /* ── CASE STUDY BOX GRID ── */
+    .cs-box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); }
+    .cs-box { background: var(--white); padding: 2.5rem; display: flex; flex-direction: column; gap: 0.6rem; cursor: pointer; text-decoration: none; color: inherit; transition: background 0.2s; }
+    .cs-box:hover { background: var(--green-pale); }
+    .cs-box-tag { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-mid); }
+    .cs-box-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); line-height: 1.25; margin-top: 0.25rem; }
+    .cs-box-desc { font-size: 0.875rem; font-weight: 300; line-height: 1.75; color: var(--ink-light); flex: 1; }
+    .cs-box-outcomes { display: flex; gap: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); margin-top: 0.5rem; flex-wrap: wrap; }
+    .cs-box-outcome-num { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 0.2rem; }
+    .cs-box-outcome-label { font-family: 'DM Mono', monospace; font-size: 0.53rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-light); }
+    .cs-box-read { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(196,163,90,0.3); padding-bottom: 0.1rem; align-self: flex-start; margin-top: 0.5rem; transition: border-color 0.2s; }
+    .cs-box:hover .cs-box-read { border-color: var(--gold); }
 
     /* ── FILTER BAR ── */
     .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 2.5rem 0 2.5rem; }
@@ -99,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .page-btn:hover:not(:disabled):not(.active) { border-color: var(--green); color: var(--green); }
     .page-btn.active { background: var(--green); color: var(--cream); border-color: var(--green); cursor: default; }
     .page-btn:disabled { opacity: 0.3; cursor: default; }
-    .no-results { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--ink-light); text-align: center; padding: 3rem 0; }
+    .no-results { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--ink-light); text-align: center; padding: 3rem 0; grid-column: 1 / -1; }
 
     /* ── RESEARCH CARDS ── */
     .r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
@@ -125,6 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       .r-grid { grid-template-columns: 1fr; }
+      .cs-box-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 860px) {
       header.main-header { padding: 0 1.5rem; }
@@ -132,13 +134,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .section-block { padding: 3rem 1.5rem 4rem; }
       footer { padding: 1.75rem 1.5rem; }
       .footer-copy { text-align: left; }
-      .cs-row { flex-direction: column; gap: 1.25rem; }
-      .cs-row-outcomes { gap: 1.75rem; }
       .cs-featured-outcomes { gap: 2rem; }
     }
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
+      .cs-box-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -219,102 +220,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="filter-tag" data-tag="general">General</button>
     </div>
 
-    <!-- Row list -->
-    <div id="csRows">
-    <a href="Work-Regional-Real-Estate.html" class="cs-row" data-tags="b2c general">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Real Estate / Content Strategy</span>
-        <h3 class="cs-row-title">Building Demand by Aligning Content With Housing Decision Moments</h3>
-        <p class="cs-row-desc">A regional real estate firm's digital presence centered on listings rather than the decisions buyers and sellers actually make before contacting an agent. I rebuilt the content strategy around those decision moments.</p>
+    <!-- Box grid -->
+    <div id="csRows" class="cs-box-grid">
+    <a href="Work-Regional-Real-Estate.html" class="cs-box" data-tags="b2c general">
+      <span class="cs-box-tag">Case Study &middot; Real Estate / Content Strategy</span>
+      <h3 class="cs-box-title">Building Demand by Aligning Content With Housing Decision Moments</h3>
+      <p class="cs-box-desc">A regional real estate firm's digital presence centered on listings rather than the decisions buyers and sellers actually make before contacting an agent.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">+45%</div><div class="cs-box-outcome-label">Form Submissions</div></div>
+        <div><div class="cs-box-outcome-num">+64%</div><div class="cs-box-outcome-label">Click-to-Call</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">+45%</div><div class="cs-row-outcome-label">Form Submissions</div></div>
-        <div><div class="cs-row-outcome-num">+64%</div><div class="cs-row-outcome-label">Click-to-Call</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Work-Landscaping-Behavioral-Optimization.html" class="cs-row" data-tags="b2c general">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Home Services / Landscaping &middot; Live Engagement</span>
-        <h3 class="cs-row-title">Turning a New Site Launch Into a Behavioral Optimization System</h3>
-        <p class="cs-row-desc">After a new website launch, the priority was to start optimizing from behavior, not months of waiting. A phased baseline-to-scale strategy is already lifting form activity and expanding reach on key service pages.</p>
+    <a href="Work-Landscaping-Behavioral-Optimization.html" class="cs-box" data-tags="b2c general">
+      <span class="cs-box-tag">Case Study &middot; Home Services / Landscaping &middot; Live Engagement</span>
+      <h3 class="cs-box-title">Turning a New Site Launch Into a Behavioral Optimization System</h3>
+      <p class="cs-box-desc">After a new website launch, the priority was to start optimizing from behavior, not months of waiting.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">+86.7%</div><div class="cs-box-outcome-label">Form Submissions</div></div>
+        <div><div class="cs-box-outcome-num">+364%</div><div class="cs-box-outcome-label">Portfolio Views</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">+86.7%</div><div class="cs-row-outcome-label">Form Submissions</div></div>
-        <div><div class="cs-row-outcome-num">+364%</div><div class="cs-row-outcome-label">Portfolio Page Views</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Case study write lane.html" class="cs-row" data-tags="education b2c">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Early-Stage Growth / Day Zero</span>
-        <h3 class="cs-row-title">Creating Demand from Zero</h3>
-        <p class="cs-row-desc">At launch, The Write Lane had no audience, no client base, and no existing demand. I built behavioral momentum through community-based exposure, positioning clarity, and low-friction entry points that made first engagement feel easy and repeatable.</p>
+    <a href="Case study write lane.html" class="cs-box" data-tags="education b2c">
+      <span class="cs-box-tag">Case Study &middot; Early-Stage Growth / Day Zero</span>
+      <h3 class="cs-box-title">Creating Demand from Zero</h3>
+      <p class="cs-box-desc">At launch, The Write Lane had no audience, no client base, and no existing demand.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">0 &rarr; Waitlist</div><div class="cs-box-outcome-label">Client Growth</div></div>
+        <div><div class="cs-box-outcome-num">Hired</div><div class="cs-box-outcome-label">Teachers</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">0 &rarr; Waitlist</div><div class="cs-row-outcome-label">Client Growth</div></div>
-        <div><div class="cs-row-outcome-num">Hired</div><div class="cs-row-outcome-label">Additional Teachers</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Case study engagement.html" class="cs-row" data-tags="nonprofit">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Community / Nonprofit</span>
-        <h3 class="cs-row-title">Rebuilding Engagement Through Decision-Focused Communication</h3>
-        <p class="cs-row-desc">The organization had consistent activity — but inconsistent participation. I diagnosed where behavior was breaking down and rebuilt the system around how people actually decide to participate.</p>
+    <a href="Case study engagement.html" class="cs-box" data-tags="nonprofit">
+      <span class="cs-box-tag">Case Study &middot; Community / Nonprofit</span>
+      <h3 class="cs-box-title">Rebuilding Engagement Through Decision-Focused Communication</h3>
+      <p class="cs-box-desc">The organization had consistent activity — but inconsistent participation.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">+125%</div><div class="cs-box-outcome-label">Organic Social</div></div>
+        <div><div class="cs-box-outcome-num">+20%</div><div class="cs-box-outcome-label">First-Time Participation</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">+125%</div><div class="cs-row-outcome-label">Organic Social</div></div>
-        <div><div class="cs-row-outcome-num">+20%</div><div class="cs-row-outcome-label">First-Time Participation</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Case study seafood.html" class="cs-row" data-tags="nonprofit healthcare">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; National Nonprofit / Public Health</span>
-        <h3 class="cs-row-title">Closing the Gap Between Awareness and Action</h3>
-        <p class="cs-row-desc">Audiences already knew seafood was healthy. They weren't buying it. I diagnosed friction points and rebuilt messaging around the actual conditions under which people decide what to eat.</p>
+    <a href="Case study seafood.html" class="cs-box" data-tags="nonprofit healthcare">
+      <span class="cs-box-tag">Case Study &middot; National Nonprofit / Public Health</span>
+      <h3 class="cs-box-title">Closing the Gap Between Awareness and Action</h3>
+      <p class="cs-box-desc">Audiences already knew seafood was healthy. They weren't buying it.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">5&times;</div><div class="cs-box-outcome-label">Click-Through Rate</div></div>
+        <div><div class="cs-box-outcome-num">+63%</div><div class="cs-box-outcome-label">Social Engagement</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">5&times;</div><div class="cs-row-outcome-label">Click-Through Rate</div></div>
-        <div><div class="cs-row-outcome-num">+63%</div><div class="cs-row-outcome-label">Social Engagement</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Building a Youth Engagement System.html" class="cs-row" data-tags="nonprofit education">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Community / Youth Engagement</span>
-        <h3 class="cs-row-title">Building a Youth Engagement System That Drove Consistent Participation and Growth</h3>
-        <p class="cs-row-desc">Weekly participation was inconsistent and parent-driven communication wasn't working. I shifted to student-owned engagement and social reinforcement — turning occasional attendance into habit-based participation.</p>
+    <a href="Building a Youth Engagement System.html" class="cs-box" data-tags="nonprofit education">
+      <span class="cs-box-tag">Case Study &middot; Community / Youth Engagement</span>
+      <h3 class="cs-box-title">Building a Youth Engagement System That Drove Consistent Participation and Growth</h3>
+      <p class="cs-box-desc">Weekly participation was inconsistent and parent-driven communication wasn't working.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">15 &rarr; 50</div><div class="cs-box-outcome-label">Weekly Participants</div></div>
+        <div><div class="cs-box-outcome-num">200+</div><div class="cs-box-outcome-label">Event Attendance</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">15 &rarr; 50</div><div class="cs-row-outcome-label">Weekly Participants</div></div>
-        <div><div class="cs-row-outcome-num">200+</div><div class="cs-row-outcome-label">Event Attendance</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Affirmation-Waiting-Room-Case-Study.html" class="cs-row" data-tags="education general">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Childcare / Affect Priming</span>
-        <h3 class="cs-row-title">How Emotional State in a Waiting Room Increased Conversion by 24%</h3>
-        <p class="cs-row-desc">Parents who waited during a window of joyful classroom activity converted at a noticeably higher rate. No changes to the tour, staff, or pricing — just the emotional state parents were in before the conversation even began.</p>
+    <a href="Affirmation-Waiting-Room-Case-Study.html" class="cs-box" data-tags="education general">
+      <span class="cs-box-tag">Case Study &middot; Childcare / Affect Priming</span>
+      <h3 class="cs-box-title">How Emotional State in a Waiting Room Increased Conversion by 24%</h3>
+      <p class="cs-box-desc">Parents who waited during a window of joyful classroom activity converted at a noticeably higher rate.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">+24%</div><div class="cs-box-outcome-label">Conversion Lift</div></div>
+        <div><div class="cs-box-outcome-num">0</div><div class="cs-box-outcome-label">Process Changes</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">+24%</div><div class="cs-row-outcome-label">Conversion Lift</div></div>
-        <div><div class="cs-row-outcome-num">0</div><div class="cs-row-outcome-label">Process Changes</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
 
-    <a href="Scent-Experiment-Case-Study.html" class="cs-row" data-tags="education general">
-      <div class="cs-row-main">
-        <span class="cs-row-tag">Case Study &middot; Childcare / Environmental Design</span>
-        <h3 class="cs-row-title">How a Single Environmental Variable Increased Conversion by 17%</h3>
-        <p class="cs-row-desc">Parents toured, expressed interest, and didn't enroll. The fix wasn't better messaging — it was a single scent introduced at the entrance, addressing the emotional frame parents form before anyone says a word.</p>
+    <a href="Scent-Experiment-Case-Study.html" class="cs-box" data-tags="education general">
+      <span class="cs-box-tag">Case Study &middot; Childcare / Environmental Design</span>
+      <h3 class="cs-box-title">How a Single Environmental Variable Increased Conversion by 17%</h3>
+      <p class="cs-box-desc">Parents toured, expressed interest, and didn't enroll. The fix wasn't better messaging.</p>
+      <div class="cs-box-outcomes">
+        <div><div class="cs-box-outcome-num">+17%</div><div class="cs-box-outcome-label">Tour Conversion</div></div>
+        <div><div class="cs-box-outcome-num">1</div><div class="cs-box-outcome-label">Variable Changed</div></div>
       </div>
-      <div class="cs-row-outcomes">
-        <div><div class="cs-row-outcome-num">+17%</div><div class="cs-row-outcome-label">Tour Conversion</div></div>
-        <div><div class="cs-row-outcome-num">1</div><div class="cs-row-outcome-label">Variable Changed</div></div>
-      </div>
+      <span class="cs-box-read">Read Case Study &rarr;</span>
     </a>
     </div>
 
@@ -402,11 +395,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   /* ── CASE STUDY TAG FILTER + PAGINATION ── */
   (function() {
-    const PAGE_SIZE = 4;
+    const PAGE_SIZE = 6;
     const rowsWrap = document.getElementById('csRows');
     const paginationEl = document.getElementById('csPagination');
     const filterBtns = Array.from(document.querySelectorAll('#csFilterBar .filter-tag'));
-    const rows = Array.from(rowsWrap.querySelectorAll('.cs-row'));
+    const rows = Array.from(rowsWrap.querySelectorAll('.cs-box'));
     const featured = document.getElementById('csFeatured');
 
     let activeTag = 'all';
@@ -458,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
       if (currentPage > totalPages) currentPage = totalPages;
 
-      rows.forEach(function(row) { row.style.display = 'none'; row.style.borderBottom = ''; });
+      rows.forEach(function(row) { row.style.display = 'none'; });
 
       const existingMsg = rowsWrap.querySelector('.no-results');
       if (existingMsg) existingMsg.remove();
@@ -472,7 +465,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const start = (currentPage - 1) * PAGE_SIZE;
         const visible = filtered.slice(start, start + PAGE_SIZE);
         visible.forEach(function(row) { row.style.display = 'flex'; });
-        visible[visible.length - 1].style.borderBottom = 'none';
       }
 
       renderPagination(totalPages);
