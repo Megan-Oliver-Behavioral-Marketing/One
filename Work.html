@@ -48,14 +48,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .page { padding-top: var(--nav-h); }
 
     /* ── HERO / THESIS ── */
-    .work-hero { padding: 5.5rem 3.5rem 4rem; max-width: 760px; }
-    .work-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem; }
-    .work-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.08; color: var(--ink); margin-bottom: 1.75rem; }
-    .work-hero-thesis { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 400; line-height: 1.55; color: var(--green); border-left: 3px solid var(--green); padding-left: 1.5rem; }
+    .work-hero-wrap { padding: 2.5rem 3.5rem 0; }
+    .work-hero { max-width: 760px; margin-bottom: 2rem; }
+    .work-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 0.85rem; }
+    .work-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; line-height: 1.1; color: var(--ink); margin-bottom: 1.1rem; }
+    .work-hero-thesis { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; font-weight: 400; line-height: 1.5; color: var(--green); border-left: 3px solid var(--green); padding-left: 1.25rem; }
     .work-hero-thesis em { font-style: italic; }
 
     /* ── SECTION WRAPPER ── */
-    .section-block { padding: 4rem 3.5rem 5.5rem; }
+    .section-block { padding: 3rem 3.5rem 5.5rem; }
     .section-block--tint { background: var(--green-pale); }
 
     /* ── SECTION HEADER ── */
@@ -65,7 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-count { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); margin-left: auto; }
 
     /* ── FEATURED CASE STUDY (editorial spread) ── */
-    .cs-featured { display: block; text-decoration: none; color: inherit; padding: 3rem 0 3.5rem; border-bottom: 1px solid var(--rule); cursor: pointer; }
+    .cs-featured { display: block; text-decoration: none; color: inherit; padding: 0 0 2.5rem; border-bottom: 1px solid var(--rule); cursor: pointer; }
     .cs-featured-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
     .cs-featured-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; color: var(--ink); line-height: 1.15; max-width: 680px; margin-bottom: 1.1rem; transition: color 0.2s; }
     .cs-featured:hover .cs-featured-title { color: var(--green); }
@@ -130,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (max-width: 860px) {
       header.main-header { padding: 0 1.5rem; }
-      .work-hero { padding: 4rem 1.5rem 3rem; }
+      .work-hero-wrap { padding: 2rem 1.5rem 0; }
       .section-block { padding: 3rem 1.5rem 4rem; }
       footer { padding: 1.75rem 1.5rem; }
       .footer-copy { text-align: left; }
@@ -177,21 +178,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="index.html#contact" class="mobile-nav-link">Contact</a>
   </nav>
 
-  <!-- ══ HERO / THESIS ══ -->
-  <section class="work-hero">
-    <p class="work-eyebrow">Work</p>
-    <h1 class="work-hero-title">Case Studies &amp; Applied Behavioral Research</h1>
-    <p class="work-hero-thesis">Every project starts with the same question — <em>what decision is this person actually making, and what's standing in the way of it?</em></p>
-  </section>
-
-  <!-- ══ CASE STUDIES ══ -->
-  <section class="section-block">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Case Studies</p>
-        <h2 class="section-title">Applied Behavioral Work</h2>
-      </div>
-      <span class="section-count">09 Projects</span>
+  <!-- ══ HERO + FEATURED ══ -->
+  <section class="work-hero-wrap">
+    <div class="work-hero">
+      <p class="work-eyebrow">Work</p>
+      <h1 class="work-hero-title">Case Studies &amp; Applied Behavioral Research</h1>
+      <p class="work-hero-thesis">Every project starts with the same question — <em>what decision is this person actually making, and what's standing in the way of it?</em></p>
     </div>
 
     <!-- Featured -->
@@ -206,6 +198,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <span class="cs-featured-link">Read Case Study &rarr;</span>
     </a>
+  </section>
+
+  <!-- ══ CASE STUDIES ══ -->
+  <section class="section-block">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">More Case Studies</p>
+        <h2 class="section-title">Applied Behavioral Work</h2>
+      </div>
+      <span class="section-count">09 Projects</span>
+    </div>
 
     <div class="filter-bar" id="csFilterBar">
       <button class="filter-tag active" data-tag="all">All</button>
