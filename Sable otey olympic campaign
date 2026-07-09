@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPL5CLXD');</script>
+<!-- End Google Tag Manager -->
+
+  <link rel="canonical" href="https://www.meganoliver.com/Sable-Otey-Olympic-Campaign.html"/>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Memphis to the Olympics: Building a Community Fundraising Campaign for an Olympic Athlete | Megan Oliver</title>
+  <meta name="description" content="How earned media and community storytelling helped Memphis-based Olympic bobsledder Sable Otey fund her way to the 2018 Winter Olympics in PyeongChang." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #2d5a45;
+      --mid: #3a7057;
+      --green-pale: #e8f0ec;
+      --cream: #f5f2ec;
+      --white: #ffffff;
+      --ink: #1a1018;
+      --ink-mid: #3d3d38;
+      --link-light: #7d7a72;
+      --rule: #d4d0cb;
+      --gold: #b89558;
+      --accent: #c4435a;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header.main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: #1f2124;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: #ffffff; }
+
+    /* MOBILE MENU */
+    #mobileMenu {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 70%;
+      height: 100%;
+      background: #1f2124;
+      padding: 2rem;
+      transition: right 0.3s ease;
+      z-index: 300;
+    }
+
+    #mobileMenu.open { right: 0; }
+
+    #mobileMenu a {
+      display: block;
+      margin-bottom: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    /* CASE STUDY LAYOUT */
+    .case-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 4rem) 2rem 6rem;
+    }
+
+    .case-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    h1.case-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      line-height: 1.15;
+    }
+
+    h2.case-section {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 3rem 0 1rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+
+    ul { margin: 1rem 0 1.5rem; padding-left: 1.25rem; }
+    li { margin-bottom: 0.75rem; }
+
+    .case-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.5;
+      border-left: 3px solid var(--green);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    /* OUTCOME BADGES (milestones, not stats) */
+    .outcome-badges {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      margin: 2rem 0;
+    }
+
+    .outcome-badge {
+      background: var(--green);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .outcome-badge-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+
+    .outcome-badge-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.25;
+    }
+
+    .case-callout {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+    }
+
+    .case-callout-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .case-callout p { font-size: 0.95rem; margin-bottom: 0; }
+
+    .case-insight {
+      background: var(--ink);
+      padding: 2rem 2.25rem;
+      margin: 2rem 0;
+    }
+
+    .case-insight-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .case-insight p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .case-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    .case-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1.25rem;
+      background: var(--green);
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .case-cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.4;
+      margin: 0;
+      max-width: 480px;
+    }
+
+    .case-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      background: var(--cream);
+      color: var(--green);
+      white-space: nowrap;
+      transition: gap 0.2s, background 0.2s;
+    }
+
+    .case-cta-btn:hover { background: #ebe7e0; gap: 1rem; }
+
+    .case-footer-links {
+      display: flex;
+      gap: 2rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .case-footer-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,90,69,0.3);
+      padding-bottom: 0.1rem;
+      transition: border-color 0.2s;
+    }
+
+    .case-footer-link:hover { border-color: var(--green); }
+
+    /* FOOTER */
+    .framework-footer {
+      background: var(--ink);
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-nav-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      header.main-header { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .case-container { padding: 7rem 1.5rem 5rem; }
+      .outcome-badges { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPL5CLXD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu">
+    <a href="./about.html">About</a>
+    <a href="./Work.html">Work</a>
+    <a href="./Articles.html">Writing</a>
+    <a href="./Frameworks.html">Frameworks</a>
+    <a href="./index.html#contact">Contact</a>
+  </div>
+
+  <!-- NAV BAR -->
+  <header class="main-header">
+    <a href="./index.html" class="nav-logo">Megan Oliver</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./Work.html" class="active">Work</a></li>
+        <li><a href="./Articles.html">Writing</a></li>
+        <li><a href="./Frameworks.html">Frameworks</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- CASE STUDY CONTENT -->
+  <div class="case-container">
+
+    <div class="case-eyebrow">Case Study &middot; Sports / Athlete Storytelling &amp; Earned Media</div>
+    <h1 class="case-title">From Memphis to the Olympics: Building a Community Fundraising Campaign for an Olympic Athlete</h1>
+
+    <h2 class="case-section">The Challenge</h2>
+    <p>Sable Otey was a Memphis-based Olympic bobsledder, teacher, and mother of two with her sights set on the 2018 Winter Olympics in PyeongChang.</p>
+    <p>Like most athletes competing in non-revenue Olympic sports, she received no compensation to train or compete. Getting to the Olympics meant funding it herself — while working full time and raising a family.</p>
+    <p>The goal was to raise the funds she needed to compete while building her public profile in the Memphis market to generate community support and media visibility.</p>
+
+    <h2 class="case-section">My Role</h2>
+    <p>As part of a six-person multicultural PR and marketing agency, I played a key role in developing and executing the earned media and community outreach strategy for Sable's campaign — supporting everything from media pitching and story development to public positioning and community engagement.</p>
+
+    <div class="case-cta">
+      <p>Want to see how a decision-first strategy could work for your business?</p>
+      <a href="./index.html#contact" class="case-cta-btn">Let's Talk &rarr;</a>
+    </div>
+
+    <h2 class="case-section">The Strategy</h2>
+    <p>The campaign centered on making Sable's story visible and making it easy for the Memphis community to invest in her journey.</p>
+    <p>Rather than leading with athletic achievement alone, the strategy leaned into the full picture of who she was — an Olympic-level athlete who was also a teacher and a mother of two, training for the world's biggest stage while living an ordinary Memphis life. That was the story worth telling — the same identity-and-context principle behind the <strong>emotional state</strong> factor in my <a href="./core-framework.html" style="color:var(--green);">C.O.R.E framework</a>: people don't invest in a stranger's goal, they invest in someone whose situation feels emotionally close to their own.</p>
+    <div class="case-pullquote">Earned media was a primary vehicle. By securing local press coverage and feature placements, the campaign built credibility and community awareness simultaneously — turning visibility into momentum and momentum into donations.</div>
+
+    <hr class="case-rule">
+
+    <h2 class="case-section">The Outcome</h2>
+    <div class="outcome-badges">
+      <div class="outcome-badge">
+        <div class="outcome-badge-eyebrow">Fundraising Goal</div>
+        <div class="outcome-badge-main">Achieved</div>
+      </div>
+      <div class="outcome-badge">
+        <div class="outcome-badge-eyebrow">2018 Winter Olympics</div>
+        <div class="outcome-badge-main">PyeongChang, South Korea</div>
+      </div>
+    </div>
+    <p>The fundraising campaign succeeded. Sable Otey made it to the 2018 Winter Olympics in PyeongChang.</p>
+    <div class="case-callout">
+      <div class="case-callout-label">Earned Media Highlight</div>
+      <p>A feature cover story in <em>Memphis Health and Fitness</em> magazine, positioning Sable as a local hero with a national stage.</p>
+    </div>
+
+    <hr class="case-rule">
+
+    <h2 class="case-section">Key Takeaway</h2>
+    <p>The most effective fundraising campaigns don't lead with the ask. They lead with the story.</p>
+    <p>When people understand who someone is — not just what they're trying to accomplish — they don't just donate. They invest. The Memphis community invested in Sable Otey because her story was real, specific, and worth telling. Our job was to make sure it got told.</p>
+
+    <div class="case-insight">
+      <div class="case-insight-label">Key Takeaway</div>
+      <p>&ldquo;People don't fund a goal. They fund a person. The work is making that person impossible not to root for.&rdquo;</p>
+    </div>
+
+    <div class="case-footer-links">
+      <a href="./Articles.html" class="case-footer-link">More behavioral marketing insights &rarr;</a>
+      <a href="./about.html" class="case-footer-link">About my approach &rarr;</a>
+      <a href="./index.html#contact" class="case-footer-link">Get in touch &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="framework-footer">
+    <nav class="footer-nav-links">
+      <a href="./about.html">About</a>
+      <a href="./Work.html">Work</a>
+      <a href="./Articles.html">Writing</a>
+      <a href="./Frameworks.html">Frameworks</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
