@@ -184,6 +184,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .contact-detail-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
     .contact-detail-value { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.7); text-decoration: none; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--rule); padding: 1.5rem 0; }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-top: 0.85rem;
+      max-width: 640px;
+    }
     .form-field { display: flex; flex-direction: column; gap: 0.3rem; }
     .form-field label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
     .form-field input, .form-field textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; padding: 0.8rem 1rem; outline: none; transition: border-color 0.2s; resize: none; border-radius: 0; }
@@ -247,8 +282,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "addressRegion": "TN",
       "addressCountry": "US"
     },
+    "knowsAbout": [
+      "Behavioral Marketing",
+      "Decision Architecture",
+      "Audience Behavior",
+      "Content Strategy",
+      "SEO",
+      "AEO",
+      "Brand Strategy",
+      "Conversion Strategy"
+    ],
     "sameAs": [
-      "https://www.linkedin.com/in/megan-oliver-behavioral-marketing/"
+      "https://www.linkedin.com/in/megan-oliver-behavioral-marketing/",
+      "https://meganoliverbehavioralmarketing.substack.com/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Megan Oliver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Megan Oliver is a behavioral marketing strategist based in Memphis, Tennessee. Her work focuses on audience behavior, decision moments, content strategy, SEO/AEO, and conversion-focused marketing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Megan Oliver do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "She helps brands identify why audiences are not taking action and builds strategy around the decision moments that move people from awareness to action."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Megan Oliver based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Megan Oliver is based in Memphis, Tennessee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is behavioral marketing strategy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behavioral marketing strategy uses audience behavior, decision psychology, and marketing data to understand what people need before they act."
+        }
+      }
     ]
   }
   </script>
@@ -467,6 +553,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="form-field"><label>Message</label><textarea name="message" rows="5" placeholder="Tell me what's on your mind..."></textarea></div>
         <button type="submit" class="btn btn--cream">Send Message &rarr;</button>
       </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--white" id="faq">
+    <div class="section-header">
+      <span class="section-eyebrow section-eyebrow--green">FAQ</span>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Who is Megan Oliver?</summary>
+        <p class="faq-answer">Megan Oliver is a behavioral marketing strategist based in Memphis, Tennessee. Her work focuses on audience behavior, decision moments, content strategy, SEO/AEO, and conversion-focused marketing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does Megan Oliver do?</summary>
+        <p class="faq-answer">She helps brands identify why audiences are not taking action and builds strategy around the decision moments that move people from awareness to action.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is Megan Oliver based?</summary>
+        <p class="faq-answer">Megan Oliver is based in Memphis, Tennessee.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is behavioral marketing strategy?</summary>
+        <p class="faq-answer">Behavioral marketing strategy uses audience behavior, decision psychology, and marketing data to understand what people need before they act.</p>
+      </details>
     </div>
   </section>
 
