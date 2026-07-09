@@ -36,6 +36,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Megan Oliver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Megan Oliver is a behavioral marketing strategist based in Memphis, Tennessee. Her work focuses on audience behavior, decision moments, content strategy, SEO/AEO, and conversion-focused marketing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Megan Oliver do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "She helps brands identify why audiences are not taking action and builds strategy around the decision moments that move people from awareness to action."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Megan Oliver based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Megan Oliver is based in Memphis, Tennessee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is behavioral marketing strategy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behavioral marketing strategy uses audience behavior, decision psychology, and marketing data to understand what people need before they act."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -459,6 +499,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: rgba(245,242,238,0.7);
     }
     .cta-band-actions { display: flex; gap: 1rem; flex-shrink: 0; }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--rule); padding: 1.5rem 0; }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-top: 0.85rem;
+      max-width: 640px;
+    }
     .btn-primary {
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
@@ -733,6 +808,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="framework-desc">A diagnostic approach for identifying where marketing systems lose people at the behavioral level. B.E.A.M maps the gap between what audiences are told and what they actually do — and points toward the structural fixes that close it.</div>
         <span class="framework-link">Read framework &rarr;</span>
       </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section alt" id="faq">
+    <p class="section-label reveal">FAQ</p>
+    <h2 class="section-heading reveal" style="color: var(--ink-mid);">Common Questions</h2>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Who is Megan Oliver?</summary>
+        <p class="faq-answer">Megan Oliver is a behavioral marketing strategist based in Memphis, Tennessee. Her work focuses on audience behavior, decision moments, content strategy, SEO/AEO, and conversion-focused marketing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does Megan Oliver do?</summary>
+        <p class="faq-answer">She helps brands identify why audiences are not taking action and builds strategy around the decision moments that move people from awareness to action.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is Megan Oliver based?</summary>
+        <p class="faq-answer">Megan Oliver is based in Memphis, Tennessee.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is behavioral marketing strategy?</summary>
+        <p class="faq-answer">Behavioral marketing strategy uses audience behavior, decision psychology, and marketing data to understand what people need before they act.</p>
+      </details>
     </div>
   </section>
 
